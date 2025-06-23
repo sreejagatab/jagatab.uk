@@ -10,6 +10,7 @@
 # Environment variables (CRITICAL - contains sensitive data)
 .env
 .env.local
+.env.example
 .env.development
 .env.test
 .env.production
