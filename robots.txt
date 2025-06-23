@@ -1,0 +1,187 @@
+# ========================================
+# JAGATABUK WEBSITE - ROBOTS.TXT
+# ========================================
+# This file tells search engine crawlers which pages or files 
+# they can or can't request from your site.
+
+# ========================================
+# ALLOW ALL SEARCH ENGINES
+# ========================================
+User-agent: *
+Allow: /
+
+# ========================================
+# SPECIFIC SEARCH ENGINE RULES
+# ========================================
+
+# Google Bot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing Bot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Yahoo Bot
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# DuckDuckGo Bot
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# ========================================
+# DISALLOW SENSITIVE AREAS
+# ========================================
+
+# Block access to admin areas (if they exist)
+Disallow: /admin/
+Disallow: /administrator/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+
+# Block access to configuration files
+Disallow: /.env
+Disallow: /config/
+Disallow: /configs/
+Disallow: /.git/
+Disallow: /.gitignore
+
+# Block access to log files
+Disallow: /logs/
+Disallow: /*.log
+Disallow: /error_log
+Disallow: /access_log
+
+# Block access to backup files
+Disallow: /*.bak
+Disallow: /*.backup
+Disallow: /*.old
+Disallow: /backups/
+
+# Block access to temporary files
+Disallow: /tmp/
+Disallow: /temp/
+Disallow: /*.tmp
+
+# Block access to development files
+Disallow: /dev/
+Disallow: /development/
+Disallow: /test/
+Disallow: /tests/
+
+# Block access to database files
+Disallow: /*.sql
+Disallow: /*.db
+Disallow: /*.sqlite
+
+# Block access to sensitive documents
+Disallow: /private/
+Disallow: /confidential/
+Disallow: /internal/
+
+# ========================================
+# BLOCK MALICIOUS BOTS
+# ========================================
+
+# Block known bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MegaIndex
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+# Block aggressive crawlers
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: ScoutJet
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+# Block social media crawlers (optional - remove if you want social sharing)
+# User-agent: facebookexternalhit
+# Disallow: /
+
+# User-agent: Twitterbot
+# Disallow: /
+
+# ========================================
+# CRAWL DELAY SETTINGS
+# ========================================
+# Set crawl delay for all bots to prevent server overload
+Crawl-delay: 1
+
+# ========================================
+# SITEMAP LOCATION
+# ========================================
+# Tell search engines where to find your sitemap
+Sitemap: https://jagatabuk.com/sitemap.xml
+
+# ========================================
+# ADDITIONAL SITEMAPS (when created)
+# ========================================
+# Sitemap: https://jagatabuk.com/sitemap-blog.xml
+# Sitemap: https://jagatabuk.com/sitemap-services.xml
+# Sitemap: https://jagatabuk.com/sitemap-locations.xml
+
+# ========================================
+# NOTES & BEST PRACTICES
+# ========================================
+# 1. This robots.txt file is publicly accessible at:
+#    https://jagatabuk.com/robots.txt
+#
+# 2. It's a guideline for search engines, not a security measure
+#    - Well-behaved bots will follow these rules
+#    - Malicious bots may ignore them
+#    - Use server-level security for actual protection
+#
+# 3. Test your robots.txt file using:
+#    - Google Search Console > Robots.txt Tester
+#    - Bing Webmaster Tools > Robots.txt Tester
+#
+# 4. Common mistakes to avoid:
+#    - Don't block CSS/JS files (hurts SEO)
+#    - Don't block images you want indexed
+#    - Don't use robots.txt for sensitive data protection
+#    - Don't block pages you want in search results
+#
+# 5. Regular maintenance:
+#    - Review and update quarterly
+#    - Check for new bot user-agents
+#    - Monitor server logs for blocked bot activity
+#    - Update sitemap URLs when structure changes
+#
+# 6. SEO considerations:
+#    - Blocking pages in robots.txt may still allow them to appear in search results
+#    - Use noindex meta tags for pages you don't want indexed
+#    - Consider using canonical URLs for duplicate content
+#
+# 7. Security notes:
+#    - This file can reveal site structure to attackers
+#    - Don't list sensitive directories here
+#    - Use server-level access controls for real security
+#
+# Last updated: 2024-12-15
+# Contact: sreejagatab@yahoo.com

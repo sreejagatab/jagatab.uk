@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline | Jagatab - AI Automation & Python Development</title>
+    <meta name="description" content="You're currently offline. Jagatab AI automation and Python development services will be available when you reconnect.">
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --background-light: #f8fafc;
+            --white: #ffffff;
+            --font-primary: 'Inter', sans-serif;
+            --font-heading: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--background-light) 0%, #e0f2fe 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .offline-container {
+            text-align: center;
+            max-width: 500px;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .offline-icon {
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+        }
+
+        .offline-features {
+            background: var(--background-light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .offline-features h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .offline-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .offline-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .offline-features li::before {
+            content: "✓";
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-right: 0.75rem;
+            font-size: 1.125rem;
+        }
+
+        .retry-button {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .retry-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .contact-info {
+            background: var(--background-light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .contact-item i {
+            color: var(--primary-color);
+            margin-right: 0.75rem;
+            width: 20px;
+        }
+
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #fee2e2;
+            color: #dc2626;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .status-indicator.online {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: currentColor;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+
+        @media (max-width: 768px) {
+            .offline-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .offline-icon {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">📡</div>
+        
+        <div class="status-indicator" id="statusIndicator">
+            <div class="status-dot"></div>
+            <span id="statusText">You're currently offline</span>
+        </div>
+
+        <h1>Connection Lost</h1>
+        <p>Don't worry! You can still browse some content while offline. We'll automatically reconnect you when your internet connection is restored.</p>
+
+        <div class="offline-features">
+            <h3>Available Offline:</h3>
+            <ul>
+                <li>View cached service information</li>
+                <li>Read our privacy policy and terms</li>
+                <li>Browse previously loaded content</li>
+                <li>Contact information is always available</li>
+            </ul>
+        </div>
+
+        <button class="retry-button" onclick="retryConnection()">Try Again</button>
+        <button class="retry-button" onclick="goHome()" style="background: var(--accent-color);">Go to Homepage</button>
+
+        <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <div class="contact-item">
+                <i>📧</i>
+                <span>sreejagatab@yahoo.com</span>
+            </div>
+            <div class="contact-item">
+                <i>📞</i>
+                <span>07864 880790</span>
+            </div>
+            <div class="contact-item">
+                <i>📍</i>
+                <span>Wisbech, Cambridgeshire, UK</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check online status
+        function updateOnlineStatus() {
+            const statusIndicator = document.getElementById('statusIndicator');
+            const statusText = document.getElementById('statusText');
+            
+            if (navigator.onLine) {
+                statusIndicator.classList.add('online');
+                statusText.textContent = 'Back online!';
+                
+                // Auto-redirect after 2 seconds when back online
+                setTimeout(() => {
+                    window.location.href = '/';
+                }, 2000);
+            } else {
+                statusIndicator.classList.remove('online');
+                statusText.textContent = 'You\'re currently offline';
+            }
+        }
+
+        // Listen for online/offline events
+        window.addEventListener('online', updateOnlineStatus);
+        window.addEventListener('offline', updateOnlineStatus);
+
+        // Initial status check
+        updateOnlineStatus();
+
+        // Retry connection function
+        function retryConnection() {
+            if (navigator.onLine) {
+                window.location.reload();
+            } else {
+                // Show a message that they're still offline
+                alert('Still offline. Please check your internet connection and try again.');
+            }
+        }
+
+        // Go to homepage function
+        function goHome() {
+            window.location.href = '/';
+        }
+
+        // Periodic connectivity check
+        setInterval(() => {
+            if (navigator.onLine) {
+                // Try to fetch a small resource to verify actual connectivity
+                fetch('/', { method: 'HEAD', cache: 'no-cache' })
+                    .then(() => {
+                        updateOnlineStatus();
+                    })
+                    .catch(() => {
+                        // Still offline despite navigator.onLine being true
+                        console.log('Network request failed, still offline');
+                    });
+            }
+        }, 5000);
+
+        // Service Worker registration check
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.ready.then((registration) => {
+                console.log('Service Worker is ready');
+            });
+        }
+    </script>
+</body>
+</html>

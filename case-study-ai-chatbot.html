@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Customer Support Chatbot - Case Study | Jagatab</title>
+    <meta name="description" content="Learn how we built an intelligent AI chatbot for a Peterborough e-commerce business, handling 80% of customer inquiries automatically with 95% satisfaction.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --accent-color: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --background-light: #f8fafc;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .breadcrumb a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        .breadcrumb a:hover {
+            opacity: 1;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+        }
+
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .content-section {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2rem;
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .content-section h3 {
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .project-info {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .info-value {
+            color: var(--text-light);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: var(--background-light);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .result-card {
+            background: var(--background-light);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .result-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            display: block;
+        }
+
+        .result-label {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .timeline-content h4 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .cta-section {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .case-study-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">Jagatab</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>AI Customer Support Chatbot</h1>
+            <p>Intelligent 24/7 customer service automation with natural language processing</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="index.html#portfolio">Portfolio</a>
+                <span>/</span>
+                <span>AI Customer Support Chatbot</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="case-study-grid">
+                <!-- Main Content -->
+                <div class="main-column">
+                    <!-- Challenge Section -->
+                    <section class="content-section">
+                        <h2><i class="fas fa-exclamation-triangle"></i> The Challenge</h2>
+                        <p>Peterborough Online Retail Ltd, a growing e-commerce business with over 10,000 monthly customers, was overwhelmed by customer support demands. Their challenges included:</p>
+                        <ul style="margin: 1rem 0; padding-left: 2rem;">
+                            <li>High volume of repetitive customer inquiries (order status, returns, product info)</li>
+                            <li>Limited support hours causing customer frustration</li>
+                            <li>Increasing support costs with growing customer base</li>
+                            <li>Long response times during peak periods</li>
+                            <li>Staff burnout from handling routine questions</li>
+                            <li>Inconsistent responses across different support agents</li>
+                        </ul>
+                        <p>The company needed a solution that could provide instant, accurate responses while maintaining the personal touch customers expect.</p>
+                    </section>
+
+                    <!-- Solution Section -->
+                    <section class="content-section">
+                        <h2><i class="fas fa-lightbulb"></i> Our AI Solution</h2>
+                        <p>We developed an intelligent chatbot powered by OpenAI's GPT technology, integrated seamlessly with their e-commerce platform:</p>
+                        
+                        <h3>Core Capabilities:</h3>
+                        <ul style="margin: 1rem 0; padding-left: 2rem;">
+                            <li><strong>Natural Language Understanding:</strong> Processes customer queries in natural language</li>
+                            <li><strong>Order Management:</strong> Real-time order status, tracking, and modification capabilities</li>
+                            <li><strong>Product Information:</strong> Instant access to product details, specifications, and availability</li>
+                            <li><strong>Returns & Refunds:</strong> Automated processing of return requests and refund inquiries</li>
+                            <li><strong>Escalation System:</strong> Smart handoff to human agents for complex issues</li>
+                            <li><strong>Multi-language Support:</strong> Handles inquiries in English, Spanish, and French</li>
+                        </ul>
+
+                        <h3>Integration Features:</h3>
+                        <ul style="margin: 1rem 0; padding-left: 2rem;">
+                            <li>Seamless integration with WooCommerce platform</li>
+                            <li>Real-time inventory and order data access</li>
+                            <li>Customer authentication and account management</li>
+                            <li>Analytics and conversation tracking</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <div class="project-info">
+                        <h3>Project Details</h3>
+                        <div class="info-item">
+                            <span class="info-label">Client:</span>
+                            <span class="info-value">Peterborough Online Retail Ltd</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Industry:</span>
+                            <span class="info-value">E-commerce</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Location:</span>
+                            <span class="info-value">Peterborough, UK</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Project Duration:</span>
+                            <span class="info-value">8 weeks</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Team Size:</span>
+                            <span class="info-value">1 Developer</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Budget Range:</span>
+                            <span class="info-value">£5,000 - £7,000</span>
+                        </div>
+                        
+                        <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem;">Technologies Used:</h4>
+                        <div class="tech-stack">
+                            <span class="tech-tag">OpenAI GPT</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">API Integration</span>
+                            <span class="tech-tag">WooCommerce</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+
+                    <!-- Contact CTA -->
+                    <div class="project-info">
+                        <h3>Need AI Chatbot?</h3>
+                        <p style="margin-bottom: 1rem;">Transform your customer support with intelligent automation.</p>
+                        <a href="index.html#contact" class="btn btn-primary" style="width: 100%; text-align: center;">Get Free Consultation</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Implementation Process -->
+            <section class="content-section">
+                <h2><i class="fas fa-cogs"></i> Implementation Process</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>Week 1-2: Analysis & Design</h4>
+                            <p>Analyzed customer support data, identified common queries, and designed conversation flows and chatbot personality.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>Week 3-4: Core Development</h4>
+                            <p>Built the chatbot engine with OpenAI integration, developed natural language processing capabilities, and created response templates.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>Week 5-6: Platform Integration</h4>
+                            <p>Integrated with WooCommerce API, implemented order management features, and developed customer authentication system.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>Week 7: Testing & Training</h4>
+                            <p>Conducted extensive testing with real customer scenarios, trained the AI model with company-specific data, and refined responses.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h4>Week 8: Deployment & Optimization</h4>
+                            <p>Deployed to production, monitored performance, implemented analytics, and provided staff training on the escalation system.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="content-section">
+                <h2><i class="fas fa-chart-line"></i> Results & Impact</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <span class="result-number">80%</span>
+                        <span class="result-label">Inquiries Handled Automatically</span>
+                    </div>
+                    <div class="result-card">
+                        <span class="result-number">24/7</span>
+                        <span class="result-label">Availability</span>
+                    </div>
+                    <div class="result-card">
+                        <span class="result-number">95%</span>
+                        <span class="result-label">Customer Satisfaction</span>
+                    </div>
+                    <div class="result-card">
+                        <span class="result-number">60%</span>
+                        <span class="result-label">Cost Reduction</span>
+                    </div>
+                </div>
+
+                <h3>Detailed Impact Analysis:</h3>
+                <ul style="margin: 1rem 0; padding-left: 2rem;">
+                    <li><strong>Response Time:</strong> Instant responses vs. previous 2-4 hour average</li>
+                    <li><strong>Cost Savings:</strong> Reduced support staff requirements by 60%</li>
+                    <li><strong>Customer Satisfaction:</strong> Improved from 78% to 95% satisfaction rating</li>
+                    <li><strong>Scalability:</strong> Handles unlimited concurrent conversations</li>
+                    <li><strong>Consistency:</strong> Standardized responses across all customer interactions</li>
+                    <li><strong>Data Insights:</strong> Valuable analytics on customer behavior and common issues</li>
+                </ul>
+            </section>
+
+            <!-- Client Testimonial -->
+            <section class="content-section">
+                <h2><i class="fas fa-quote-left"></i> Client Testimonial</h2>
+                <blockquote style="background: var(--background-light); padding: 2rem; border-left: 4px solid var(--accent-color); margin: 1rem 0; font-style: italic; font-size: 1.1rem;">
+                    "The AI chatbot Sree built for our e-commerce store has been a game-changer. It handles 80% of customer inquiries automatically, works 24/7, and our customers love the instant responses. Our customer satisfaction scores have never been higher."
+                </blockquote>
+                <div style="text-align: right; margin-top: 1rem;">
+                    <strong>Sarah Parker</strong><br>
+                    <span style="color: var(--text-light);">CEO, Peterborough Online Retail Ltd</span>
+                </div>
+            </section>
+
+            <!-- Technical Details -->
+            <section class="content-section">
+                <h2><i class="fas fa-code"></i> Technical Implementation</h2>
+                <h3>AI & NLP Technologies:</h3>
+                <ul style="margin: 1rem 0; padding-left: 2rem;">
+                    <li><strong>OpenAI GPT-4:</strong> Advanced language model for natural conversation</li>
+                    <li><strong>Custom Training:</strong> Fine-tuned with company-specific data and FAQs</li>
+                    <li><strong>Intent Recognition:</strong> Accurate classification of customer queries</li>
+                    <li><strong>Context Management:</strong> Maintains conversation context across multiple exchanges</li>
+                    <li><strong>Sentiment Analysis:</strong> Detects customer emotions for appropriate responses</li>
+                </ul>
+
+                <h3>Integration Architecture:</h3>
+                <ul style="margin: 1rem 0; padding-left: 2rem;">
+                    <li><strong>WooCommerce API:</strong> Real-time access to orders, products, and customer data</li>
+                    <li><strong>Webhook Integration:</strong> Instant notifications for order updates</li>
+                    <li><strong>Customer Authentication:</strong> Secure login integration with existing accounts</li>
+                    <li><strong>Analytics Dashboard:</strong> Real-time monitoring and performance metrics</li>
+                </ul>
+
+                <h3>Key Features:</h3>
+                <ul style="margin: 1rem 0; padding-left: 2rem;">
+                    <li>Multi-turn conversations with context retention</li>
+                    <li>Intelligent escalation to human agents</li>
+                    <li>Personalized responses based on customer history</li>
+                    <li>Automated follow-up and satisfaction surveys</li>
+                    <li>Integration with existing help desk systems</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Customer Support?</h2>
+            <p>Discover how AI-powered chatbots can revolutionize your customer service and reduce support costs.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="index.html#contact" class="btn btn-outline" style="color: white; border-color: white;">Get Free Consultation</a>
+                <a href="index.html#portfolio" class="btn" style="background: white; color: var(--accent-color);">View More Projects</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

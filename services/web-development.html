@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Web Development - Professional Websites & Web Applications | Jagatabuk</title>
+    <meta name="description" content="Professional web development services for Cambridgeshire businesses. Custom websites, web applications, and e-commerce solutions with modern design and SEO optimization.">
+    <meta name="keywords" content="web development Cambridge, custom websites, web applications, e-commerce development, responsive design, SEO websites">
+    <link rel="canonical" href="https://jagatabuk.com/services/web-development">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Custom Web Development - Professional Websites & Web Applications">
+    <meta property="og:description" content="Transform your online presence with custom web development. Modern, responsive, and SEO-optimized solutions for Cambridge businesses.">
+    <meta property="og:image" content="https://jagatabuk.com/images/services/web-development-hero.jpg">
+    <meta property="og:url" content="https://jagatabuk.com/services/web-development">
+    <meta property="og:type" content="website">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Custom Web Development",
+      "description": "Professional web development services including custom websites and web applications",
+      "provider": {
+        "@type": "Organization",
+        "name": "Jagatabuk",
+        "url": "https://jagatabuk.com"
+      },
+      "areaServed": "Cambridgeshire, UK",
+      "offers": {
+        "@type": "Offer",
+        "price": "800",
+        "priceCurrency": "GBP",
+        "description": "Starting price for custom web development"
+      }
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #8b5cf6;
+            --primary-light: #a78bfa;
+            --primary-dark: #7c3aed;
+            --secondary-color: #10b981;
+            --accent-color: #f59e0b;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --text-light: #6b7280;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-accent: #f5f3ff;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--bg-secondary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header */
+        .service-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 50%, var(--secondary-color) 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .header-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.1;
+        }
+        
+        .header-text .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        
+        .header-visual {
+            text-align: center;
+            font-size: 8rem;
+            opacity: 0.8;
+        }
+        
+        .breadcrumb {
+            background: var(--bg-primary);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+        
+        .breadcrumb-nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+        
+        .content-section {
+            background: var(--bg-primary);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+        }
+        
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+        
+        .sidebar-card {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        h4 {
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        ul, ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+            color: var(--text-secondary);
+        }
+        
+        li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+        
+        /* Special Boxes */
+        .highlight-box {
+            background: var(--bg-accent);
+            border-left: 4px solid var(--primary-color);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .case-study {
+            background: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .case-study h4 {
+            color: #0369a1;
+            margin-top: 0;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: var(--bg-accent);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border: 2px solid #c4b5fd;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--primary-dark);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        /* Tech Stack Grid */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .tech-item {
+            background: var(--bg-primary);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        
+        .tech-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .tech-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Pricing Table */
+        .pricing-table {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .pricing-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .pricing-body {
+            padding: 2rem;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+        }
+        
+        .price-note {
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+        
+        /* CTA Button */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            width: 100%;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .cta-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .cta-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .header-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .content-section,
+            .sidebar-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .tech-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+        }
+        /* Navigation Header */
+        .main-header {
+            background: var(--bg-primary);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="../index.html" class="logo">Jagatab</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#portfolio">Portfolio</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#testimonials">Testimonials</a></li>
+                    <li><a href="../index.html#blog">Blog</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Service Header -->
+    <section class="service-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Custom Web Development</h1>
+                    <p class="subtitle">Build powerful, scalable web applications that drive business growth with modern technologies and best practices</p>
+                </div>
+                <div class="header-visual">
+                    <i class="fas fa-code"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-nav">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="../index.html#services">Services</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Custom Web Development</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="main-column">
+                    <!-- Overview Section -->
+                    <section class="content-section">
+                        <h2>💻 Transform Your Business with Custom Web Solutions</h2>
+                        <p>In today's digital-first world, your website is often the first impression customers have of your business. Our custom web development services help Cambridgeshire businesses create powerful, scalable, and user-friendly web applications that drive engagement, conversions, and growth.</p>
+
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <span class="stat-number">200%</span>
+                                <span class="stat-label">Average Conversion Increase</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">3s</span>
+                                <span class="stat-label">Average Load Time</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">99.9%</span>
+                                <span class="stat-label">Uptime Guarantee</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Mobile Responsive</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Services Section -->
+                    <section class="content-section">
+                        <h2>🚀 Our Web Development Services</h2>
+
+                        <h3>Custom Web Applications</h3>
+                        <p>Build tailored web applications that perfectly match your business requirements and scale with your growth.</p>
+                        <ul>
+                            <li><strong>Business Web Apps:</strong> Custom CRM, inventory management, and workflow automation systems</li>
+                            <li><strong>E-commerce Platforms:</strong> Full-featured online stores with payment integration and inventory management</li>
+                            <li><strong>SaaS Applications:</strong> Subscription-based software solutions with user management and billing</li>
+                            <li><strong>API Development:</strong> RESTful APIs and microservices for seamless integrations</li>
+                        </ul>
+
+                        <h3>Modern Frontend Development</h3>
+                        <p>Create engaging, responsive user interfaces that provide exceptional user experiences across all devices.</p>
+                        <ul>
+                            <li><strong>React Applications:</strong> Dynamic, component-based user interfaces with optimal performance</li>
+                            <li><strong>Vue.js Development:</strong> Progressive web applications with smooth user interactions</li>
+                            <li><strong>Responsive Design:</strong> Mobile-first design that works perfectly on all screen sizes</li>
+                            <li><strong>Progressive Web Apps:</strong> App-like experiences that work offline and load instantly</li>
+                        </ul>
+
+                        <h3>Backend Development & APIs</h3>
+                        <p>Robust server-side solutions that power your applications with security, scalability, and performance.</p>
+                        <ul>
+                            <li><strong>Python/Django:</strong> Rapid development with clean, maintainable code architecture</li>
+                            <li><strong>Node.js Applications:</strong> Fast, scalable server-side JavaScript applications</li>
+                            <li><strong>Database Design:</strong> Optimized database structures for performance and scalability</li>
+                            <li><strong>Cloud Integration:</strong> AWS, Azure, and Google Cloud deployment and management</li>
+                        </ul>
+
+                        <h3>E-commerce Solutions</h3>
+                        <p>Complete online store solutions that drive sales and provide seamless shopping experiences.</p>
+                        <ul>
+                            <li><strong>Custom E-commerce:</strong> Tailored online stores built for your specific products and customers</li>
+                            <li><strong>WooCommerce Development:</strong> WordPress-based stores with custom functionality</li>
+                            <li><strong>Payment Integration:</strong> Secure payment processing with Stripe, PayPal, and more</li>
+                            <li><strong>Inventory Management:</strong> Real-time stock tracking and automated reorder systems</li>
+                        </ul>
+                    </section>
+
+                    <!-- Technology Stack -->
+                    <section class="content-section">
+                        <h2>🛠️ Our Technology Stack</h2>
+
+                        <div class="tech-grid">
+                            <div class="tech-category">
+                                <h4>Frontend Technologies</h4>
+                                <ul>
+                                    <li>React.js & Next.js</li>
+                                    <li>Vue.js & Nuxt.js</li>
+                                    <li>TypeScript & JavaScript</li>
+                                    <li>HTML5 & CSS3</li>
+                                    <li>Tailwind CSS & Bootstrap</li>
+                                </ul>
+                            </div>
+                            <div class="tech-category">
+                                <h4>Backend Technologies</h4>
+                                <ul>
+                                    <li>Python & Django</li>
+                                    <li>Node.js & Express</li>
+                                    <li>PostgreSQL & MongoDB</li>
+                                    <li>Redis & Elasticsearch</li>
+                                    <li>RESTful APIs & GraphQL</li>
+                                </ul>
+                            </div>
+                            <div class="tech-category">
+                                <h4>Cloud & DevOps</h4>
+                                <ul>
+                                    <li>AWS & Azure</li>
+                                    <li>Docker & Kubernetes</li>
+                                    <li>CI/CD Pipelines</li>
+                                    <li>Nginx & Load Balancing</li>
+                                    <li>SSL & Security</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Case Study -->
+                    <section class="content-section">
+                        <div class="case-study">
+                            <h4>🏪 Case Study: Cambridgeshire Outdoor Gear</h4>
+                            <p><strong>Challenge:</strong> A local outdoor equipment retailer needed to transition from brick-and-mortar to online sales with a custom e-commerce platform.</p>
+                            <p><strong>Solution:</strong> We built a comprehensive e-commerce platform with inventory management, SEO optimization, and mobile-first design.</p>
+                            <p><strong>Results:</strong></p>
+                            <ul>
+                                <li>200% increase in online sales within 8 months</li>
+                                <li>First-page Google rankings for 15+ target keywords</li>
+                                <li>350% increase in website traffic</li>
+                                <li>4.8/5 customer satisfaction rating</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Development Process -->
+                    <section class="content-section">
+                        <h2>⚙️ Our Development Process</h2>
+
+                        <h3>1. Discovery & Planning (Week 1-2)</h3>
+                        <p>Comprehensive requirements analysis, user research, and technical architecture planning.</p>
+
+                        <h3>2. Design & Prototyping (Week 2-3)</h3>
+                        <p>UI/UX design, wireframing, and interactive prototypes for user testing and feedback.</p>
+
+                        <h3>3. Development & Testing (Week 4-8)</h3>
+                        <p>Agile development with regular testing, code reviews, and client feedback integration.</p>
+
+                        <h3>4. Deployment & Launch (Week 9)</h3>
+                        <p>Production deployment, performance optimization, and comprehensive testing across all devices.</p>
+
+                        <h3>5. Support & Maintenance (Ongoing)</h3>
+                        <p>Ongoing support, security updates, feature enhancements, and performance monitoring.</p>
+                    </section>
+
+                    <!-- Additional Case Studies -->
+                    <section class="content-section">
+                        <div class="case-study">
+                            <h4>🏥 Case Study: Cambridge Healthcare Practice - Digital Transformation</h4>
+                            <p><strong>Client:</strong> Multi-location healthcare practice in Cambridge</p>
+                            <p><strong>Challenge:</strong> Outdated website, poor mobile experience, no online booking system, losing patients to competitors with better digital presence.</p>
+                            <p><strong>Solution:</strong> Complete website redesign with patient portal, online booking system, mobile-first design, and integrated payment processing.</p>
+                            <p><strong>Results:</strong></p>
+                            <ul>
+                                <li>400% increase in online appointment bookings</li>
+                                <li>85% reduction in phone call volume for appointments</li>
+                                <li>300% improvement in mobile user engagement</li>
+                                <li>50% increase in new patient registrations</li>
+                                <li>95% patient satisfaction score for online experience</li>
+                            </ul>
+                            <p><strong>Timeline:</strong> 8-week development, launched with full training and support</p>
+                            <p><em>"The new website and patient portal have revolutionized how we operate. Patients love the convenience, and our staff can focus on care instead of scheduling." - Practice Manager, Cambridge Healthcare</em></p>
+                        </div>
+                    </section>
+
+                    <!-- Additional Case Study -->
+                    <section class="content-section">
+                        <div class="case-study">
+                            <h4>🛍️ Case Study: Wisbech Artisan Marketplace - E-commerce Success</h4>
+                            <p><strong>Client:</strong> Local artisan collective in Wisbech</p>
+                            <p><strong>Challenge:</strong> Multiple artisans needed unified online presence, inventory management across vendors, complex commission structure.</p>
+                            <p><strong>Solution:</strong> Custom multi-vendor e-commerce platform with automated commission calculations, inventory management, and vendor dashboards.</p>
+                            <p><strong>Results:</strong></p>
+                            <ul>
+                                <li>500% increase in online sales within 6 months</li>
+                                <li>25 local artisans successfully onboarded</li>
+                                <li>90% reduction in manual commission calculations</li>
+                                <li>Expanded customer base from local to UK-wide</li>
+                                <li>Featured in local media as digital transformation success</li>
+                            </ul>
+                            <p><strong>Timeline:</strong> 12-week development with phased vendor onboarding</p>
+                        </div>
+                    </section>
+
+                    <!-- FAQ Section -->
+                    <section class="content-section">
+                        <h2>❓ Frequently Asked Questions</h2>
+
+                        <h3>How long does a typical web development project take?</h3>
+                        <p>Simple websites take 4-6 weeks, while complex web applications can take 8-16 weeks. We provide detailed timelines during the planning phase and keep you updated throughout development.</p>
+
+                        <h3>Do you provide ongoing maintenance and support?</h3>
+                        <p>Yes, we offer various maintenance packages including security updates, content updates, performance monitoring, and feature enhancements. All projects include 3 months of free support.</p>
+
+                        <h3>Can you work with our existing hosting and domain?</h3>
+                        <p>Absolutely. We can work with any hosting provider and domain registrar. We can also recommend optimal hosting solutions based on your specific requirements and budget.</p>
+
+                        <h3>Will my website be mobile-friendly?</h3>
+                        <p>All our websites are built mobile-first and are fully responsive. We test on multiple devices and screen sizes to ensure optimal performance across all platforms.</p>
+
+                        <h3>Can you integrate with our existing business systems?</h3>
+                        <p>Yes, we specialize in integrations with CRM systems, payment processors, inventory management, email marketing platforms, and other business tools.</p>
+
+                        <h3>Do you provide training on how to update the website?</h3>
+                        <p>Yes, we provide comprehensive training sessions and documentation. We can also set up content management systems that make updates easy for non-technical users.</p>
+
+                        <h3>What about SEO and search engine visibility?</h3>
+                        <p>All our websites are built with SEO best practices, including proper meta tags, structured data, fast loading times, and mobile optimization. We can also provide ongoing SEO services.</p>
+                    </section>
+
+                    <!-- Testimonials Section -->
+                    <section class="content-section">
+                        <h2>💬 Client Success Stories</h2>
+
+                        <div class="highlight-box">
+                            <p><em>"Jagatab delivered exactly what we needed - a professional website that converts visitors into customers. Our online sales have increased by 300% since launch, and the site is so easy to manage."</em></p>
+                            <p><strong>- Rachel Green, Owner, Cambridge Boutique Store</strong></p>
+                        </div>
+
+                        <div class="highlight-box">
+                            <p><em>"The web application Sree built for our logistics company has streamlined our entire operation. What used to take hours of manual work is now automated, saving us thousands of pounds monthly."</em></p>
+                            <p><strong>- Tom Bradley, Operations Manager, Peterborough Logistics Ltd</strong></p>
+                        </div>
+
+                        <div class="highlight-box">
+                            <p><em>"Working with Jagatab was a pleasure from start to finish. They understood our vision, delivered on time, and provided excellent ongoing support. Our website perfectly represents our brand."</em></p>
+                            <p><strong>- Sarah Mitchell, Marketing Director, Wisbech Professional Services</strong></p>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Quick Contact -->
+                    <div class="sidebar-card">
+                        <h3>Start Your Project</h3>
+                        <p>Ready to build a powerful web application that drives your business forward? Let's discuss your requirements and create something amazing.</p>
+                        <a href="../index.html#contact" class="cta-button">
+                            <i class="fas fa-rocket"></i>
+                            Get Development Quote
+                        </a>
+                        <a href="tel:+447123456789" class="cta-button cta-secondary">
+                            <i class="fas fa-phone"></i>
+                            Free Consultation
+                        </a>
+                    </div>
+
+                    <!-- Pricing -->
+                    <div class="sidebar-card">
+                        <h3>💰 Project Packages</h3>
+
+                        <div class="pricing-table" style="margin-bottom: 1rem;">
+                            <div class="pricing-header">
+                                <h4 style="color: white; margin: 0;">Business Website</h4>
+                                <div class="price">£1,800</div>
+                                <div class="price-note">5-10 pages</div>
+                            </div>
+                            <div class="pricing-body">
+                                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Custom Design</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Mobile Responsive</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Contact Form</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> SEO Optimized</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> 3 Months Support</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pricing-table" style="margin-bottom: 1rem;">
+                            <div class="pricing-header" style="background: var(--accent-color);">
+                                <h4 style="color: white; margin: 0;">E-commerce Store</h4>
+                                <div class="price">£4,500</div>
+                                <div class="price-note">Online Shop</div>
+                            </div>
+                            <div class="pricing-body">
+                                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Product Catalog</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Payment Integration</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Inventory Management</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Order Management</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> 6 Months Support</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pricing-table">
+                            <div class="pricing-header" style="background: var(--secondary-color);">
+                                <h4 style="color: white; margin: 0;">Custom Web App</h4>
+                                <div class="price">£8,500+</div>
+                                <div class="price-note">Bespoke Solution</div>
+                            </div>
+                            <div class="pricing-body">
+                                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Custom Functionality</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Database Integration</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> User Management</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> API Development</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> 12 Months Support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Related Services -->
+                    <div class="sidebar-card">
+                        <h3>Related Services</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;"><a href="seo-automation.html" style="color: var(--primary-color); text-decoration: none;">🔍 SEO Automation</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="cloud-automation.html" style="color: var(--primary-color); text-decoration: none;">☁️ Cloud Solutions</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="python-automation-scripts.html" style="color: var(--primary-color); text-decoration: none;">🐍 Python Automation</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

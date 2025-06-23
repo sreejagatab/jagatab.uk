@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Setup & Automation Services | Jagatab</title>
+    <meta name="description" content="Complete social media management and automation services for Cambridgeshire businesses. Setup, content creation, scheduling, analytics, and growth strategies across all platforms.">
+    <meta name="keywords" content="social media automation, social media management, content scheduling, social media setup, Cambridge social media, automated posting">
+    <link rel="canonical" href="https://jagatab.uk/services/social-media-automation.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Social Media Setup & Automation Services | Jagatab">
+    <meta property="og:description" content="Complete social media management and automation services for Cambridgeshire businesses. Setup, content creation, scheduling, and analytics.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jagatab.uk/services/social-media-automation.html">
+    <meta property="og:image" content="https://jagatab.uk/images/social-media-automation.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Social Media Setup & Automation Services | Jagatab">
+    <meta name="twitter:description" content="Complete social media management and automation services for Cambridgeshire businesses.">
+    <meta name="twitter:image" content="https://jagatab.uk/images/social-media-automation.jpg">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --border-color: #e5e7eb;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-secondary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Navigation Header */
+        .main-header {
+            background: var(--bg-primary);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-family: var(--font-heading);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        /* Service Header */
+        .service-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--bg-primary);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .header-content {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header-text h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .header-visual {
+            font-size: 8rem;
+            opacity: 0.8;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: var(--bg-primary);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb-nav i {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: var(--bg-primary);
+            padding: 3rem 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .main-column {
+            max-width: none;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .content-section h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin: 2rem 0 1rem 0;
+        }
+
+        .content-section p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .content-section ul {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: var(--bg-primary);
+            border: 2px solid var(--success-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--success-color);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .highlight-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .case-study {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .case-study h4 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .platform-card {
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .platform-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .platform-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .platform-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            height: fit-content;
+            position: sticky;
+            top: 2rem;
+        }
+
+        .sidebar-card {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .sidebar-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .sidebar-card h3 {
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: block;
+            background: var(--primary-color);
+            color: var(--bg-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+            margin-bottom: 1rem;
+        }
+
+        .cta-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .cta-secondary {
+            background: var(--accent-color);
+        }
+
+        .cta-secondary:hover {
+            background: #d97706;
+        }
+
+        .pricing-table {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-header {
+            background: var(--primary-color);
+            color: var(--bg-primary);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0.5rem 0;
+        }
+
+        .price-note {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .pricing-body {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .header-text h1 {
+                font-size: 2rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .platform-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="../index.html" class="logo">Jagatab</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#portfolio">Portfolio</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#testimonials">Testimonials</a></li>
+                    <li><a href="../index.html#blog">Blog</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Service Header -->
+    <section class="service-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Social Media Setup & Automation</h1>
+                    <p class="subtitle">Complete social media management and automation services to grow your online presence, engage your audience, and drive business results</p>
+                </div>
+                <div class="header-visual">
+                    <i class="fas fa-share-alt"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-nav">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="../index.html#services">Services</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Social Media Setup & Automation</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="main-column">
+                    <!-- Overview Section -->
+                    <section class="content-section">
+                        <h2>📱 Transform Your Social Media Presence with Smart Automation</h2>
+                        <p>Social media is essential for business growth, but managing multiple platforms, creating consistent content, and engaging with your audience can be overwhelming. Our comprehensive social media automation services help Cambridgeshire businesses build a strong online presence while saving time and maximizing engagement.</p>
+
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <span class="stat-number">300%</span>
+                                <span class="stat-label">Average Engagement Increase</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">15 Hours</span>
+                                <span class="stat-label">Weekly Time Savings</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">85%</span>
+                                <span class="stat-label">More Consistent Posting</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">200%</span>
+                                <span class="stat-label">Follower Growth Rate</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Services Section -->
+                    <section class="content-section">
+                        <h2>🚀 Our Social Media Automation Services</h2>
+
+                        <h3>Complete Platform Setup & Optimization</h3>
+                        <p>Professional setup and optimization of your social media profiles across all major platforms to maximize visibility and credibility.</p>
+                        <ul>
+                            <li><strong>Profile Creation & Optimization:</strong> Professional setup with branded visuals, compelling bios, and SEO optimization</li>
+                            <li><strong>Business Account Configuration:</strong> Proper business account setup with analytics and advertising capabilities</li>
+                            <li><strong>Cross-Platform Consistency:</strong> Unified branding and messaging across all platforms</li>
+                            <li><strong>Local SEO Integration:</strong> Location-based optimization for Cambridgeshire businesses</li>
+                        </ul>
+
+                        <h3>Content Creation & Strategy</h3>
+                        <p>Comprehensive content planning and creation tailored to your brand voice and audience preferences.</p>
+                        <ul>
+                            <li><strong>Content Calendar Development:</strong> Strategic monthly content planning aligned with business goals</li>
+                            <li><strong>Visual Content Creation:</strong> Custom graphics, images, and video content for each platform</li>
+                            <li><strong>Copywriting & Captions:</strong> Engaging, brand-consistent copy that drives engagement</li>
+                            <li><strong>Hashtag Research & Strategy:</strong> Platform-specific hashtag optimization for maximum reach</li>
+                        </ul>
+
+                        <h3>Automated Posting & Scheduling</h3>
+                        <p>Smart automation systems that ensure consistent posting at optimal times for maximum engagement.</p>
+                        <ul>
+                            <li><strong>Multi-Platform Scheduling:</strong> Automated posting across Facebook, Instagram, LinkedIn, Twitter, and TikTok</li>
+                            <li><strong>Optimal Timing Analysis:</strong> AI-powered posting schedule based on audience activity</li>
+                            <li><strong>Content Recycling:</strong> Intelligent reposting of evergreen content for maximum value</li>
+                            <li><strong>Emergency Posting:</strong> Real-time posting capabilities for urgent announcements</li>
+                        </ul>
+
+                        <h3>Engagement & Community Management</h3>
+                        <p>Automated and manual engagement strategies to build meaningful relationships with your audience.</p>
+                        <ul>
+                            <li><strong>Automated Responses:</strong> AI-powered responses to common questions and comments</li>
+                            <li><strong>Engagement Monitoring:</strong> Real-time tracking of mentions, tags, and direct messages</li>
+                            <li><strong>Community Building:</strong> Strategic engagement with followers and industry influencers</li>
+                            <li><strong>Crisis Management:</strong> Automated alerts and response protocols for negative feedback</li>
+                        </ul>
+                    </section>
+
+                    <!-- Platform Coverage -->
+                    <section class="content-section">
+                        <h2>🌐 Platforms We Cover</h2>
+
+                        <div class="platform-grid">
+                            <div class="platform-card">
+                                <div class="platform-icon" style="color: #1877f2;">
+                                    <i class="fab fa-facebook"></i>
+                                </div>
+                                <h4>Facebook</h4>
+                                <p>Business pages, groups, events, and advertising integration for local reach.</p>
+                            </div>
+
+                            <div class="platform-card">
+                                <div class="platform-icon" style="color: #e4405f;">
+                                    <i class="fab fa-instagram"></i>
+                                </div>
+                                <h4>Instagram</h4>
+                                <p>Feed posts, stories, reels, and IGTV content with shopping integration.</p>
+                            </div>
+
+                            <div class="platform-card">
+                                <div class="platform-icon" style="color: #0077b5;">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <h4>LinkedIn</h4>
+                                <p>Professional networking, company pages, and B2B lead generation content.</p>
+                            </div>
+
+                            <div class="platform-card">
+                                <div class="platform-icon" style="color: #1da1f2;">
+                                    <i class="fab fa-twitter"></i>
+                                </div>
+                                <h4>Twitter/X</h4>
+                                <p>Real-time engagement, news sharing, and customer service automation.</p>
+                            </div>
+
+                            <div class="platform-card">
+                                <div class="platform-icon" style="color: #ff0050;">
+                                    <i class="fab fa-tiktok"></i>
+                                </div>
+                                <h4>TikTok</h4>
+                                <p>Short-form video content and trending hashtag optimization.</p>
+                            </div>
+
+                            <div class="platform-card">
+                                <div class="platform-icon" style="color: #ff0000;">
+                                    <i class="fab fa-youtube"></i>
+                                </div>
+                                <h4>YouTube</h4>
+                                <p>Video content optimization, channel management, and SEO.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Case Study -->
+                    <section class="content-section">
+                        <div class="case-study">
+                            <h4>📈 Case Study: Wisbech Restaurant Chain - 400% Engagement Growth</h4>
+                            <p><strong>Client:</strong> Local restaurant chain with 3 locations in Wisbech</p>
+                            <p><strong>Challenge:</strong> Inconsistent social media presence, low engagement, and difficulty managing multiple locations' social accounts.</p>
+                            <p><strong>Solution:</strong> Comprehensive social media automation with location-specific content, automated posting, and community management.</p>
+                            <p><strong>Results:</strong></p>
+                            <ul>
+                                <li>400% increase in social media engagement within 6 months</li>
+                                <li>250% growth in followers across all platforms</li>
+                                <li>35% increase in foot traffic attributed to social media</li>
+                                <li>90% reduction in time spent on social media management</li>
+                                <li>Featured in local media for innovative social media presence</li>
+                            </ul>
+                            <p><strong>Timeline:</strong> Full automation system implemented in 4 weeks</p>
+                            <p><em>"The social media automation has transformed our marketing. We're now consistently engaging with customers across all our locations without the manual workload." - Owner, Wisbech Restaurant Chain</em></p>
+                        </div>
+                    </section>
+
+                    <!-- Process Timeline -->
+                    <section class="content-section">
+                        <h2>⚙️ Our Social Media Automation Process</h2>
+
+                        <h3>Week 1: Strategy & Setup</h3>
+                        <ul>
+                            <li>Brand analysis and competitor research</li>
+                            <li>Target audience identification and persona development</li>
+                            <li>Platform selection and account optimization</li>
+                            <li>Content strategy and calendar planning</li>
+                        </ul>
+
+                        <h3>Week 2: Content Creation & Automation Setup</h3>
+                        <ul>
+                            <li>Visual content creation and brand asset development</li>
+                            <li>Automation tool configuration and integration</li>
+                            <li>Content calendar population with 30 days of content</li>
+                            <li>Hashtag research and optimization strategy</li>
+                        </ul>
+
+                        <h3>Week 3: Testing & Optimization</h3>
+                        <ul>
+                            <li>Automation system testing and refinement</li>
+                            <li>Posting schedule optimization based on audience insights</li>
+                            <li>Engagement automation setup and testing</li>
+                            <li>Analytics and reporting system configuration</li>
+                        </ul>
+
+                        <h3>Week 4: Launch & Training</h3>
+                        <ul>
+                            <li>Full automation system launch</li>
+                            <li>Team training on content approval and management</li>
+                            <li>Performance monitoring and initial optimizations</li>
+                            <li>Monthly maintenance and optimization plan setup</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Quick Contact -->
+                    <div class="sidebar-card">
+                        <h3>Boost Your Social Presence</h3>
+                        <p>Ready to automate your social media and grow your online presence? Let's discuss your goals and create a custom strategy.</p>
+                        <a href="../index.html#contact" class="cta-button">
+                            <i class="fas fa-share-alt"></i>
+                            Get Social Media Strategy
+                        </a>
+                        <a href="tel:+447864880790" class="cta-button cta-secondary">
+                            <i class="fas fa-phone"></i>
+                            Free Consultation
+                        </a>
+                    </div>
+
+                    <!-- Pricing -->
+                    <div class="sidebar-card">
+                        <h3>💰 Monthly Packages</h3>
+
+                        <div class="pricing-table">
+                            <div class="pricing-header">
+                                <h4 style="color: white; margin: 0;">Starter Package</h4>
+                                <div class="price">£600</div>
+                                <div class="price-note">per month</div>
+                            </div>
+                            <div class="pricing-body">
+                                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> 2 Platforms</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> 15 Posts/Month</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Basic Analytics</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Monthly Reports</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pricing-table">
+                            <div class="pricing-header" style="background: var(--accent-color);">
+                                <h4 style="color: white; margin: 0;">Professional</h4>
+                                <div class="price">£1,200</div>
+                                <div class="price-note">per month</div>
+                            </div>
+                            <div class="pricing-body">
+                                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> 4 Platforms</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> 30 Posts/Month</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Advanced Analytics</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Community Management</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Weekly Optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pricing-table">
+                            <div class="pricing-header" style="background: var(--secondary-color);">
+                                <h4 style="color: white; margin: 0;">Enterprise</h4>
+                                <div class="price">£2,500+</div>
+                                <div class="price-note">per month</div>
+                            </div>
+                            <div class="pricing-body">
+                                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> All Platforms</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> 60+ Posts/Month</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Custom Content Creation</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Dedicated Account Manager</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Ad Campaign Management</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Related Services -->
+                    <div class="sidebar-card">
+                        <h3>Related Services</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;"><a href="content-automation.html" style="color: var(--primary-color); text-decoration: none;">📝 Content Automation</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="email-automation.html" style="color: var(--primary-color); text-decoration: none;">📧 Email Automation</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="seo-automation.html" style="color: var(--primary-color); text-decoration: none;">🔍 SEO Automation</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

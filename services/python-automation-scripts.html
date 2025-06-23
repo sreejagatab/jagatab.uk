@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Automation Scripts - Custom Business Process Automation | Jagatabuk</title>
+    <meta name="description" content="Professional Python automation scripts for Cambridgeshire businesses. Streamline operations, reduce manual work, and boost productivity with custom automation solutions.">
+    <meta name="keywords" content="Python automation, business automation scripts, process automation, workflow automation, Cambridge Python developer">
+    <link rel="canonical" href="https://jagatabuk.com/services/python-automation-scripts">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Python Automation Scripts - Custom Business Process Automation">
+    <meta property="og:description" content="Transform your business with custom Python automation scripts. Reduce manual work by up to 90% and boost productivity.">
+    <meta property="og:image" content="https://jagatabuk.com/images/services/python-automation-hero.jpg">
+    <meta property="og:url" content="https://jagatabuk.com/services/python-automation-scripts">
+    <meta property="og:type" content="website">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Python Automation Scripts",
+      "description": "Custom Python automation scripts for business process optimization",
+      "provider": {
+        "@type": "Organization",
+        "name": "Jagatabuk",
+        "url": "https://jagatabuk.com"
+      },
+      "areaServed": "Cambridgeshire, UK",
+      "offers": {
+        "@type": "Offer",
+        "price": "500",
+        "priceCurrency": "GBP",
+        "description": "Starting price for Python automation scripts"
+      }
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #10b981;
+            --primary-light: #34d399;
+            --primary-dark: #059669;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --text-light: #6b7280;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-accent: #ecfdf5;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--bg-secondary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header */
+        .service-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 50%, var(--secondary-color) 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .header-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.1;
+        }
+        
+        .header-text .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        
+        .header-visual {
+            text-align: center;
+            font-size: 8rem;
+            opacity: 0.8;
+        }
+        
+        .breadcrumb {
+            background: var(--bg-primary);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+        
+        .breadcrumb-nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+        
+        .content-section {
+            background: var(--bg-primary);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+        }
+        
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+        
+        .sidebar-card {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        h4 {
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        ul, ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+            color: var(--text-secondary);
+        }
+        
+        li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+        
+        /* Special Boxes */
+        .highlight-box {
+            background: var(--bg-accent);
+            border-left: 4px solid var(--primary-color);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .case-study {
+            background: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .case-study h4 {
+            color: #0369a1;
+            margin-top: 0;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: var(--bg-accent);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border: 2px solid #a7f3d0;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--primary-dark);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        /* Process Timeline */
+        .process-timeline {
+            margin: 2rem 0;
+        }
+        
+        .process-step {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+        }
+        
+        .step-number {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .step-content h4 {
+            color: var(--primary-color);
+            margin: 0 0 0.5rem 0;
+        }
+        
+        /* Pricing Table */
+        .pricing-table {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .pricing-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .pricing-body {
+            padding: 2rem;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+        }
+        
+        .price-note {
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+        
+        /* CTA Button */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            width: 100%;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .cta-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .cta-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+        
+        .faq-answer {
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+        
+        /* Testimonial */
+        .testimonial {
+            background: var(--bg-accent);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            margin: 2rem 0;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .header-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .content-section,
+            .sidebar-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .process-step {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        /* Navigation Header */
+        .main-header {
+            background: var(--bg-primary);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="../index.html" class="logo">Jagatab</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#portfolio">Portfolio</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#testimonials">Testimonials</a></li>
+                    <li><a href="../index.html#blog">Blog</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Service Header -->
+    <div class="service-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Python Automation Scripts</h1>
+                    <p class="subtitle">Transform your business operations with custom Python automation scripts that eliminate repetitive tasks, reduce errors, and free up your team for strategic work.</p>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-number">90%</span>
+                            <span class="stat-label">Time Reduction</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">99.8%</span>
+                            <span class="stat-label">Accuracy Rate</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Operation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-visual">
+                    🐍
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="../index.html#services">Services</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Python Automation Scripts</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Main Content -->
+                <div class="main-column">
+                    <!-- Service Description -->
+                    <div class="content-section">
+                        <h2>What is Python Automation?</h2>
+                        <p>Python automation involves creating intelligent scripts that handle your repetitive business tasks automatically. Instead of spending hours on manual data entry, report generation, or file processing, our custom Python solutions work tirelessly in the background, completing these tasks with perfect accuracy and lightning speed.</p>
+
+                        <p>Our approach goes beyond simple task automation. We analyze your entire workflow, identify bottlenecks and inefficiencies, then design comprehensive solutions that integrate seamlessly with your existing systems. Whether you're processing invoices, managing inventory, or generating reports, our Python scripts become your digital workforce.</p>
+
+                        <div class="highlight-box">
+                            <h3>🎯 Perfect for Cambridgeshire Businesses</h3>
+                            <p>From Cambridge startups to established Wisbech manufacturers, our Python automation solutions are tailored to the unique needs of local businesses. We understand the challenges of growing companies and provide scalable automation that grows with you.</p>
+                        </div>
+                    </div>
+
+                    <!-- Case Studies -->
+                    <div class="content-section">
+                        <h2>Real Success Stories</h2>
+
+                        <div class="case-study">
+                            <h4>📊 Cambridge Accounting Firm - Invoice Processing Automation</h4>
+                            <p><strong>Challenge:</strong> Processing 200+ invoices weekly, taking 3 hours daily with frequent data entry errors.</p>
+                            <p><strong>Solution:</strong> Custom Python script that extracts data from PDF invoices, validates information, and populates accounting software automatically.</p>
+                            <p><strong>Results:</strong> 95% time reduction, 99.8% accuracy rate, £8,500 annual savings in labor costs.</p>
+                        </div>
+
+                        <div class="case-study">
+                            <h4>📈 Peterborough Marketing Agency - Report Generation</h4>
+                            <p><strong>Challenge:</strong> Creating weekly client reports from multiple data sources took 6 hours per week.</p>
+                            <p><strong>Solution:</strong> Automated data collection from Google Analytics, social media APIs, and CRM systems with branded PDF report generation.</p>
+                            <p><strong>Results:</strong> Reports now generated in 10 minutes, consistent formatting, clients receive reports 2 days earlier.</p>
+                        </div>
+
+                        <div class="case-study">
+                            <h4>🏭 Wisbech Manufacturing - Inventory Management</h4>
+                            <p><strong>Challenge:</strong> Manual inventory tracking across multiple warehouses led to stockouts and overordering.</p>
+                            <p><strong>Solution:</strong> Real-time inventory monitoring with automated reorder alerts and supplier communication.</p>
+                            <p><strong>Results:</strong> 40% reduction in stockouts, 25% decrease in excess inventory, improved cash flow.</p>
+                        </div>
+
+                        <div class="case-study">
+                            <h4>💼 Cambridge Consultancy - Email Campaign Automation</h4>
+                            <p><strong>Challenge:</strong> Personalizing and sending follow-up emails to 500+ prospects monthly.</p>
+                            <p><strong>Solution:</strong> Intelligent email automation with personalization based on prospect behavior and engagement.</p>
+                            <p><strong>Results:</strong> 300% increase in response rates, 5 hours saved weekly, improved lead nurturing.</p>
+                        </div>
+                    </div>
+
+                    <!-- Process & Timeline -->
+                    <div class="content-section">
+                        <h2>Our Proven Process</h2>
+                        <p>We follow a systematic approach to ensure your automation project delivers maximum value with minimal disruption to your operations.</p>
+
+                        <div class="process-timeline">
+                            <div class="process-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Discovery & Analysis (Week 1)</h4>
+                                    <p>We conduct a comprehensive audit of your current processes, identify automation opportunities, and document your specific requirements. This includes workflow mapping, system integration assessment, and ROI projections.</p>
+                                </div>
+                            </div>
+
+                            <div class="process-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Solution Design (Week 2)</h4>
+                                    <p>Our team designs a custom automation solution tailored to your needs. We create detailed specifications, system architecture diagrams, and provide a clear implementation roadmap with milestones.</p>
+                                </div>
+                            </div>
+
+                            <div class="process-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Development & Testing (Weeks 3-4)</h4>
+                                    <p>We build your automation scripts using best practices and rigorous testing. All code is thoroughly tested with your actual data to ensure reliability and accuracy before deployment.</p>
+                                </div>
+                            </div>
+
+                            <div class="process-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Implementation & Training (Week 5)</h4>
+                                    <p>We deploy the automation in your environment and provide comprehensive training to your team. This includes user guides, troubleshooting procedures, and ongoing support setup.</p>
+                                </div>
+                            </div>
+
+                            <div class="process-step">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <h4>Optimization & Support (Ongoing)</h4>
+                                    <p>We monitor performance, make adjustments as needed, and provide ongoing support. Regular check-ins ensure your automation continues to deliver value as your business evolves.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Capabilities -->
+                    <div class="content-section">
+                        <h2>Technical Capabilities</h2>
+                        <p>Our Python automation expertise covers a wide range of business applications and integrations:</p>
+
+                        <h3>Data Processing & Analysis</h3>
+                        <ul>
+                            <li>Excel/CSV file processing and manipulation</li>
+                            <li>Database integration (MySQL, PostgreSQL, SQLite)</li>
+                            <li>Data cleaning, validation, and transformation</li>
+                            <li>Statistical analysis and reporting</li>
+                            <li>Large dataset processing and optimization</li>
+                        </ul>
+
+                        <h3>System Integration</h3>
+                        <ul>
+                            <li>API connections and data synchronization</li>
+                            <li>CRM system automation (Salesforce, HubSpot)</li>
+                            <li>Accounting software integration (Xero, QuickBooks)</li>
+                            <li>E-commerce platform automation (Shopify, WooCommerce)</li>
+                            <li>Cloud service integration (Google Workspace, Microsoft 365)</li>
+                        </ul>
+
+                        <h3>Web Automation</h3>
+                        <ul>
+                            <li>Web scraping and data extraction</li>
+                            <li>Form submission automation</li>
+                            <li>Website monitoring and alerts</li>
+                            <li>Social media automation</li>
+                            <li>Competitive intelligence gathering</li>
+                        </ul>
+
+                        <h3>Communication Automation</h3>
+                        <ul>
+                            <li>Email automation and personalization</li>
+                            <li>SMS and WhatsApp messaging</li>
+                            <li>Slack and Teams integration</li>
+                            <li>Automated notifications and alerts</li>
+                            <li>Customer communication workflows</li>
+                        </ul>
+
+                        <h3>File & Document Management</h3>
+                        <ul>
+                            <li>PDF processing and data extraction</li>
+                            <li>Document generation and formatting</li>
+                            <li>File organization and backup automation</li>
+                            <li>Image processing and optimization</li>
+                            <li>Automated archiving and cleanup</li>
+                        </ul>
+                    </div>
+
+                    <!-- FAQ Section -->
+                    <div class="content-section">
+                        <h2>Frequently Asked Questions</h2>
+
+                        <div class="faq-item">
+                            <div class="faq-question">Will this work with our existing systems?</div>
+                            <div class="faq-answer">Yes! Our Python scripts are designed to integrate seamlessly with your current software and workflows. We conduct a thorough compatibility assessment during the discovery phase and ensure all integrations work smoothly before deployment.</div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">What if we need changes later?</div>
+                            <div class="faq-answer">All our automation solutions are built with flexibility in mind. We provide 3 months of free modifications after deployment, and our modular approach makes future updates straightforward and cost-effective.</div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">How much technical knowledge do we need?</div>
+                            <div class="faq-answer">None! Our automation scripts are designed to be user-friendly with simple interfaces. We provide comprehensive training and documentation, so your team can operate the automation without any programming knowledge.</div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">What ongoing support do you provide?</div>
+                            <div class="faq-answer">We offer various support packages including email support, phone consultations, system monitoring, and regular maintenance. Our goal is to ensure your automation continues to deliver value long-term.</div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">How secure is the automation?</div>
+                            <div class="faq-answer">Security is our top priority. All scripts include proper error handling, data encryption where needed, and follow industry best practices. We can also implement additional security measures based on your specific requirements.</div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">Can you automate our specific industry processes?</div>
+                            <div class="faq-answer">Absolutely! We've worked with businesses across various industries including healthcare, finance, manufacturing, retail, and professional services. Our approach is always customized to your specific industry requirements and compliance needs.</div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonials -->
+                    <div class="content-section">
+                        <h2>What Our Clients Say</h2>
+
+                        <div class="testimonial">
+                            <div class="testimonial-text">"The Python automation Sree built for our invoice processing has been a game-changer. What used to take us 3 hours daily now happens automatically in minutes. The accuracy is perfect, and we've saved thousands in labor costs."</div>
+                            <div class="testimonial-author">- Sarah Mitchell, Cambridge Accounting Solutions</div>
+                        </div>
+
+                        <div class="testimonial">
+                            <div class="testimonial-text">"Our weekly reporting process went from 6 hours of manual work to 10 minutes of automated perfection. Our clients are impressed with the consistency and speed of delivery. Best investment we've made this year."</div>
+                            <div class="testimonial-author">- David Thompson, Peterborough Marketing Group</div>
+                        </div>
+
+                        <div class="testimonial">
+                            <div class="testimonial-text">"The inventory automation has transformed our operations. We no longer have stockouts or excess inventory issues. The system pays for itself every month through improved efficiency and reduced waste."</div>
+                            <div class="testimonial-author">- Emma Wilson, Wisbech Manufacturing Ltd</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Pricing -->
+                    <div class="pricing-table">
+                        <div class="pricing-header">
+                            <div class="price">£500</div>
+                            <div class="price-note">Starting Price</div>
+                        </div>
+                        <div class="pricing-body">
+                            <h3>What's Included:</h3>
+                            <ul>
+                                <li>Process analysis and consultation</li>
+                                <li>Custom script development</li>
+                                <li>Testing with your data</li>
+                                <li>Implementation and training</li>
+                                <li>3 months free support</li>
+                                <li>Documentation and user guides</li>
+                            </ul>
+
+                            <h4>Pricing Factors:</h4>
+                            <ul>
+                                <li><strong>Complexity:</strong> Simple tasks start at £500, complex workflows £2,000+</li>
+                                <li><strong>Integrations:</strong> Each system integration adds £200-500</li>
+                                <li><strong>Data Volume:</strong> Large datasets may require optimization</li>
+                                <li><strong>Timeline:</strong> Rush projects incur 25% premium</li>
+                            </ul>
+
+                            <h4>Typical Project Ranges:</h4>
+                            <ul>
+                                <li><strong>Simple automation:</strong> £500-1,200</li>
+                                <li><strong>Multi-step workflows:</strong> £1,200-3,000</li>
+                                <li><strong>Enterprise solutions:</strong> £3,000-8,000</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="sidebar-card">
+                        <h3>Ready to Get Started?</h3>
+                        <p>Book a free consultation to discuss your automation needs and get a custom quote.</p>
+                        <a href="../index.html#contact" class="cta-button">
+                            <i class="fas fa-calendar-alt"></i>
+                            Book Free Consultation
+                        </a>
+                        <a href="tel:+447864880790" class="cta-button cta-secondary">
+                            <i class="fas fa-phone"></i>
+                            Call Now: 07864 880790
+                        </a>
+                    </div>
+
+                    <!-- Quick Contact -->
+                    <div class="sidebar-card">
+                        <h3>Quick Contact</h3>
+                        <p><strong>Email:</strong> sreejagatab@yahoo.com</p>
+                        <p><strong>Phone:</strong> 07864 880790</p>
+                        <p><strong>Location:</strong> Wisbech, Cambridgeshire</p>
+                        <p><strong>Response Time:</strong> Within 2 hours</p>
+                    </div>
+
+                    <!-- Related Services -->
+                    <div class="sidebar-card">
+                        <h3>Related Services</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;"><a href="ai-chatbots.html" style="color: var(--primary-color); text-decoration: none;">🤖 AI Customer Support Chatbots</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="web-development.html" style="color: var(--primary-color); text-decoration: none;">💻 Custom Web Development</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="seo-automation.html" style="color: var(--primary-color); text-decoration: none;">🔍 SEO Automation Tools</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

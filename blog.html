@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Jagatab - AI Automation & Python Development Insights</title>
+    <meta name="description" content="Expert insights on AI automation, Python development, and business transformation. Learn from real projects and industry trends in Cambridgeshire and beyond.">
+    <link rel="canonical" href="https://jagatab.uk/blog">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --background-light: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e5e7eb;
+            --font-primary: 'Inter', sans-serif;
+            --font-heading: 'Poppins', sans-serif;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            background: var(--background-light);
+            padding: 1rem 0;
+        }
+
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .breadcrumb-nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .main-content {
+            padding: 3rem 0;
+        }
+
+        .blog-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--border-color);
+            background: var(--white);
+            color: var(--text-light);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .blog-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .blog-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .blog-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .blog-title a:hover {
+            color: var(--primary-color);
+        }
+
+        .blog-excerpt {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more:hover {
+            color: var(--secondary-color);
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+        }
+
+        .pagination a,
+        .pagination span {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .pagination a:hover,
+        .pagination .current {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        .sidebar {
+            background: var(--background-light);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            margin-top: 2rem;
+        }
+
+        .sidebar h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            color: var(--primary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.75rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-filters {
+                justify-content: flex-start;
+            }
+        }
+        /* Navigation Header */
+        .main-header {
+            background: var(--white);
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-family: var(--font-heading);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="index.html" class="logo">Jagatab</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <header class="header">
+        <div class="container">
+            <h1>AI Automation & Python Development Blog</h1>
+            <p>Expert insights, tutorials, and case studies from real projects across Cambridgeshire and the UK</p>
+        </div>
+    </header>
+
+    <nav class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-nav">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Blog</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="blog-filters">
+                <a href="#" class="filter-btn active" data-category="all">All Posts</a>
+                <a href="#" class="filter-btn" data-category="ai-automation">AI Automation</a>
+                <a href="#" class="filter-btn" data-category="python">Python Development</a>
+                <a href="#" class="filter-btn" data-category="local-seo">Local SEO</a>
+                <a href="#" class="filter-btn" data-category="case-studies">Case Studies</a>
+                <a href="#" class="filter-btn" data-category="tutorials">Tutorials</a>
+                <a href="#" class="filter-btn" data-category="social-media">Social Media</a>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-card" data-category="ai-automation">
+                    <div class="blog-image">
+                        <div class="blog-category">AI Automation</div>
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> December 15, 2024</span>
+                            <span><i class="fas fa-clock"></i> 8 min read</span>
+                        </div>
+                        <h2 class="blog-title">
+                            <a href="blog/ai-automation-cambridgeshire-businesses.html">AI Automation for Cambridgeshire Businesses: A Complete Guide</a>
+                        </h2>
+                        <p class="blog-excerpt">Discover how local businesses in Cambridgeshire are leveraging AI automation to streamline operations, reduce costs, and drive growth. Learn about practical applications and real-world success stories from Cambridge, Wisbech, and Peterborough.</p>
+                        <a href="blog/ai-automation-cambridgeshire-businesses.html" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="python">
+                    <div class="blog-image">
+                        <div class="blog-category">Python Development</div>
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> December 10, 2024</span>
+                            <span><i class="fas fa-clock"></i> 12 min read</span>
+                        </div>
+                        <h2 class="blog-title">
+                            <a href="blog/python-automation-beginners-guide.html">Python Automation: A Beginner's Guide for Business Owners</a>
+                        </h2>
+                        <p class="blog-excerpt">Learn how Python automation can transform your business processes. This comprehensive guide covers the basics, benefits, and practical examples of Python automation for small and medium businesses in the UK.</p>
+                        <a href="blog/python-automation-beginners-guide.html" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="local-seo">
+                    <div class="blog-image">
+                        <div class="blog-category">Local SEO</div>
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> December 5, 2024</span>
+                            <span><i class="fas fa-clock"></i> 10 min read</span>
+                        </div>
+                        <h2 class="blog-title">
+                            <a href="blog/local-seo-cambridge-businesses.html">Local SEO for Cambridge Area Businesses: 2024 Strategy Guide</a>
+                        </h2>
+                        <p class="blog-excerpt">Master local SEO for your Cambridge, Wisbech, or Peterborough business. Learn proven strategies to dominate local search results and attract more customers from your area with our comprehensive 2024 guide.</p>
+                        <a href="blog/local-seo-cambridge-businesses.html" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="case-studies">
+                    <div class="blog-image">
+                        <div class="blog-category">Case Study</div>
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> November 28, 2024</span>
+                            <span><i class="fas fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h2 class="blog-title">
+                            <a href="blog/case-study-invoice-automation-cambridge.html">Case Study: How We Saved a Cambridge Firm 5 Hours Daily with Invoice Automation</a>
+                        </h2>
+                        <p class="blog-excerpt">A detailed breakdown of how our Python automation solution transformed invoice processing for a Cambridge accounting firm, reducing manual work by 90% and saving £15,000 annually in labor costs.</p>
+                        <a href="blog/case-study-invoice-automation-cambridge.html" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="tutorials">
+                    <div class="blog-image">
+                        <div class="blog-category">Tutorial</div>
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> November 20, 2024</span>
+                            <span><i class="fas fa-clock"></i> 15 min read</span>
+                        </div>
+                        <h2 class="blog-title">
+                            <a href="blog/building-chatbot-python-tutorial.html">Building Your First AI Chatbot with Python: Step-by-Step Tutorial</a>
+                        </h2>
+                        <p class="blog-excerpt">Learn to build a functional AI chatbot from scratch using Python and OpenAI's GPT API. Perfect for businesses looking to automate customer service and improve user engagement.</p>
+                        <a href="blog/building-chatbot-python-tutorial.html" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="ai-automation">
+                    <div class="blog-image">
+                        <div class="blog-category">AI Automation</div>
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> November 15, 2024</span>
+                            <span><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                        <h2 class="blog-title">
+                            <a href="blog/roi-business-automation-uk.html">The ROI of Business Automation: What UK Companies Need to Know</a>
+                        </h2>
+                        <p class="blog-excerpt">Understand the real return on investment from business automation. We analyze data from 50+ UK companies to show you the financial impact of AI and Python automation solutions.</p>
+                        <a href="blog/roi-business-automation-uk.html" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="social-media">
+                    <div class="blog-image">
+                        <div class="blog-category">Social Media Guide</div>
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Social Media Automation Guide for UK Businesses: Save 15+ Hours Weekly</h3>
+                        <p>Complete guide to social media automation for UK businesses. Learn how to automate posting, engagement, and analytics to save time while growing your online presence.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> December 1, 2024</span>
+                            <span><i class="fas fa-clock"></i> 12 min read</span>
+                        </div>
+                        <a href="blog/social-media-automation-guide-uk-businesses.html" class="read-more">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="pagination">
+                <span class="current">1</span>
+                <a href="#page2">2</a>
+                <a href="#page3">3</a>
+                <a href="#next">Next <i class="fas fa-chevron-right"></i></a>
+            </div>
+
+            <div class="sidebar">
+                <h3>Popular Categories</h3>
+                <ul>
+                    <li><a href="#ai-automation">AI Automation (12 posts)</a></li>
+                    <li><a href="#python">Python Development (8 posts)</a></li>
+                    <li><a href="#case-studies">Case Studies (6 posts)</a></li>
+                    <li><a href="#local-seo">Local SEO (5 posts)</a></li>
+                    <li><a href="#tutorials">Tutorials (4 posts)</a></li>
+                </ul>
+
+                <h3>Recent Posts</h3>
+                <ul>
+                    <li><a href="#">AI Automation for Cambridgeshire Businesses</a></li>
+                    <li><a href="#">Python Automation Beginner's Guide</a></li>
+                    <li><a href="#">Local SEO for Cambridge Area</a></li>
+                    <li><a href="#">Invoice Automation Case Study</a></li>
+                </ul>
+            </div>
+
+            <a href="index.html" class="back-link">← Back to Website</a>
+        </div>
+    </main>
+
+    <script>
+        // Blog filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const category = this.getAttribute('data-category');
+
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Filter blog cards
+                    blogCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        
+                        if (category === 'all' || cardCategory === category) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 100);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

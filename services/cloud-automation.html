@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Automation Solutions - Scalable Infrastructure & DevOps | Jagatabuk</title>
+    <meta name="description" content="Professional cloud automation services for Cambridgeshire businesses. AWS, Azure, and Google Cloud automation, DevOps, and infrastructure management solutions.">
+    <meta name="keywords" content="cloud automation, AWS automation, Azure DevOps, Google Cloud, infrastructure automation, Cambridge cloud services">
+    <link rel="canonical" href="https://jagatabuk.com/services/cloud-automation">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Cloud Automation Solutions - Scalable Infrastructure & DevOps">
+    <meta property="og:description" content="Transform your cloud infrastructure with automated deployment, scaling, and management solutions for modern businesses.">
+    <meta property="og:image" content="https://jagatabuk.com/images/services/cloud-automation-hero.jpg">
+    <meta property="og:url" content="https://jagatabuk.com/services/cloud-automation">
+    <meta property="og:type" content="website">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Cloud Automation Solutions",
+      "description": "Professional cloud automation and DevOps services for scalable infrastructure management",
+      "provider": {
+        "@type": "Organization",
+        "name": "Jagatabuk",
+        "url": "https://jagatabuk.com"
+      },
+      "areaServed": "Cambridgeshire, UK",
+      "offers": {
+        "@type": "Offer",
+        "price": "1500",
+        "priceCurrency": "GBP",
+        "description": "Starting price for cloud automation solutions"
+      }
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #06b6d4;
+            --primary-light: #67e8f9;
+            --primary-dark: #0891b2;
+            --secondary-color: #8b5cf6;
+            --accent-color: #f59e0b;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --text-light: #6b7280;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-accent: #ecfeff;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--bg-secondary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header */
+        .service-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 50%, var(--secondary-color) 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .header-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.1;
+        }
+        
+        .header-text .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        
+        .header-visual {
+            text-align: center;
+            font-size: 8rem;
+            opacity: 0.8;
+        }
+        
+        .breadcrumb {
+            background: var(--bg-primary);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+        
+        .breadcrumb-nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+        
+        .content-section {
+            background: var(--bg-primary);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+        }
+        
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+        
+        .sidebar-card {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        h4 {
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        ul, ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+            color: var(--text-secondary);
+        }
+        
+        li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+        
+        /* Special Boxes */
+        .highlight-box {
+            background: var(--bg-accent);
+            border-left: 4px solid var(--primary-color);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .case-study {
+            background: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .case-study h4 {
+            color: #0369a1;
+            margin-top: 0;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: var(--bg-accent);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border: 2px solid #a5f3fc;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--primary-dark);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        /* Cloud Providers Grid */
+        .cloud-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .cloud-provider {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        
+        .cloud-provider:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .cloud-logo {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Pricing Table */
+        .pricing-table {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .pricing-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .pricing-body {
+            padding: 2rem;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+        }
+        
+        .price-note {
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+        
+        /* CTA Button */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            width: 100%;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .cta-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .cta-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .header-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .content-section,
+            .sidebar-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .cloud-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Navigation Header */
+        .main-header {
+            background: var(--bg-primary);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="../index.html" class="logo">Jagatab</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#portfolio">Portfolio</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#testimonials">Testimonials</a></li>
+                    <li><a href="../index.html#blog">Blog</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Service Header -->
+    <section class="service-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Cloud Automation Solutions</h1>
+                    <p class="subtitle">Transform your infrastructure with scalable, automated cloud solutions that grow with your business</p>
+                </div>
+                <div class="header-visual">
+                    <i class="fas fa-cloud"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-nav">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="../index.html#services">Services</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Cloud Automation Solutions</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="main-column">
+                    <!-- Overview Section -->
+                    <section class="content-section">
+                        <h2>🚀 Accelerate Your Business with Cloud Automation</h2>
+                        <p>In today's fast-paced digital landscape, manual infrastructure management is no longer sustainable. Our cloud automation solutions help Cambridgeshire businesses leverage the power of AWS, Azure, and Google Cloud to create scalable, reliable, and cost-effective infrastructure that operates seamlessly without constant human intervention.</p>
+
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <span class="stat-number">75%</span>
+                                <span class="stat-label">Faster Deployment</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">60%</span>
+                                <span class="stat-label">Cost Reduction</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">99.9%</span>
+                                <span class="stat-label">Uptime Guarantee</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">24/7</span>
+                                <span class="stat-label">Automated Monitoring</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Services Section -->
+                    <section class="content-section">
+                        <h2>☁️ Our Cloud Automation Services</h2>
+
+                        <h3>Infrastructure as Code (IaC)</h3>
+                        <p>Transform your infrastructure management with code-based automation that ensures consistency, repeatability, and version control across all your cloud resources.</p>
+                        <ul>
+                            <li><strong>Terraform Automation:</strong> Multi-cloud infrastructure provisioning and management</li>
+                            <li><strong>AWS CloudFormation:</strong> Native AWS resource automation and orchestration</li>
+                            <li><strong>Azure Resource Manager:</strong> Comprehensive Azure infrastructure automation</li>
+                            <li><strong>Google Cloud Deployment Manager:</strong> GCP resource management and automation</li>
+                        </ul>
+
+                        <h3>CI/CD Pipeline Automation</h3>
+                        <p>Streamline your development workflow with automated continuous integration and deployment pipelines that reduce manual errors and accelerate time-to-market.</p>
+                        <ul>
+                            <li><strong>Automated Testing:</strong> Unit, integration, and end-to-end test automation</li>
+                            <li><strong>Build Automation:</strong> Automated compilation, packaging, and artifact creation</li>
+                            <li><strong>Deployment Automation:</strong> Zero-downtime deployments across environments</li>
+                            <li><strong>Rollback Mechanisms:</strong> Automated failure detection and recovery</li>
+                        </ul>
+
+                        <h3>Container Orchestration</h3>
+                        <p>Leverage the power of containerization with automated orchestration solutions that scale your applications efficiently and reliably.</p>
+                        <ul>
+                            <li><strong>Kubernetes Management:</strong> Automated cluster provisioning and management</li>
+                            <li><strong>Docker Automation:</strong> Container lifecycle management and optimization</li>
+                            <li><strong>Service Mesh:</strong> Automated service-to-service communication and security</li>
+                            <li><strong>Auto-scaling:</strong> Dynamic resource allocation based on demand</li>
+                        </ul>
+                    </section>
+
+                    <!-- Cloud Providers Section -->
+                    <section class="content-section">
+                        <h2>🌐 Multi-Cloud Expertise</h2>
+                        <p>We specialize in all major cloud platforms, helping you choose the right solution for your specific needs or manage a multi-cloud strategy.</p>
+
+                        <div class="cloud-grid">
+                            <div class="cloud-provider">
+                                <div class="cloud-logo" style="color: #FF9900;">
+                                    <i class="fab fa-aws"></i>
+                                </div>
+                                <h4>Amazon Web Services</h4>
+                                <p>Comprehensive AWS automation including EC2, Lambda, RDS, and S3 management with advanced monitoring and scaling.</p>
+                            </div>
+                            <div class="cloud-provider">
+                                <div class="cloud-logo" style="color: #0078D4;">
+                                    <i class="fab fa-microsoft"></i>
+                                </div>
+                                <h4>Microsoft Azure</h4>
+                                <p>Azure DevOps, App Services, and Virtual Machines automation with seamless integration to existing Microsoft ecosystems.</p>
+                            </div>
+                            <div class="cloud-provider">
+                                <div class="cloud-logo" style="color: #4285F4;">
+                                    <i class="fab fa-google"></i>
+                                </div>
+                                <h4>Google Cloud Platform</h4>
+                                <p>GCP automation leveraging Compute Engine, Cloud Functions, and BigQuery with advanced AI/ML integration capabilities.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Case Study Section -->
+                    <section class="content-section">
+                        <div class="case-study">
+                            <h4>📈 Case Study: Cambridge Tech Startup - 70% Cost Reduction</h4>
+                            <p><strong>Client:</strong> A Cambridge-based fintech startup with 50+ employees</p>
+                            <p><strong>Challenge:</strong> Manual infrastructure management was consuming 40+ hours weekly, with frequent downtime and scaling issues during peak usage.</p>
+                            <p><strong>Solution:</strong> Implemented comprehensive cloud automation using Terraform, AWS Auto Scaling, and CI/CD pipelines.</p>
+                            <p><strong>Results:</strong></p>
+                            <ul>
+                                <li>70% reduction in infrastructure management time</li>
+                                <li>99.9% uptime achieved (up from 94%)</li>
+                                <li>60% cost savings through automated resource optimization</li>
+                                <li>Deployment time reduced from 4 hours to 15 minutes</li>
+                                <li>Zero-downtime deployments implemented</li>
+                            </ul>
+                            <p><strong>Timeline:</strong> 6-week implementation with full automation achieved</p>
+                            <p><em>"Jagatab's cloud automation transformed our operations. We now focus on product development instead of infrastructure firefighting." - CTO, Cambridge Fintech</em></p>
+                        </div>
+                    </section>
+
+                    <!-- Process Timeline Section -->
+                    <section class="content-section">
+                        <h2>⚙️ Our Cloud Automation Process</h2>
+
+                        <h3>Week 1-2: Assessment & Strategy</h3>
+                        <ul>
+                            <li>Current infrastructure audit and analysis</li>
+                            <li>Cost optimization opportunities identification</li>
+                            <li>Security and compliance requirements review</li>
+                            <li>Automation roadmap and timeline creation</li>
+                        </ul>
+
+                        <h3>Week 3-4: Design & Planning</h3>
+                        <ul>
+                            <li>Infrastructure as Code template development</li>
+                            <li>CI/CD pipeline architecture design</li>
+                            <li>Monitoring and alerting strategy</li>
+                            <li>Disaster recovery and backup planning</li>
+                        </ul>
+
+                        <h3>Week 5-6: Implementation & Testing</h3>
+                        <ul>
+                            <li>Automated infrastructure provisioning setup</li>
+                            <li>CI/CD pipeline implementation and testing</li>
+                            <li>Security controls and monitoring deployment</li>
+                            <li>Performance optimization and fine-tuning</li>
+                        </ul>
+
+                        <h3>Week 7-8: Training & Handover</h3>
+                        <ul>
+                            <li>Team training on new automation tools</li>
+                            <li>Documentation and runbook creation</li>
+                            <li>Knowledge transfer sessions</li>
+                            <li>Ongoing support setup and monitoring</li>
+                        </ul>
+                    </section>
+
+                    <!-- FAQ Section -->
+                    <section class="content-section">
+                        <h2>❓ Frequently Asked Questions</h2>
+
+                        <h3>What cloud platforms do you support?</h3>
+                        <p>We specialize in AWS, Microsoft Azure, and Google Cloud Platform. We can also work with hybrid and multi-cloud environments, helping you choose the best platform for your specific needs and budget.</p>
+
+                        <h3>How long does a typical cloud automation project take?</h3>
+                        <p>Most projects are completed within 6-8 weeks, depending on complexity. Simple automation setups can be done in 2-3 weeks, while enterprise-level implementations may take 10-12 weeks.</p>
+
+                        <h3>What kind of cost savings can I expect?</h3>
+                        <p>Our clients typically see 40-70% reduction in infrastructure management time and 30-60% cost savings through automated resource optimization. ROI is usually achieved within 3-6 months.</p>
+
+                        <h3>Do you provide ongoing support after implementation?</h3>
+                        <p>Yes, we offer various support packages including 24/7 monitoring, regular optimization reviews, and on-demand technical support. All projects include 30 days of free support.</p>
+
+                        <h3>Is my data secure during the automation process?</h3>
+                        <p>Absolutely. We follow industry best practices for security, including encryption at rest and in transit, IAM policies, and compliance with GDPR and other regulations. Security is built into every automation we implement.</p>
+
+                        <h3>Can you work with our existing development team?</h3>
+                        <p>Yes, we collaborate closely with your internal teams, providing training and knowledge transfer to ensure they can maintain and extend the automation solutions we implement.</p>
+                    </section>
+
+                    <!-- Testimonials Section -->
+                    <section class="content-section">
+                        <h2>💬 What Our Clients Say</h2>
+
+                        <div class="highlight-box">
+                            <p><em>"The cloud automation solution from Jagatab has been transformational for our business. We've reduced our infrastructure costs by 55% while improving reliability. The team's expertise in AWS and Terraform is exceptional."</em></p>
+                            <p><strong>- Sarah Mitchell, Operations Director, Peterborough Manufacturing Ltd</strong></p>
+                        </div>
+
+                        <div class="highlight-box">
+                            <p><em>"Working with Sree and the Jagatab team was fantastic. They automated our entire deployment process, reducing our release cycle from weeks to hours. The ROI was evident within the first month."</em></p>
+                            <p><strong>- David Chen, CTO, Cambridge Software Solutions</strong></p>
+                        </div>
+
+                        <div class="highlight-box">
+                            <p><em>"As a growing startup, we needed scalable infrastructure without the overhead. Jagatab's cloud automation gave us enterprise-level capabilities with minimal management overhead."</em></p>
+                            <p><strong>- Emma Thompson, Founder, Wisbech Tech Innovations</strong></p>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Quick Contact -->
+                    <div class="sidebar-card">
+                        <h3>Get Started Today</h3>
+                        <p>Ready to transform your infrastructure with cloud automation? Let's discuss your specific requirements and create a tailored solution.</p>
+                        <a href="../index.html#contact" class="cta-button">
+                            <i class="fas fa-rocket"></i>
+                            Start Your Cloud Journey
+                        </a>
+                        <a href="tel:+447123456789" class="cta-button cta-secondary">
+                            <i class="fas fa-phone"></i>
+                            Call for Consultation
+                        </a>
+                    </div>
+
+                    <!-- Pricing -->
+                    <div class="sidebar-card">
+                        <h3>💰 Pricing Packages</h3>
+
+                        <div class="pricing-table" style="margin-bottom: 1rem;">
+                            <div class="pricing-header">
+                                <h4 style="color: white; margin: 0;">Starter Package</h4>
+                                <div class="price">£1,500</div>
+                                <div class="price-note">Basic Automation</div>
+                            </div>
+                            <div class="pricing-body">
+                                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Infrastructure Assessment</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Basic CI/CD Pipeline</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Single Cloud Platform</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> 30-day Support</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pricing-table" style="margin-bottom: 1rem;">
+                            <div class="pricing-header" style="background: var(--accent-color);">
+                                <h4 style="color: white; margin: 0;">Professional Package</h4>
+                                <div class="price">£3,500</div>
+                                <div class="price-note">Complete Automation</div>
+                            </div>
+                            <div class="pricing-body">
+                                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Full Infrastructure as Code</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Advanced CI/CD Pipelines</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Multi-environment Setup</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Monitoring & Alerting</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> 90-day Support</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pricing-table">
+                            <div class="pricing-header" style="background: var(--secondary-color);">
+                                <h4 style="color: white; margin: 0;">Enterprise Package</h4>
+                                <div class="price">£7,500+</div>
+                                <div class="price-note">Custom Solutions</div>
+                            </div>
+                            <div class="pricing-body">
+                                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Multi-cloud Architecture</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Advanced Security & Compliance</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Disaster Recovery</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> 24/7 Monitoring</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> 6-month Support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Related Services -->
+                    <div class="sidebar-card">
+                        <h3>Related Services</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;"><a href="python-automation-scripts.html" style="color: var(--primary-color); text-decoration: none;">🐍 Python Automation Scripts</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="web-development.html" style="color: var(--primary-color); text-decoration: none;">💻 Custom Web Development</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="seo-automation.html" style="color: var(--primary-color); text-decoration: none;">🔍 SEO Automation Tools</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

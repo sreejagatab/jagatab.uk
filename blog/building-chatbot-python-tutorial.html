@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Your First AI Chatbot with Python: Step-by-Step Tutorial | Jagatab</title>
+    <meta name="description" content="Learn to build a functional AI chatbot from scratch using Python and OpenAI's GPT API. Perfect for businesses looking to automate customer service and improve user engagement.">
+    <meta name="keywords" content="Python chatbot, AI chatbot tutorial, OpenAI GPT, customer service automation, Python programming, chatbot development">
+    <link rel="canonical" href="https://jagatab.uk/blog/building-chatbot-python-tutorial.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Building Your First AI Chatbot with Python: Step-by-Step Tutorial">
+    <meta property="og:description" content="Learn to build a functional AI chatbot from scratch using Python and OpenAI's GPT API. Perfect for businesses looking to automate customer service.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://jagatab.uk/blog/building-chatbot-python-tutorial.html">
+    <meta property="og:image" content="https://jagatab.uk/images/python-chatbot-tutorial.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Building Your First AI Chatbot with Python: Step-by-Step Tutorial">
+    <meta name="twitter:description" content="Learn to build a functional AI chatbot from scratch using Python and OpenAI's GPT API.">
+    <meta name="twitter:image" content="https://jagatab.uk/images/python-chatbot-tutorial.jpg">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --background-light: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e5e7eb;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+            --code-bg: #1f2937;
+            --code-text: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Navigation Header */
+        .main-header {
+            background: var(--white);
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        /* Article Styles */
+        .article-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .article-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-excerpt {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .breadcrumb {
+            background: var(--white);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb-nav i {
+            color: var(--text-light);
+            font-size: 0.8rem;
+        }
+
+        .article-content {
+            background: var(--white);
+            padding: 3rem 0;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .main-content {
+            max-width: none;
+        }
+
+        .main-content h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin: 2rem 0 1rem 0;
+            line-height: 1.3;
+        }
+
+        .main-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .main-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .main-content ul, .main-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .main-content li {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .warning-box {
+            background: #fffbeb;
+            border: 1px solid var(--warning-color);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .code-block {
+            background: var(--code-bg);
+            color: var(--code-text);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .code-block pre {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: var(--white);
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 1rem;
+        }
+
+        .sidebar {
+            background: var(--background-light);
+            padding: 2rem;
+            border-radius: 12px;
+            height: fit-content;
+            position: sticky;
+            top: 2rem;
+        }
+
+        .sidebar h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .sidebar-section {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sidebar-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .related-posts {
+            list-style: none;
+            padding: 0;
+        }
+
+        .related-posts li {
+            margin-bottom: 1rem;
+        }
+
+        .related-posts a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .related-posts a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .article-title {
+                font-size: 2rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .code-block {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="../index.html" class="logo">Jagatab</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#portfolio">Portfolio</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#testimonials">Testimonials</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Article Header -->
+    <section class="article-header">
+        <div class="container">
+            <h1 class="article-title">Building Your First AI Chatbot with Python: Step-by-Step Tutorial</h1>
+            <div class="article-meta">
+                <span><i class="fas fa-calendar"></i> November 20, 2024</span>
+                <span><i class="fas fa-clock"></i> 15 min read</span>
+                <span><i class="fas fa-tag"></i> Tutorial</span>
+            </div>
+            <p class="article-excerpt">Learn to build a functional AI chatbot from scratch using Python and OpenAI's GPT API. Perfect for businesses looking to automate customer service and improve user engagement.</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-nav">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="../blog.html">Blog</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Python Chatbot Tutorial</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Content -->
+    <section class="article-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <main class="main-content">
+                    <p>In today's digital landscape, AI chatbots have become essential tools for businesses looking to provide 24/7 customer support, automate routine inquiries, and improve user engagement. In this comprehensive tutorial, we'll build a functional AI chatbot from scratch using Python and OpenAI's powerful GPT API.</p>
+
+                    <div class="highlight-box">
+                        <h3>🎯 What You'll Learn</h3>
+                        <ul>
+                            <li>Setting up your Python development environment</li>
+                            <li>Integrating with OpenAI's GPT API</li>
+                            <li>Building a conversational interface</li>
+                            <li>Adding memory and context to your chatbot</li>
+                            <li>Deploying your chatbot for production use</li>
+                        </ul>
+                    </div>
+
+                    <h2>🛠️ Prerequisites</h2>
+
+                    <p>Before we begin, make sure you have:</p>
+                    <ul>
+                        <li><strong>Python 3.8+</strong> installed on your system</li>
+                        <li><strong>Basic Python knowledge</strong> (variables, functions, loops)</li>
+                        <li><strong>OpenAI API key</strong> (we'll show you how to get one)</li>
+                        <li><strong>Text editor or IDE</strong> (VS Code, PyCharm, or similar)</li>
+                    </ul>
+
+                    <h2><span class="step-number">1</span>Setting Up Your Environment</h2>
+
+                    <h3>Install Required Libraries</h3>
+                    <p>First, let's install the necessary Python packages:</p>
+
+                    <div class="code-block">
+                        <pre>pip install openai python-dotenv flask</pre>
+                    </div>
+
+                    <h3>Get Your OpenAI API Key</h3>
+                    <ol>
+                        <li>Visit <a href="https://platform.openai.com/" target="_blank">OpenAI's platform</a></li>
+                        <li>Create an account or sign in</li>
+                        <li>Navigate to API Keys section</li>
+                        <li>Create a new API key and copy it</li>
+                    </ol>
+
+                    <div class="warning-box">
+                        <h3>⚠️ Important Security Note</h3>
+                        <p>Never hardcode your API key in your source code. We'll use environment variables to keep it secure.</p>
+                    </div>
+
+                    <h3>Create Environment File</h3>
+                    <p>Create a <code>.env</code> file in your project directory:</p>
+
+                    <div class="code-block">
+                        <pre>OPENAI_API_KEY=your_api_key_here</pre>
+                    </div>
+
+                    <h2><span class="step-number">2</span>Building the Basic Chatbot</h2>
+
+                    <p>Let's start with a simple chatbot that can have basic conversations. Create a file called <code>chatbot.py</code>:</p>
+
+                    <div class="code-block">
+                        <pre>import openai
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+# Set up OpenAI API key
+openai.api_key = os.getenv('OPENAI_API_KEY')
+
+class SimpleChatbot:
+    def __init__(self):
+        self.conversation_history = []
+
+    def get_response(self, user_input):
+        """Get response from OpenAI GPT model"""
+        try:
+            # Add user input to conversation history
+            self.conversation_history.append({"role": "user", "content": user_input})
+
+            # Get response from OpenAI
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=self.conversation_history,
+                max_tokens=150,
+                temperature=0.7
+            )
+
+            # Extract the assistant's response
+            assistant_response = response.choices[0].message.content
+
+            # Add assistant response to conversation history
+            self.conversation_history.append({"role": "assistant", "content": assistant_response})
+
+            return assistant_response
+
+        except Exception as e:
+            return f"Sorry, I encountered an error: {str(e)}"
+
+# Test the chatbot
+if __name__ == "__main__":
+    chatbot = SimpleChatbot()
+
+    print("Chatbot: Hello! I'm your AI assistant. Type 'quit' to exit.")
+
+    while True:
+        user_input = input("You: ")
+
+        if user_input.lower() == 'quit':
+            print("Chatbot: Goodbye!")
+            break
+
+        response = chatbot.get_response(user_input)
+        print(f"Chatbot: {response}")
+</pre>
+                    </div>
+
+                    <h2><span class="step-number">3</span>Adding Business Context</h2>
+
+                    <p>To make your chatbot more useful for business purposes, let's add some context and personality:</p>
+
+                    <div class="code-block">
+                        <pre>class BusinessChatbot:
+    def __init__(self, business_name, business_info):
+        self.business_name = business_name
+        self.business_info = business_info
+        self.conversation_history = [
+            {
+                "role": "system",
+                "content": f"""You are a helpful customer service assistant for {business_name}.
+
+Business Information:
+{business_info}
+
+Guidelines:
+- Be friendly and professional
+- Provide accurate information about the business
+- If you don't know something, offer to connect them with a human
+- Keep responses concise but helpful
+- Always try to be solution-oriented"""
+            }
+        ]
+
+    def get_response(self, user_input):
+        """Get contextual response for business inquiries"""
+        try:
+            self.conversation_history.append({"role": "user", "content": user_input})
+
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=self.conversation_history,
+                max_tokens=200,
+                temperature=0.7
+            )
+
+            assistant_response = response.choices[0].message.content
+            self.conversation_history.append({"role": "assistant", "content": assistant_response})
+
+            return assistant_response
+
+        except Exception as e:
+            return "I'm sorry, I'm having technical difficulties. Please try again or contact our support team."
+</pre>
+                    </div>
+
+                    <h2><span class="step-number">4</span>Testing Your Chatbot</h2>
+
+                    <p>Run your chatbot and test it with various questions:</p>
+
+                    <div class="code-block">
+                        <pre>python chatbot.py</pre>
+                    </div>
+
+                    <p>Try asking questions like:</p>
+                    <ul>
+                        <li>"What services do you offer?"</li>
+                        <li>"How much does Python automation cost?"</li>
+                        <li>"Can you help with my website?"</li>
+                        <li>"What's your contact information?"</li>
+                    </ul>
+
+                    <h2>🚀 Next Steps and Advanced Features</h2>
+
+                    <h3>1. Add Memory Management</h3>
+                    <p>For production use, implement conversation memory limits to control API costs:</p>
+
+                    <div class="code-block">
+                        <pre>def manage_conversation_memory(self, max_messages=10):
+    """Keep conversation history within limits"""
+    if len(self.conversation_history) > max_messages:
+        # Keep system message and recent messages
+        system_msg = self.conversation_history[0]
+        recent_messages = self.conversation_history[-(max_messages-1):]
+        self.conversation_history = [system_msg] + recent_messages
+</pre>
+                    </div>
+
+                    <h3>2. Add Intent Recognition</h3>
+                    <p>Implement basic intent recognition to route conversations:</p>
+
+                    <div class="code-block">
+                        <pre>def detect_intent(self, user_input):
+    """Basic intent detection"""
+    user_input = user_input.lower()
+
+    if any(word in user_input for word in ['price', 'cost', 'how much']):
+        return 'pricing'
+    elif any(word in user_input for word in ['contact', 'phone', 'email']):
+        return 'contact'
+    elif any(word in user_input for word in ['service', 'what do you do']):
+        return 'services'
+    else:
+        return 'general'
+</pre>
+                    </div>
+
+                    <h3>3. Integration Options</h3>
+                    <ul>
+                        <li><strong>Website Integration:</strong> Embed using JavaScript widget</li>
+                        <li><strong>WhatsApp Business:</strong> Connect via WhatsApp Business API</li>
+                        <li><strong>Facebook Messenger:</strong> Use Facebook's Messenger Platform</li>
+                        <li><strong>Slack/Teams:</strong> Create bot applications for workplace chat</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h3>💡 Pro Tips for Production</h3>
+                        <ul>
+                            <li><strong>Rate Limiting:</strong> Implement rate limiting to prevent abuse</li>
+                            <li><strong>Error Handling:</strong> Add comprehensive error handling and fallbacks</li>
+                            <li><strong>Analytics:</strong> Track conversation metrics and user satisfaction</li>
+                            <li><strong>Human Handoff:</strong> Provide easy escalation to human support</li>
+                            <li><strong>Testing:</strong> Thoroughly test with real user scenarios</li>
+                        </ul>
+                    </div>
+
+                    <h2>💰 Cost Considerations</h2>
+
+                    <p>OpenAI API pricing is based on tokens used:</p>
+                    <ul>
+                        <li><strong>GPT-3.5-turbo:</strong> $0.002 per 1K tokens</li>
+                        <li><strong>Average conversation:</strong> 10-50 tokens per message</li>
+                        <li><strong>Monthly estimate:</strong> £20-100 for small business use</li>
+                    </ul>
+
+                    <h2>🎯 Conclusion</h2>
+
+                    <p>You've now built a functional AI chatbot that can handle customer inquiries with context and personality. This foundation can be extended with additional features like:</p>
+
+                    <ul>
+                        <li>Database integration for customer data</li>
+                        <li>Appointment booking capabilities</li>
+                        <li>Multi-language support</li>
+                        <li>Voice interaction capabilities</li>
+                        <li>Integration with CRM systems</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h3>🚀 Ready to Deploy Your Chatbot?</h3>
+                        <p>Need help implementing a professional chatbot for your business? Our team specializes in custom AI chatbot development with advanced features, integrations, and ongoing support.</p>
+                        <p><strong>Get in touch:</strong> sreejagatab@yahoo.com | 07864 880790</p>
+                    </div>
+                </main>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-section">
+                        <h3>🚀 Need Professional Chatbot Development?</h3>
+                        <p>Get a custom AI chatbot built specifically for your business with advanced features and integrations.</p>
+                        <a href="../index.html#contact" class="cta-button">
+                            <i class="fas fa-robot"></i> Get Custom Chatbot
+                        </a>
+                        <a href="tel:+447864880790" class="cta-button" style="background: var(--accent-color);">
+                            <i class="fas fa-phone"></i> Free Consultation
+                        </a>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>📚 Tutorial Sections</h3>
+                        <ul class="related-posts">
+                            <li><a href="#prerequisites">Prerequisites</a></li>
+                            <li><a href="#environment">Environment Setup</a></li>
+                            <li><a href="#basic-chatbot">Basic Chatbot</a></li>
+                            <li><a href="#business-context">Business Context</a></li>
+                            <li><a href="#advanced-features">Advanced Features</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>🔗 Related Articles</h3>
+                        <ul class="related-posts">
+                            <li><a href="ai-automation-cambridgeshire-businesses.html">AI Automation for Businesses</a></li>
+                            <li><a href="python-automation-beginners-guide.html">Python Automation Guide</a></li>
+                            <li><a href="case-study-invoice-automation-cambridge.html">Automation Case Study</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>🏷️ Tags</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">
+                            #PythonChatbot #AIAutomation #OpenAI #CustomerService #BusinessAutomation #ChatbotDevelopment #PythonTutorial
+                        </p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

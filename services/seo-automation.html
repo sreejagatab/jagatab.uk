@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Automation Tools - Automated Search Engine Optimization | Jagatabuk</title>
+    <meta name="description" content="Professional SEO automation tools for Cambridgeshire businesses. Automated keyword tracking, content optimization, and search engine ranking improvements.">
+    <meta name="keywords" content="SEO automation, search engine optimization, keyword tracking, Cambridge SEO, automated SEO tools, ranking optimization">
+    <link rel="canonical" href="https://jagatabuk.com/services/seo-automation">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SEO Automation Tools - Automated Search Engine Optimization">
+    <meta property="og:description" content="Boost your search rankings with automated SEO tools. Track keywords, optimize content, and improve visibility automatically.">
+    <meta property="og:image" content="https://jagatabuk.com/images/services/seo-automation-hero.jpg">
+    <meta property="og:url" content="https://jagatabuk.com/services/seo-automation">
+    <meta property="og:type" content="website">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "SEO Automation Tools",
+      "description": "Automated SEO tools and services for improved search engine rankings and visibility",
+      "provider": {
+        "@type": "Organization",
+        "name": "Jagatabuk",
+        "url": "https://jagatabuk.com"
+      },
+      "areaServed": "Cambridgeshire, UK",
+      "offers": {
+        "@type": "Offer",
+        "price": "600",
+        "priceCurrency": "GBP",
+        "description": "Starting price for SEO automation tools"
+      }
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #ef4444;
+            --primary-light: #f87171;
+            --primary-dark: #dc2626;
+            --secondary-color: #10b981;
+            --accent-color: #f59e0b;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --text-light: #6b7280;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-accent: #fef2f2;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--bg-secondary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header */
+        .service-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 50%, var(--secondary-color) 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .header-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.1;
+        }
+        
+        .header-text .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        
+        .header-visual {
+            text-align: center;
+            font-size: 8rem;
+            opacity: 0.8;
+        }
+        
+        .breadcrumb {
+            background: var(--bg-primary);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+        
+        .breadcrumb-nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+        
+        .content-section {
+            background: var(--bg-primary);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+        }
+        
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+        
+        .sidebar-card {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        h4 {
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        ul, ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+            color: var(--text-secondary);
+        }
+        
+        li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+        
+        /* Special Boxes */
+        .highlight-box {
+            background: var(--bg-accent);
+            border-left: 4px solid var(--primary-color);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .case-study {
+            background: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .case-study h4 {
+            color: #0369a1;
+            margin-top: 0;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: var(--bg-accent);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border: 2px solid #fecaca;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--primary-dark);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        /* SEO Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .tool-card {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .tool-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        /* Pricing Table */
+        .pricing-table {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .pricing-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .pricing-body {
+            padding: 2rem;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+        }
+        
+        .price-note {
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+        
+        /* CTA Button */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            width: 100%;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .cta-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .cta-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .header-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .content-section,
+            .sidebar-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Navigation Header */
+        .main-header {
+            background: var(--bg-primary);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="../index.html" class="logo">Jagatab</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#portfolio">Portfolio</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#testimonials">Testimonials</a></li>
+                    <li><a href="../index.html#blog">Blog</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Service Header -->
+    <section class="service-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>SEO Automation Tools</h1>
+                    <p class="subtitle">Boost your search rankings with intelligent automation that monitors, analyzes, and optimizes your SEO performance 24/7</p>
+                </div>
+                <div class="header-visual">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-nav">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="../index.html#services">Services</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>SEO Automation Tools</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="main-column">
+                    <!-- Overview Section -->
+                    <section class="content-section">
+                        <h2>🔍 Dominate Search Results with Automated SEO</h2>
+                        <p>Manual SEO monitoring is time-consuming and often misses critical opportunities. Our SEO automation tools provide continuous monitoring, intelligent analysis, and automated optimizations that help Cambridge businesses achieve and maintain top search rankings while saving countless hours of manual work.</p>
+
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <span class="stat-number">150%</span>
+                                <span class="stat-label">Average Traffic Increase</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">85%</span>
+                                <span class="stat-label">Time Saved on SEO Tasks</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">24/7</span>
+                                <span class="stat-label">Automated Monitoring</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">SEO Metrics Tracked</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Services Section -->
+                    <section class="content-section">
+                        <h2>🚀 Our SEO Automation Services</h2>
+
+                        <h3>Automated Keyword Monitoring</h3>
+                        <p>Track your keyword rankings across all major search engines with real-time alerts for significant changes and opportunities.</p>
+                        <ul>
+                            <li><strong>Daily Rank Tracking:</strong> Monitor 100+ keywords across Google, Bing, and Yahoo</li>
+                            <li><strong>Competitor Analysis:</strong> Track competitor rankings and identify opportunities</li>
+                            <li><strong>Local SEO Monitoring:</strong> Track local search performance and Google My Business rankings</li>
+                            <li><strong>SERP Feature Tracking:</strong> Monitor featured snippets, local packs, and other SERP features</li>
+                        </ul>
+
+                        <h3>Technical SEO Automation</h3>
+                        <p>Automatically detect and alert you to technical SEO issues that could impact your search performance.</p>
+                        <ul>
+                            <li><strong>Site Crawling:</strong> Regular automated crawls to identify technical issues</li>
+                            <li><strong>Page Speed Monitoring:</strong> Continuous Core Web Vitals tracking and optimization alerts</li>
+                            <li><strong>Broken Link Detection:</strong> Automated identification and reporting of broken internal/external links</li>
+                            <li><strong>Schema Markup Validation:</strong> Ensure structured data is properly implemented and error-free</li>
+                        </ul>
+
+                        <h3>Content Optimization Automation</h3>
+                        <p>Leverage AI-powered content analysis to automatically identify optimization opportunities and content gaps.</p>
+                        <ul>
+                            <li><strong>Content Gap Analysis:</strong> Identify missing content opportunities based on competitor research</li>
+                            <li><strong>Keyword Density Optimization:</strong> Automated analysis and recommendations for keyword usage</li>
+                            <li><strong>Meta Tag Optimization:</strong> AI-generated suggestions for title tags and meta descriptions</li>
+                            <li><strong>Internal Linking Suggestions:</strong> Automated recommendations for internal link opportunities</li>
+                        </ul>
+
+                        <h3>Automated Reporting & Analytics</h3>
+                        <p>Receive comprehensive SEO reports automatically delivered to your inbox with actionable insights and recommendations.</p>
+                        <ul>
+                            <li><strong>Weekly Performance Reports:</strong> Automated ranking, traffic, and conversion reports</li>
+                            <li><strong>Custom Dashboards:</strong> Real-time SEO performance monitoring with key metrics</li>
+                            <li><strong>ROI Tracking:</strong> Automated calculation of SEO return on investment</li>
+                            <li><strong>Alert System:</strong> Instant notifications for ranking drops, traffic changes, or technical issues</li>
+                        </ul>
+                    </section>
+
+                    <!-- Case Study -->
+                    <section class="content-section">
+                        <div class="case-study">
+                            <h4>📈 Case Study: Cambridge Legal Associates</h4>
+                            <p><strong>Challenge:</strong> A Cambridge law firm was struggling with poor search visibility and manual SEO monitoring that consumed 10+ hours weekly.</p>
+                            <p><strong>Solution:</strong> We implemented our comprehensive SEO automation system with keyword tracking, technical monitoring, and automated reporting.</p>
+                            <p><strong>Results:</strong></p>
+                            <ul>
+                                <li>150% increase in organic traffic within 6 months</li>
+                                <li>20+ keywords ranking on first page of Google</li>
+                                <li>85% reduction in time spent on SEO tasks</li>
+                                <li>300% increase in qualified leads from organic search</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Process Section -->
+                    <section class="content-section">
+                        <h2>⚙️ Our SEO Automation Process</h2>
+
+                        <h3>1. SEO Audit & Strategy (Week 1)</h3>
+                        <p>Comprehensive analysis of your current SEO performance, competitor research, and automation strategy development.</p>
+
+                        <h3>2. Tool Setup & Configuration (Week 2)</h3>
+                        <p>Implementation of monitoring tools, keyword setup, and integration with your existing analytics platforms.</p>
+
+                        <h3>3. Automation Implementation (Week 3-4)</h3>
+                        <p>Deployment of automated monitoring, reporting systems, and alert mechanisms tailored to your business needs.</p>
+
+                        <h3>4. Testing & Optimization (Week 5)</h3>
+                        <p>Thorough testing of all automation systems and fine-tuning based on initial performance data.</p>
+
+                        <h3>5. Training & Handover (Week 6)</h3>
+                        <p>Comprehensive training on using the automation tools and interpreting reports, plus ongoing support setup.</p>
+                    </section>
+
+                    <!-- Additional Case Studies -->
+                    <section class="content-section">
+                        <div class="case-study">
+                            <h4>🏪 Case Study: Ely Retail Business - 300% Traffic Increase</h4>
+                            <p><strong>Client:</strong> Independent retail store in Ely, Cambridgeshire</p>
+                            <p><strong>Challenge:</strong> Poor online visibility, manual SEO monitoring consuming 15+ hours weekly, losing customers to larger competitors.</p>
+                            <p><strong>Solution:</strong> Implemented comprehensive SEO automation with local search optimization, automated content suggestions, and competitor monitoring.</p>
+                            <p><strong>Results:</strong></p>
+                            <ul>
+                                <li>300% increase in organic website traffic</li>
+                                <li>25 keywords ranking on first page of Google</li>
+                                <li>90% reduction in SEO management time</li>
+                                <li>450% increase in online sales</li>
+                                <li>Top 3 rankings for "retail store Ely" and related terms</li>
+                            </ul>
+                            <p><strong>Timeline:</strong> Results visible within 8 weeks, full optimization achieved in 16 weeks</p>
+                            <p><em>"The SEO automation has transformed our online presence. We're now competing with much larger retailers and winning!" - Owner, Ely Retail Store</em></p>
+                        </div>
+                    </section>
+
+                    <!-- Technical Capabilities -->
+                    <section class="content-section">
+                        <h2>🔧 Technical Capabilities</h2>
+
+                        <h3>Advanced SEO Tools Integration</h3>
+                        <ul>
+                            <li><strong>Google Search Console API:</strong> Automated performance monitoring and issue detection</li>
+                            <li><strong>SEMrush/Ahrefs Integration:</strong> Competitor analysis and keyword opportunity identification</li>
+                            <li><strong>Google Analytics 4:</strong> Advanced conversion tracking and user behavior analysis</li>
+                            <li><strong>PageSpeed Insights API:</strong> Automated Core Web Vitals monitoring</li>
+                        </ul>
+
+                        <h3>Local SEO Automation</h3>
+                        <ul>
+                            <li><strong>Google My Business Optimization:</strong> Automated posting and review management</li>
+                            <li><strong>Local Citation Building:</strong> Automated directory submissions and NAP consistency</li>
+                            <li><strong>Local Keyword Tracking:</strong> Cambridge, Wisbech, Peterborough area monitoring</li>
+                            <li><strong>Review Monitoring:</strong> Automated alerts for new reviews across platforms</li>
+                        </ul>
+                    </section>
+
+                    <!-- FAQ Section -->
+                    <section class="content-section">
+                        <h2>❓ Frequently Asked Questions</h2>
+
+                        <h3>How quickly will I see SEO results?</h3>
+                        <p>Initial improvements typically appear within 4-6 weeks, with significant results visible in 8-12 weeks. Local SEO improvements often show faster results, sometimes within 2-4 weeks.</p>
+
+                        <h3>What makes your SEO automation different?</h3>
+                        <p>Our automation focuses on continuous monitoring and optimization rather than one-time setup. We use AI-powered content suggestions, automated technical SEO audits, and real-time competitor analysis.</p>
+
+                        <h3>Do you work with businesses outside Cambridgeshire?</h3>
+                        <p>Yes, while we specialize in Cambridgeshire local SEO, we work with businesses across the UK and internationally. Our automation tools are effective for any geographic market.</p>
+
+                        <h3>Can you guarantee first-page rankings?</h3>
+                        <p>While we can't guarantee specific rankings (no ethical SEO company can), our clients typically see 70-80% of targeted keywords reach first-page rankings within 6 months.</p>
+
+                        <h3>What happens if Google changes its algorithm?</h3>
+                        <p>Our automation systems monitor algorithm changes and automatically adjust strategies. We follow white-hat SEO practices that are resilient to Google updates.</p>
+
+                        <h3>How do you measure ROI from SEO automation?</h3>
+                        <p>We track organic traffic growth, keyword rankings, conversion rates, and time saved on manual SEO tasks. Most clients see positive ROI within 3-4 months.</p>
+                    </section>
+
+                    <!-- Testimonials Section -->
+                    <section class="content-section">
+                        <h2>💬 Client Success Stories</h2>
+
+                        <div class="highlight-box">
+                            <p><em>"Jagatab's SEO automation has been a game-changer. Our organic traffic increased by 250% in 6 months, and we're now ranking #1 for our main keywords in Cambridge. The automated reporting saves us hours every week."</em></p>
+                            <p><strong>- Mark Stevens, Marketing Director, Cambridge Professional Services</strong></p>
+                        </div>
+
+                        <div class="highlight-box">
+                            <p><em>"The local SEO automation brought us from page 3 to position 1 for 'accountants Wisbech' in just 3 months. Our phone inquiries have tripled, and we've had to hire additional staff."</em></p>
+                            <p><strong>- Lisa Parker, Managing Partner, Wisbech Accounting Firm</strong></p>
+                        </div>
+
+                        <div class="highlight-box">
+                            <p><em>"Working with Sree on SEO automation was the best investment we made. The system identifies opportunities we would never have found manually, and our rankings continue to improve month after month."</em></p>
+                            <p><strong>- James Wilson, Owner, Peterborough Construction Company</strong></p>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Quick Contact -->
+                    <div class="sidebar-card">
+                        <h3>Boost Your Rankings</h3>
+                        <p>Ready to automate your SEO and dominate search results? Let's discuss your SEO goals and create a custom automation strategy.</p>
+                        <a href="../index.html#contact" class="cta-button">
+                            <i class="fas fa-chart-line"></i>
+                            Get SEO Automation Quote
+                        </a>
+                        <a href="tel:+447123456789" class="cta-button cta-secondary">
+                            <i class="fas fa-phone"></i>
+                            Free SEO Consultation
+                        </a>
+                    </div>
+
+                    <!-- Pricing -->
+                    <div class="sidebar-card">
+                        <h3>💰 Monthly Packages</h3>
+
+                        <div class="pricing-table" style="margin-bottom: 1rem;">
+                            <div class="pricing-header">
+                                <h4 style="color: white; margin: 0;">Local Business</h4>
+                                <div class="price">£600</div>
+                                <div class="price-note">per month</div>
+                            </div>
+                            <div class="pricing-body">
+                                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> 25 Keyword Tracking</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Local SEO Focus</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Monthly Reports</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Basic Competitor Analysis</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pricing-table" style="margin-bottom: 1rem;">
+                            <div class="pricing-header" style="background: var(--accent-color);">
+                                <h4 style="color: white; margin: 0;">Professional</h4>
+                                <div class="price">£1,200</div>
+                                <div class="price-note">per month</div>
+                            </div>
+                            <div class="pricing-body">
+                                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> 100+ Keyword Tracking</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Advanced Technical SEO</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Weekly Reports</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Content Optimization</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> 24/7 Monitoring</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pricing-table">
+                            <div class="pricing-header" style="background: var(--secondary-color);">
+                                <h4 style="color: white; margin: 0;">Enterprise</h4>
+                                <div class="price">£2,500+</div>
+                                <div class="price-note">per month</div>
+                            </div>
+                            <div class="pricing-body">
+                                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> 500+ Keywords</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Multi-location SEO</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Daily Reports</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Advanced Analytics</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Dedicated Account Manager</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Related Services -->
+                    <div class="sidebar-card">
+                        <h3>Related Services</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;"><a href="content-automation.html" style="color: var(--primary-color); text-decoration: none;">📝 Content Automation</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="web-development.html" style="color: var(--primary-color); text-decoration: none;">💻 Web Development</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="python-automation-scripts.html" style="color: var(--primary-color); text-decoration: none;">🐍 Python Automation</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

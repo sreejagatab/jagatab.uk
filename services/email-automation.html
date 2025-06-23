@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Marketing Automation - Automated Email Campaigns & Lead Nurturing | Jagatabuk</title>
+    <meta name="description" content="Professional email marketing automation for Cambridgeshire businesses. Automated campaigns, lead nurturing, and cold outreach systems that generate results.">
+    <meta name="keywords" content="email automation, email marketing, cold outreach, lead nurturing, Cambridge email marketing, automated campaigns">
+    <link rel="canonical" href="https://jagatabuk.com/services/email-automation">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Email Marketing Automation - Automated Email Campaigns & Lead Nurturing">
+    <meta property="og:description" content="Transform your email marketing with automated campaigns that nurture leads and drive conversions 24/7.">
+    <meta property="og:image" content="https://jagatabuk.com/images/services/email-automation-hero.jpg">
+    <meta property="og:url" content="https://jagatabuk.com/services/email-automation">
+    <meta property="og:type" content="website">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Email Marketing Automation",
+      "description": "Automated email marketing campaigns and lead nurturing systems for business growth",
+      "provider": {
+        "@type": "Organization",
+        "name": "Jagatabuk",
+        "url": "https://jagatabuk.com"
+      },
+      "areaServed": "Cambridgeshire, UK",
+      "offers": {
+        "@type": "Offer",
+        "price": "400",
+        "priceCurrency": "GBP",
+        "description": "Starting price for email automation systems"
+      }
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #f59e0b;
+            --primary-light: #fbbf24;
+            --primary-dark: #d97706;
+            --secondary-color: #1e40af;
+            --accent-color: #10b981;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --text-light: #6b7280;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-accent: #fffbeb;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--bg-secondary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header */
+        .service-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 50%, var(--secondary-color) 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .header-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.1;
+        }
+        
+        .header-text .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        
+        .header-visual {
+            text-align: center;
+            font-size: 8rem;
+            opacity: 0.8;
+        }
+        
+        .breadcrumb {
+            background: var(--bg-primary);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+        
+        .breadcrumb-nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 4rem 0;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+        
+        .content-section {
+            background: var(--bg-primary);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+        }
+        
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+        
+        .sidebar-card {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        h4 {
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        ul, ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+            color: var(--text-secondary);
+        }
+        
+        li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+        
+        /* Special Boxes */
+        .highlight-box {
+            background: var(--bg-accent);
+            border-left: 4px solid var(--primary-color);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .case-study {
+            background: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .case-study h4 {
+            color: #0369a1;
+            margin-top: 0;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: var(--bg-accent);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border: 2px solid #fed7aa;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--primary-dark);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        /* Pricing Table */
+        .pricing-table {
+            background: var(--bg-primary);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .pricing-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .pricing-body {
+            padding: 2rem;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+        }
+        
+        .price-note {
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+        
+        /* CTA Button */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            width: 100%;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .cta-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .cta-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .header-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .content-section,
+            .sidebar-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+        /* Navigation Header */
+        .main-header {
+            background: var(--bg-primary);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="../index.html" class="logo">Jagatab</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#portfolio">Portfolio</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#testimonials">Testimonials</a></li>
+                    <li><a href="../index.html#blog">Blog</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Service Header -->
+    <section class="service-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Email Marketing Automation</h1>
+                    <p class="subtitle">Transform your email marketing with automated campaigns that nurture leads and drive conversions 24/7</p>
+                </div>
+                <div class="header-visual">
+                    <i class="fas fa-envelope"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-nav">
+                <a href="../index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="../index.html#services">Services</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Email Marketing Automation</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="main-column">
+                    <!-- Overview Section -->
+                    <section class="content-section">
+                        <h2>📧 Scale Your Business with Smart Email Automation</h2>
+                        <p>Email marketing remains one of the highest ROI marketing channels, but manual email campaigns are time-consuming and often miss opportunities. Our email automation solutions help Cambridgeshire businesses create sophisticated, personalized email campaigns that nurture leads, retain customers, and drive sales automatically.</p>
+
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <span class="stat-number">4200%</span>
+                                <span class="stat-label">Average ROI</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">80%</span>
+                                <span class="stat-label">Time Saved</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">300%</span>
+                                <span class="stat-label">Lead Conversion Increase</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-number">24/7</span>
+                                <span class="stat-label">Automated Nurturing</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Services Section -->
+                    <section class="content-section">
+                        <h2>🚀 Our Email Automation Services</h2>
+
+                        <h3>Lead Nurturing Campaigns</h3>
+                        <p>Automatically guide prospects through your sales funnel with personalized email sequences that build trust and drive conversions.</p>
+                        <ul>
+                            <li><strong>Welcome Series:</strong> Automated onboarding sequences for new subscribers</li>
+                            <li><strong>Educational Drip Campaigns:</strong> Value-driven content that builds authority and trust</li>
+                            <li><strong>Behavioral Triggers:</strong> Emails triggered by specific user actions and behaviors</li>
+                            <li><strong>Lead Scoring Integration:</strong> Automated segmentation based on engagement and interest levels</li>
+                        </ul>
+
+                        <h3>Cold Outreach Automation</h3>
+                        <p>Scale your prospecting efforts with intelligent cold email campaigns that generate qualified leads consistently.</p>
+                        <ul>
+                            <li><strong>Prospect Research:</strong> Automated lead generation and contact discovery</li>
+                            <li><strong>Personalized Sequences:</strong> Multi-step cold email campaigns with dynamic personalization</li>
+                            <li><strong>Follow-up Automation:</strong> Intelligent follow-up sequences based on response behavior</li>
+                            <li><strong>A/B Testing:</strong> Automated testing of subject lines, content, and send times</li>
+                        </ul>
+
+                        <h3>Customer Retention Campaigns</h3>
+                        <p>Keep customers engaged and increase lifetime value with automated retention and re-engagement campaigns.</p>
+                        <ul>
+                            <li><strong>Win-back Campaigns:</strong> Re-engage inactive customers with targeted offers</li>
+                            <li><strong>Upsell/Cross-sell Automation:</strong> Intelligent product recommendations based on purchase history</li>
+                            <li><strong>Anniversary & Birthday Campaigns:</strong> Personalized celebration emails with special offers</li>
+                            <li><strong>Loyalty Program Automation:</strong> Automated rewards and milestone recognition</li>
+                        </ul>
+
+                        <h3>E-commerce Email Automation</h3>
+                        <p>Maximize online sales with automated e-commerce email campaigns that recover lost sales and increase order values.</p>
+                        <ul>
+                            <li><strong>Abandoned Cart Recovery:</strong> Automated sequences to recover lost sales</li>
+                            <li><strong>Browse Abandonment:</strong> Re-engage visitors who viewed products but didn't purchase</li>
+                            <li><strong>Post-Purchase Follow-up:</strong> Order confirmations, shipping updates, and review requests</li>
+                            <li><strong>Inventory Alerts:</strong> Notify customers when out-of-stock items are available</li>
+                        </ul>
+                    </section>
+
+                    <!-- Case Study -->
+                    <section class="content-section">
+                        <div class="case-study">
+                            <h4>📈 Case Study: Wisbech Business Consulting</h4>
+                            <p><strong>Challenge:</strong> A business consulting firm needed to nurture leads more effectively and automate their follow-up process to increase conversion rates.</p>
+                            <p><strong>Solution:</strong> We implemented a comprehensive email automation system with lead nurturing sequences, behavioral triggers, and automated follow-ups.</p>
+                            <p><strong>Results:</strong></p>
+                            <ul>
+                                <li>300% increase in lead-to-client conversion rate</li>
+                                <li>80% reduction in manual email tasks</li>
+                                <li>450% ROI on email marketing investment</li>
+                                <li>65% increase in average client value</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Process Section -->
+                    <section class="content-section">
+                        <h2>⚙️ Our Email Automation Process</h2>
+
+                        <h3>1. Strategy & Planning (Week 1)</h3>
+                        <p>Analyze your current email marketing, define goals, map customer journey, and create automation strategy.</p>
+
+                        <h3>2. Setup & Integration (Week 2)</h3>
+                        <p>Configure email platform, integrate with CRM/website, set up tracking, and create email templates.</p>
+
+                        <h3>3. Campaign Development (Week 3)</h3>
+                        <p>Create email sequences, set up automation triggers, develop personalization rules, and configure segmentation.</p>
+
+                        <h3>4. Testing & Launch (Week 4)</h3>
+                        <p>Test all automation flows, conduct A/B tests, launch campaigns, and monitor initial performance.</p>
+
+                        <h3>5. Optimization & Scaling (Ongoing)</h3>
+                        <p>Analyze performance data, optimize campaigns, scale successful sequences, and implement new automation opportunities.</p>
+                    </section>
+
+                    <!-- Additional Case Studies -->
+                    <section class="content-section">
+                        <div class="case-study">
+                            <h4>🏢 Case Study: Cambridge B2B Services - 500% Lead Increase</h4>
+                            <p><strong>Client:</strong> Professional services firm in Cambridge</p>
+                            <p><strong>Challenge:</strong> Low email engagement, manual follow-ups consuming 20+ hours weekly, poor lead nurturing resulting in lost opportunities.</p>
+                            <p><strong>Solution:</strong> Comprehensive email automation with lead scoring, behavioral triggers, personalized sequences, and automated follow-ups.</p>
+                            <p><strong>Results:</strong></p>
+                            <ul>
+                                <li>500% increase in qualified leads</li>
+                                <li>85% reduction in manual email tasks</li>
+                                <li>650% ROI on email marketing investment</li>
+                                <li>45% increase in email open rates</li>
+                                <li>300% improvement in lead-to-client conversion</li>
+                            </ul>
+                            <p><strong>Timeline:</strong> 4-week setup, results visible within 6 weeks</p>
+                            <p><em>"The email automation has transformed our business development. We're now nurturing leads 24/7 and closing more deals than ever before." - Business Development Director</em></p>
+                        </div>
+                    </section>
+
+                    <!-- Technical Features -->
+                    <section class="content-section">
+                        <h2>🔧 Advanced Features</h2>
+
+                        <h3>Smart Personalization</h3>
+                        <ul>
+                            <li><strong>Dynamic Content:</strong> Personalized content based on user behavior and preferences</li>
+                            <li><strong>Behavioral Triggers:</strong> Emails triggered by specific actions and engagement patterns</li>
+                            <li><strong>Segmentation:</strong> Advanced audience segmentation for targeted messaging</li>
+                            <li><strong>A/B Testing:</strong> Automated testing of subject lines, content, and send times</li>
+                        </ul>
+
+                        <h3>Integration Capabilities</h3>
+                        <ul>
+                            <li><strong>CRM Integration:</strong> Seamless sync with Salesforce, HubSpot, Pipedrive, and more</li>
+                            <li><strong>E-commerce Platforms:</strong> WooCommerce, Shopify, Magento integration</li>
+                            <li><strong>Analytics Tools:</strong> Google Analytics, Facebook Pixel, and custom tracking</li>
+                            <li><strong>Zapier Connections:</strong> Connect with 3,000+ apps and services</li>
+                        </ul>
+                    </section>
+
+                    <!-- FAQ Section -->
+                    <section class="content-section">
+                        <h2>❓ Frequently Asked Questions</h2>
+
+                        <h3>Which email platforms do you work with?</h3>
+                        <p>We work with all major platforms including Mailchimp, ConvertKit, ActiveCampaign, HubSpot, and can set up custom SMTP solutions. We'll recommend the best platform for your specific needs and budget.</p>
+
+                        <h3>How quickly can email automation be set up?</h3>
+                        <p>Basic automation can be set up within 1-2 weeks, while complex multi-sequence campaigns typically take 3-4 weeks. We provide a detailed timeline during the planning phase.</p>
+
+                        <h3>Can you help with email deliverability issues?</h3>
+                        <p>Yes, we optimize for deliverability including domain authentication, list hygiene, content optimization, and reputation management to ensure your emails reach the inbox.</p>
+
+                        <h3>Do you provide email copywriting services?</h3>
+                        <p>Absolutely. We create compelling email copy that converts, including subject lines, body content, and call-to-action optimization based on your brand voice and audience.</p>
+
+                        <h3>How do you measure email automation success?</h3>
+                        <p>We track open rates, click-through rates, conversion rates, revenue attribution, list growth, and ROI. You'll receive detailed monthly reports with actionable insights.</p>
+
+                        <h3>Can you integrate with our existing sales process?</h3>
+                        <p>Yes, we design email automation to complement your sales funnel, including lead scoring, sales team notifications, and automated handoffs at the right moments.</p>
+                    </section>
+
+                    <!-- Testimonials Section -->
+                    <section class="content-section">
+                        <h2>💬 Client Success Stories</h2>
+
+                        <div class="highlight-box">
+                            <p><em>"The email automation system Jagatab built for us has been incredible. Our email revenue has increased by 400%, and we're nurturing leads automatically while we sleep. The ROI has been phenomenal."</em></p>
+                            <p><strong>- Michael Roberts, CEO, Peterborough Tech Solutions</strong></p>
+                        </div>
+
+                        <div class="highlight-box">
+                            <p><em>"Sree's email automation expertise saved us countless hours while dramatically improving our customer engagement. Our email open rates doubled, and conversions tripled within 3 months."</em></p>
+                            <p><strong>- Jennifer Adams, Marketing Manager, Cambridge Retail Group</strong></p>
+                        </div>
+
+                        <div class="highlight-box">
+                            <p><em>"The cold outreach automation has been a game-changer for our B2B sales. We're now generating 10x more qualified leads with half the manual effort. Highly recommended!"</em></p>
+                            <p><strong>- David Thompson, Sales Director, Wisbech Manufacturing Ltd</strong></p>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Quick Contact -->
+                    <div class="sidebar-card">
+                        <h3>Start Automating Today</h3>
+                        <p>Ready to transform your email marketing with intelligent automation? Let's discuss your goals and create a custom strategy.</p>
+                        <a href="../index.html#contact" class="cta-button">
+                            <i class="fas fa-rocket"></i>
+                            Get Email Automation Quote
+                        </a>
+                        <a href="tel:+447123456789" class="cta-button cta-secondary">
+                            <i class="fas fa-phone"></i>
+                            Free Strategy Call
+                        </a>
+                    </div>
+
+                    <!-- Pricing -->
+                    <div class="sidebar-card">
+                        <h3>💰 Monthly Packages</h3>
+
+                        <div class="pricing-table" style="margin-bottom: 1rem;">
+                            <div class="pricing-header">
+                                <h4 style="color: white; margin: 0;">Starter</h4>
+                                <div class="price">£400</div>
+                                <div class="price-note">per month</div>
+                            </div>
+                            <div class="pricing-body">
+                                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> 3 Email Sequences</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Basic Templates</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Monthly Reports</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Email Support</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pricing-table" style="margin-bottom: 1rem;">
+                            <div class="pricing-header" style="background: var(--accent-color);">
+                                <h4 style="color: white; margin: 0;">Professional</h4>
+                                <div class="price">£800</div>
+                                <div class="price-note">per month</div>
+                            </div>
+                            <div class="pricing-body">
+                                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> 8 Email Sequences</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Custom Templates</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> A/B Testing</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> CRM Integration</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Weekly Reports</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pricing-table">
+                            <div class="pricing-header" style="background: var(--secondary-color);">
+                                <h4 style="color: white; margin: 0;">Enterprise</h4>
+                                <div class="price">£1,500+</div>
+                                <div class="price-note">per month</div>
+                            </div>
+                            <div class="pricing-body">
+                                <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Unlimited Sequences</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Advanced Personalization</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Multi-platform Integration</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Dedicated Account Manager</li>
+                                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary-color); margin-right: 0.5rem;"></i> Daily Optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Related Services -->
+                    <div class="sidebar-card">
+                        <h3>Related Services</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;"><a href="content-automation.html" style="color: var(--primary-color); text-decoration: none;">📝 Content Automation</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="seo-automation.html" style="color: var(--primary-color); text-decoration: none;">🔍 SEO Automation</a></li>
+                            <li style="margin-bottom: 0.5rem;"><a href="python-automation-scripts.html" style="color: var(--primary-color); text-decoration: none;">🐍 Python Automation</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
