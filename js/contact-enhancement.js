@@ -359,14 +359,36 @@ class ContactFormEnhancer {
     }
     
     async submitForm(data) {
-        // This is a placeholder - replace with your actual form submission logic
-        // For now, we'll simulate a successful submission
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                console.log('Form submitted:', data);
-                resolve();
-            }, 2000);
-        });
+        // Submit to Formspree endpoint
+        const formspreeEndpoint = 'https://formspree.io/f/xpwzgkqr';
+
+        try {
+            const response = await fetch(formspreeEndpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    ...data,
+                    _replyto: data.email,
+                    _subject: `New inquiry from jagatabuk.com - ${data.service || 'General'}`,
+                    _cc: 'ai-assistant@jagatabuk.com'
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const result = await response.json();
+            console.log('Form submitted successfully:', result);
+            return result;
+
+        } catch (error) {
+            console.error('Form submission error:', error);
+            throw error;
+        }
     }
     
     showSuccessMessage(form) {

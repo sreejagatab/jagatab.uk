@@ -3371,6 +3371,8 @@ textarea:focus {
                 <li role="none"><a href="#home" class="nav-link" role="menuitem" aria-label="Go to Home section">Home</a></li>
                 <li role="none"><a href="#services" class="nav-link" role="menuitem" aria-label="Go to Services section">Services</a></li>
                 <li role="none"><a href="#portfolio" class="nav-link" role="menuitem" aria-label="Go to Portfolio section">Portfolio</a></li>
+                <li role="none"><a href="projects.html" class="nav-link" role="menuitem" aria-label="Go to Projects page">Projects</a></li>
+                <li role="none"><a href="virtual-assistant.html" class="nav-link" role="menuitem" aria-label="Go to Virtual Assistant page">Virtual Assistant</a></li>
                 <li role="none"><a href="#about" class="nav-link" role="menuitem" aria-label="Go to About section">About</a></li>
                 <li role="none"><a href="#testimonials" class="nav-link" role="menuitem" aria-label="Go to Testimonials section">Testimonials</a></li>
                 <li role="none"><a href="#blog" class="nav-link" role="menuitem" aria-label="Go to Blog section">Blog</a></li>
@@ -4791,7 +4793,13 @@ textarea:focus {
                     <div class="contact-form">
                         <h3>Get Your Free Consultation</h3>
                         <p>Ready to transform your business with AI automation? Fill out the form below and I'll get back to you within 24 hours.</p>
-                        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" role="form" aria-labelledby="contact-form-title" novalidate>
+                        <form id="contactForm" action="https://formspree.io/f/xpwzgkqr" method="POST" role="form" aria-labelledby="contact-form-title" novalidate>
+                            <!-- Hidden fields for Formspree configuration -->
+                            <input type="hidden" name="_replyto" value="">
+                            <input type="hidden" name="_subject" value="New inquiry from jagatabuk.com">
+                            <input type="hidden" name="_next" value="https://jagatabuk.com/thank-you.html">
+                            <input type="hidden" name="_cc" value="ai-assistant@jagatabuk.com">
+
                             <div class="form-group">
                                 <label for="name">Full Name *</label>
                                 <input type="text" id="name" name="name" required aria-required="true" aria-describedby="name-error" autocomplete="name">
@@ -5281,8 +5289,21 @@ textarea:focus {
             // Smooth scrolling for navigation links
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
-                    e.preventDefault();
                     const targetId = this.getAttribute('href');
+
+                    // Check if it's an external link (contains .html or starts with http)
+                    if (targetId.includes('.html') || targetId.startsWith('http')) {
+                        // Allow default behavior for external links
+                        // Close mobile menu if open
+                        navMenu.classList.remove('active');
+                        const icon = mobileMenuToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                        return; // Don't prevent default, let the link navigate normally
+                    }
+
+                    // Handle internal section links
+                    e.preventDefault();
                     const targetSection = document.querySelector(targetId);
 
                     if (targetSection) {

@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Jagatab.UK | AI Automation & Python Development Portfolio</title>
+    <meta name="description" content="Explore our comprehensive portfolio of AI automation and Python development projects. View detailed case studies, GitHub repositories, and project analytics.">
+    <meta name="keywords" content="AI automation projects, Python development portfolio, automation case studies, GitHub projects, Cambridgeshire developer">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Projects - Jagatab.UK | AI Automation Portfolio">
+    <meta property="og:description" content="Explore our comprehensive portfolio of AI automation and Python development projects with detailed analytics and GitHub integration.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jagatab.uk/projects">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script src="js/analytics.js"></script>
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --background: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header Styles */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary-color);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Project Filters */
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--border-color);
+            background: var(--white);
+            color: var(--text-light);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Project Card */
+        .project-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-image::before {
+            opacity: 1;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-description {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .project-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .project-analytics {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        .stat-item i {
+            font-size: 0.75rem;
+        }
+
+        .like-btn {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 0.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .like-btn:hover,
+        .like-btn.liked {
+            color: #ef4444;
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .project-links {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-links {
+            opacity: 1;
+        }
+
+        .project-link {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--text-dark);
+            padding: 0.5rem;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .project-link:hover {
+            background: var(--white);
+            transform: scale(1.1);
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 0;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--border-color);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .project-filters {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-header {
+                padding: 2rem 0;
+            }
+
+            .projects-section {
+                padding: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">Jagatab.UK</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="index.html#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="virtual-assistant.html" class="nav-link">Virtual Assistant</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Our Projects Portfolio</h1>
+                <p>Explore our comprehensive collection of AI automation and Python development projects with detailed analytics, GitHub integration, and real-world impact metrics.</p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Featured Projects</h2>
+                    <p>Discover how we've transformed businesses through innovative automation solutions and cutting-edge development.</p>
+                </div>
+
+                <!-- Project Filters -->
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="automation">Automation</button>
+                    <button class="filter-btn" data-filter="ai">AI Solutions</button>
+                    <button class="filter-btn" data-filter="web">Web Development</button>
+                    <button class="filter-btn" data-filter="seo">SEO Tools</button>
+                    <button class="filter-btn" data-filter="saas">SaaS Platforms</button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Loading State -->
+                    <div class="loading" id="loadingState">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: var(--text-dark); color: var(--white); padding: 2rem 0; text-align: center;">
+        <div class="container">
+            <p>&copy; 2024 Jagatab.UK. All rights reserved. | AI Automation & Python Development Services</p>
+        </div>
+    </footer>
+
+    <script>
+        // Project Data Structure
+        const projectsData = [
+            {
+                id: 'ai-chatbot-platform',
+                title: 'AI Customer Service Chatbot',
+                description: 'Advanced AI-powered chatbot with natural language processing, multi-language support, and seamless CRM integration for enhanced customer experience.',
+                category: 'ai',
+                technologies: ['Python', 'OpenAI API', 'Flask', 'PostgreSQL', 'React'],
+                image: '🤖',
+                githubUrl: 'https://github.com/jagatab/ai-chatbot-platform',
+                liveUrl: 'https://demo.jagatab.uk/chatbot',
+                views: 1247,
+                likes: 89,
+                featured: true,
+                details: {
+                    overview: 'A comprehensive AI chatbot solution that revolutionizes customer service interactions.',
+                    features: [
+                        'Natural Language Processing with 95% accuracy',
+                        'Multi-language support (English, Spanish, French)',
+                        'CRM integration with Salesforce and HubSpot',
+                        'Real-time analytics dashboard',
+                        'Custom training on business-specific data'
+                    ],
+                    impact: {
+                        'Response Time': '85% faster',
+                        'Customer Satisfaction': '+32%',
+                        'Cost Reduction': '60% lower support costs'
+                    }
+                }
+            },
+            {
+                id: 'invoice-automation-system',
+                title: 'Invoice Processing Automation',
+                description: 'Intelligent invoice processing system using OCR and machine learning to automate data extraction, validation, and approval workflows.',
+                category: 'automation',
+                technologies: ['Python', 'Tesseract OCR', 'Django', 'Celery', 'Redis'],
+                image: '📄',
+                githubUrl: 'https://github.com/jagatab/invoice-automation',
+                liveUrl: 'https://demo.jagatab.uk/invoices',
+                views: 892,
+                likes: 67,
+                featured: true,
+                details: {
+                    overview: 'Streamlines invoice processing with 99.2% accuracy in data extraction.',
+                    features: [
+                        'OCR-powered document scanning',
+                        'Automated data validation',
+                        'Multi-level approval workflows',
+                        'Integration with accounting software',
+                        'Real-time processing status tracking'
+                    ],
+                    impact: {
+                        'Processing Time': '90% reduction',
+                        'Accuracy Rate': '99.2%',
+                        'Manual Work': '75% elimination'
+                    }
+                }
+            },
+            {
+                id: 'seo-automation-suite',
+                title: 'SEO Automation Suite',
+                description: 'Comprehensive SEO automation platform with keyword research, content optimization, backlink analysis, and performance tracking.',
+                category: 'seo',
+                technologies: ['Python', 'Scrapy', 'FastAPI', 'MongoDB', 'Vue.js'],
+                image: '📈',
+                githubUrl: 'https://github.com/jagatab/seo-automation-suite',
+                liveUrl: 'https://demo.jagatab.uk/seo',
+                views: 1156,
+                likes: 94,
+                featured: true,
+                details: {
+                    overview: 'All-in-one SEO automation platform for digital marketing agencies.',
+                    features: [
+                        'Automated keyword research and analysis',
+                        'Content optimization suggestions',
+                        'Competitor analysis and tracking',
+                        'Backlink monitoring and outreach',
+                        'Comprehensive SEO reporting'
+                    ],
+                    impact: {
+                        'Keyword Rankings': '+150% improvement',
+                        'Organic Traffic': '+85% increase',
+                        'Time Savings': '20 hours/week'
+                    }
+                }
+            },
+            {
+                id: 'ecommerce-analytics-platform',
+                title: 'E-commerce Analytics Platform',
+                description: 'Advanced analytics platform for e-commerce businesses with real-time sales tracking, customer behavior analysis, and predictive insights.',
+                category: 'saas',
+                technologies: ['Python', 'React', 'PostgreSQL', 'Redis', 'Docker'],
+                image: '🛒',
+                githubUrl: 'https://github.com/jagatab/ecommerce-analytics',
+                liveUrl: 'https://demo.jagatab.uk/analytics',
+                views: 743,
+                likes: 52,
+                featured: false,
+                details: {
+                    overview: 'Comprehensive analytics solution for e-commerce optimization.',
+                    features: [
+                        'Real-time sales and revenue tracking',
+                        'Customer behavior analysis',
+                        'Predictive analytics for inventory',
+                        'A/B testing framework',
+                        'Custom dashboard creation'
+                    ],
+                    impact: {
+                        'Revenue Growth': '+28%',
+                        'Conversion Rate': '+15%',
+                        'Customer Retention': '+22%'
+                    }
+                }
+            },
+            {
+                id: 'content-management-automation',
+                title: 'Content Management Automation',
+                description: 'AI-powered content creation and management system with automated publishing, social media integration, and performance analytics.',
+                category: 'automation',
+                technologies: ['Python', 'OpenAI API', 'Django', 'Celery', 'AWS'],
+                image: '✍️',
+                githubUrl: 'https://github.com/jagatab/content-automation',
+                liveUrl: 'https://demo.jagatab.uk/content',
+                views: 634,
+                likes: 41,
+                featured: false,
+                details: {
+                    overview: 'Automated content creation and distribution platform.',
+                    features: [
+                        'AI-powered content generation',
+                        'Multi-platform publishing',
+                        'Social media scheduling',
+                        'Content performance analytics',
+                        'SEO optimization suggestions'
+                    ],
+                    impact: {
+                        'Content Output': '+300%',
+                        'Engagement Rate': '+45%',
+                        'Time Savings': '15 hours/week'
+                    }
+                }
+            },
+            {
+                id: 'business-directory-platform',
+                title: 'Local Business Directory',
+                description: 'Modern business directory platform with advanced search, reviews, analytics, and automated business verification system.',
+                category: 'web',
+                technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe'],
+                image: '🏢',
+                githubUrl: 'https://github.com/jagatab/business-directory',
+                liveUrl: 'https://demo.jagatab.uk/directory',
+                views: 521,
+                likes: 38,
+                featured: false,
+                details: {
+                    overview: 'Comprehensive local business directory with modern features.',
+                    features: [
+                        'Advanced search and filtering',
+                        'Business verification system',
+                        'Review and rating system',
+                        'Analytics dashboard for businesses',
+                        'Mobile-responsive design'
+                    ],
+                    impact: {
+                        'User Engagement': '+65%',
+                        'Business Listings': '2,500+ verified',
+                        'Monthly Visitors': '50,000+'
+                    }
+                }
+            }
+        ];
+
+        // Local Storage Keys
+        const STORAGE_KEYS = {
+            VIEWS: 'jagatab_project_views',
+            LIKES: 'jagatab_project_likes'
+        };
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeProjects();
+            initializeFilters();
+            initializeNavigation();
+            initializeAnalytics();
+        });
+
+        // Initialize projects display
+        function initializeProjects() {
+            setTimeout(() => {
+                renderProjects(projectsData);
+                document.getElementById('loadingState').style.display = 'none';
+            }, 1000);
+        }
+
+        // Render projects grid
+        function renderProjects(projects) {
+            const grid = document.getElementById('projectsGrid');
+            const loadingState = document.getElementById('loadingState');
+
+            // Clear existing content except loading state
+            Array.from(grid.children).forEach(child => {
+                if (child !== loadingState) {
+                    child.remove();
+                }
+            });
+
+            projects.forEach(project => {
+                const projectCard = createProjectCard(project);
+                grid.appendChild(projectCard);
+            });
+        }
+
+        // Create individual project card
+        function createProjectCard(project) {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.setAttribute('data-category', project.category);
+            card.setAttribute('data-project-id', project.id);
+
+            const views = getProjectViews(project.id);
+            const likes = getProjectLikes(project.id);
+            const isLiked = isProjectLiked(project.id);
+
+            card.innerHTML = `
+                <div class="project-image">
+                    <span>${project.image}</span>
+                    <div class="project-links">
+                        <a href="${project.githubUrl}" class="project-link" target="_blank" rel="noopener" title="View on GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        ${project.liveUrl ? `<a href="${project.liveUrl}" class="project-link" target="_blank" rel="noopener" title="View Live Demo">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>` : ''}
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">${project.title}</h3>
+                    <p class="project-description">${project.description}</p>
+                    <div class="project-tech">
+                        ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                    </div>
+                    <div class="project-stats">
+                        <div class="project-analytics">
+                            <div class="stat-item">
+                                <i class="fas fa-eye"></i>
+                                <span class="view-count">${views}</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                <span class="like-count">${likes}</span>
+                            </div>
+                        </div>
+                        <button class="like-btn ${isLiked ? 'liked' : ''}" onclick="toggleLike('${project.id}')">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            // Add click handler for project details
+            card.addEventListener('click', (e) => {
+                // Don't trigger if clicking on links or like button
+                if (e.target.closest('.project-links') || e.target.closest('.like-btn')) {
+                    return;
+                }
+
+                trackProjectView(project.id);
+                openProjectDetails(project);
+            });
+
+            return card;
+        }
+
+        // Initialize filter functionality
+        function initializeFilters() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Filter projects
+                    filterProjects(filter);
+
+                    // Track filter usage
+                    trackEvent('project_filter', {
+                        'event_category': 'Projects',
+                        'event_label': filter
+                    });
+                });
+            });
+        }
+
+        // Filter projects by category
+        function filterProjects(category) {
+            const filteredProjects = category === 'all'
+                ? projectsData
+                : projectsData.filter(project => project.category === category);
+
+            renderProjects(filteredProjects);
+        }
+
+        // Initialize navigation
+        function initializeNavigation() {
+            const header = document.getElementById('header');
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const navMenu = document.getElementById('navMenu');
+
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Mobile menu toggle
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+            }
+        }
+
+        // Analytics and tracking functions
+        function initializeAnalytics() {
+            // Track page view
+            trackEvent('page_view', {
+                'event_category': 'Projects',
+                'event_label': 'projects_page'
+            });
+
+            // Track scroll depth
+            let maxScroll = 0;
+            window.addEventListener('scroll', function() {
+                const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                if (scrollPercent > maxScroll) {
+                    maxScroll = scrollPercent;
+                    if (maxScroll % 25 === 0) { // Track at 25%, 50%, 75%, 100%
+                        trackEvent('scroll_depth', {
+                            'event_category': 'Engagement',
+                            'event_label': `${maxScroll}%`
+                        });
+                    }
+                }
+            });
+        }
+
+        // Project view tracking
+        function trackProjectView(projectId) {
+            const views = getProjectViews(projectId);
+            setProjectViews(projectId, views + 1);
+
+            // Update UI
+            const card = document.querySelector(`[data-project-id="${projectId}"]`);
+            if (card) {
+                const viewCount = card.querySelector('.view-count');
+                if (viewCount) {
+                    viewCount.textContent = views + 1;
+                }
+            }
+
+            // Track in analytics
+            trackEvent('project_view', {
+                'event_category': 'Projects',
+                'event_label': projectId
+            });
+        }
+
+        // Like functionality
+        function toggleLike(projectId) {
+            const isCurrentlyLiked = isProjectLiked(projectId);
+            const likes = getProjectLikes(projectId);
+
+            if (isCurrentlyLiked) {
+                setProjectLikes(projectId, Math.max(0, likes - 1));
+                removeProjectLike(projectId);
+            } else {
+                setProjectLikes(projectId, likes + 1);
+                addProjectLike(projectId);
+            }
+
+            // Update UI
+            const card = document.querySelector(`[data-project-id="${projectId}"]`);
+            if (card) {
+                const likeBtn = card.querySelector('.like-btn');
+                const likeCount = card.querySelector('.like-count');
+
+                likeBtn.classList.toggle('liked');
+                likeCount.textContent = getProjectLikes(projectId);
+            }
+
+            // Track in analytics
+            trackEvent('project_like', {
+                'event_category': 'Projects',
+                'event_label': projectId,
+                'value': isCurrentlyLiked ? 0 : 1
+            });
+        }
+
+        // Local storage functions
+        function getProjectViews(projectId) {
+            const views = JSON.parse(localStorage.getItem(STORAGE_KEYS.VIEWS) || '{}');
+            const project = projectsData.find(p => p.id === projectId);
+            return views[projectId] || (project ? project.views : 0);
+        }
+
+        function setProjectViews(projectId, count) {
+            const views = JSON.parse(localStorage.getItem(STORAGE_KEYS.VIEWS) || '{}');
+            views[projectId] = count;
+            localStorage.setItem(STORAGE_KEYS.VIEWS, JSON.stringify(views));
+        }
+
+        function getProjectLikes(projectId) {
+            const likes = JSON.parse(localStorage.getItem(STORAGE_KEYS.LIKES) || '{}');
+            const project = projectsData.find(p => p.id === projectId);
+            return likes[projectId] || (project ? project.likes : 0);
+        }
+
+        function setProjectLikes(projectId, count) {
+            const likes = JSON.parse(localStorage.getItem(STORAGE_KEYS.LIKES) || '{}');
+            likes[projectId] = count;
+            localStorage.setItem(STORAGE_KEYS.LIKES, JSON.stringify(likes));
+        }
+
+        function isProjectLiked(projectId) {
+            const likedProjects = JSON.parse(localStorage.getItem('jagatab_liked_projects') || '[]');
+            return likedProjects.includes(projectId);
+        }
+
+        function addProjectLike(projectId) {
+            const likedProjects = JSON.parse(localStorage.getItem('jagatab_liked_projects') || '[]');
+            if (!likedProjects.includes(projectId)) {
+                likedProjects.push(projectId);
+                localStorage.setItem('jagatab_liked_projects', JSON.stringify(likedProjects));
+            }
+        }
+
+        function removeProjectLike(projectId) {
+            const likedProjects = JSON.parse(localStorage.getItem('jagatab_liked_projects') || '[]');
+            const index = likedProjects.indexOf(projectId);
+            if (index > -1) {
+                likedProjects.splice(index, 1);
+                localStorage.setItem('jagatab_liked_projects', JSON.stringify(likedProjects));
+            }
+        }
+
+        // Open project details (will redirect to individual project page)
+        function openProjectDetails(project) {
+            // For now, we'll create a simple modal or redirect to a project detail page
+            // In the next step, we'll create individual project pages
+            window.location.href = `project-${project.id}.html`;
+        }
+
+        // Generic event tracking function
+        function trackEvent(eventName, parameters) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, parameters);
+            }
+
+            // Also log to console for debugging
+            console.log('Event tracked:', eventName, parameters);
+        }
+    </script>
+</body>
+</html>

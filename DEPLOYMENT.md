@@ -264,16 +264,142 @@ gtag('event', 'service_inquiry', {
 ```javascript
 // Formspree setup:
 // 1. Create account at formspree.io
-// 2. Create new form
+// 2. Create new form with ID: xpwzgkqr
 // 3. Configure settings:
 //    - Reply-to: visitor's email
 //    - Subject: "New inquiry from jagatabuk.com"
-//    - Redirect: "/thank-you" (create this page)
+//    - Redirect: "https://jagatabuk.com/thank-you.html"
 //    - reCAPTCHA: Enable
 //    - Spam filtering: Enable
+//    - CC: ai-assistant@jagatabuk.com
 
-// Update form action in HTML:
-<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+// Form is already configured in HTML:
+<form action="https://formspree.io/f/xpwzgkqr" method="POST">
+```
+
+### 3. AI Assistant Email Configuration
+
+#### Option A: Webhook Integration (Recommended)
+```bash
+# 1. Install Node.js dependencies
+npm install express nodemailer dotenv
+
+# 2. Configure webhook endpoint
+# Set up webhook URL in Formspree dashboard:
+# https://your-domain.com/webhook/contact-form
+
+# 3. Start webhook server
+node ai-assistant-webhook.js
+
+# 4. Configure environment variables
+WEBHOOK_SECRET=your-secure-webhook-secret
+AI_ASSISTANT_EMAIL=ai-assistant@jagatabuk.com
+SMTP_USER=sreejagatab@yahoo.com
+SMTP_PASS=your-app-password
+```
+
+#### Option B: Email Monitoring (Alternative)
+```bash
+# 1. Install Python dependencies
+pip install -r requirements.txt
+
+# 2. Configure IMAP access for AI assistant email
+# Enable IMAP in email provider settings
+# Generate app-specific password
+
+# 3. Run email processor
+python3 ai-email-processor.py
+
+# 4. Configure environment variables
+AI_EMAIL_USER=ai-assistant@jagatabuk.com
+AI_EMAIL_PASS=your-app-password
+IMAP_SERVER=imap.gmail.com
+SMTP_SERVER=smtp.gmail.com
+```
+
+#### Quick Setup Script
+```bash
+# Run automated setup
+chmod +x setup-email-config.sh
+./setup-email-config.sh
+
+# Test configuration
+./test-email-config.sh
+```
+
+### 4. Email System Testing & Validation
+
+#### Pre-Deployment Checklist
+```bash
+# ✅ Formspree Configuration
+- [ ] Account created at formspree.io
+- [ ] Form ID configured: xpwzgkqr
+- [ ] Notification email set: sreejagatab@yahoo.com
+- [ ] Spam protection enabled
+- [ ] reCAPTCHA v3 configured
+- [ ] Redirect URL set: https://jagatabuk.com/thank-you.html
+
+# ✅ AI Assistant Setup
+- [ ] Email alias created: ai-assistant@jagatabuk.com
+- [ ] Webhook endpoint configured (Option A) OR
+- [ ] IMAP access configured (Option B)
+- [ ] Environment variables set
+- [ ] Dependencies installed
+
+# ✅ Testing Completed
+- [ ] Test form submission successful
+- [ ] User email notification received
+- [ ] AI assistant notification received
+- [ ] Thank you page redirect working
+- [ ] Email templates rendering correctly
+```
+
+#### Testing Commands
+```bash
+# Test form submission
+curl -X POST https://formspree.io/f/xpwzgkqr \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Test User",
+    "email": "test@example.com",
+    "service": "Python Automation",
+    "message": "This is a test submission",
+    "_subject": "Test inquiry from jagatabuk.com"
+  }'
+
+# Test webhook endpoint (if using Option A)
+curl -X POST http://localhost:3000/webhook/contact-form \
+  -H "Content-Type: application/json" \
+  -H "X-Webhook-Signature: your-webhook-secret" \
+  -d '{
+    "name": "Test User",
+    "email": "test@example.com",
+    "message": "Test webhook processing"
+  }'
+
+# Validate email configuration
+node -e "
+const config = require('./ai-assistant-webhook.js');
+console.log('Email configuration validated');
+"
+```
+
+#### Troubleshooting Common Issues
+```bash
+# Issue: Form not submitting
+# Solution: Check Formspree endpoint URL and form method="POST"
+
+# Issue: Emails not received
+# Solution: Check spam folders and email provider settings
+
+# Issue: AI assistant not responding
+# Solution: Verify webhook URL or IMAP credentials
+
+# Issue: Thank you page not loading
+# Solution: Check redirect URL in Formspree settings
+
+# Issue: Environment variables not loading
+# Solution: Verify .env file location and syntax
 ```
 
 ## 🔍 SEO Optimization
@@ -412,6 +538,9 @@ self.addEventListener('install', (event) => {
 # - Analytics data flowing
 # - Search console for errors
 # - Email delivery functioning
+# - AI assistant processing working
+# - Webhook endpoint responding (if applicable)
+# - Email template rendering correctly
 ```
 
 ## 📞 Support & Maintenance
@@ -423,10 +552,16 @@ self.addEventListener('install', (event) => {
 # - Review analytics data
 # - Test contact forms
 # - Monitor search rankings
+# - Verify email delivery rates
+# - Check AI assistant processing logs
 
 # Monthly:
 # - Update content
 # - Review security logs
+# - Analyze email response effectiveness
+# - Update AI response templates
+# - Review and optimize email templates
+# - Check spam filter effectiveness
 # - Check for broken links
 # - Analyze performance metrics
 # - Backup website files

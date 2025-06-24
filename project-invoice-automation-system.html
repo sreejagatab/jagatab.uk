@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Processing Automation - Project Details | Jagatab.UK</title>
+    <meta name="description" content="Intelligent invoice processing system using OCR and machine learning with 99.2% accuracy in data extraction and automated workflows.">
+    <meta name="keywords" content="invoice automation, OCR processing, machine learning, Python development, business automation">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Invoice Processing Automation - Project Details">
+    <meta property="og:description" content="Intelligent invoice processing system with 99.2% accuracy, OCR technology, and automated approval workflows.">
+    <meta property="og:type" content="article">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script src="js/analytics.js"></script>
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --background: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header Styles */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .back-btn {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        /* Project Hero */
+        .project-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 4rem 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-info h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .hero-info p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .action-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .hero-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            opacity: 0.8;
+        }
+
+        /* Project Details Section */
+        .project-details {
+            padding: 4rem 0;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+
+        .main-content-area {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .tech-item {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary-color);
+            padding: 0.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .impact-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .impact-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background: var(--background);
+            border-radius: var(--border-radius);
+        }
+
+        .impact-label {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .impact-value {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .features-list i {
+            color: var(--primary-color);
+        }
+
+        /* Like and Share Section */
+        .engagement-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-color);
+            margin-top: 2rem;
+        }
+
+        .project-stats {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .like-btn {
+            background: none;
+            border: 2px solid var(--border-color);
+            color: var(--text-light);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .like-btn:hover,
+        .like-btn.liked {
+            border-color: #ef4444;
+            color: #ef4444;
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content,
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-info h1 {
+                font-size: 2rem;
+            }
+
+            .project-actions {
+                flex-direction: column;
+            }
+
+            .hero-visual {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">Jagatab.UK</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="projects.html" class="back-btn">← Back to Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Project Hero -->
+        <section class="project-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-info">
+                        <h1>Invoice Processing Automation</h1>
+                        <p>Intelligent invoice processing system using OCR and machine learning to automate data extraction, validation, and approval workflows with 99.2% accuracy.</p>
+
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>Completed: February 2024</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Duration: 6 weeks</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>Team: 2 developers</span>
+                            </div>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://github.com/jagatab/invoice-automation" class="action-btn btn-primary" target="_blank">
+                                <i class="fab fa-github"></i>
+                                View on GitHub
+                            </a>
+                            <a href="https://demo.jagatab.uk/invoices" class="action-btn btn-secondary" target="_blank">
+                                <i class="fas fa-external-link-alt"></i>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        📄
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Details -->
+        <section class="project-details">
+            <div class="container">
+                <div class="details-grid">
+                    <!-- Main Content -->
+                    <div class="main-content-area">
+                        <h2>Project Overview</h2>
+                        <p>This intelligent invoice processing system revolutionizes accounts payable operations by automating the entire invoice lifecycle. Using advanced OCR technology and machine learning algorithms, the system achieves 99.2% accuracy in data extraction while reducing processing time by 90%.</p>
+
+                        <h3>Key Features</h3>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> OCR-powered document scanning with 99.2% accuracy</li>
+                            <li><i class="fas fa-check"></i> Automated data validation and verification</li>
+                            <li><i class="fas fa-check"></i> Multi-level approval workflows</li>
+                            <li><i class="fas fa-check"></i> Integration with QuickBooks, Xero, and SAP</li>
+                            <li><i class="fas fa-check"></i> Real-time processing status tracking</li>
+                            <li><i class="fas fa-check"></i> Exception handling and manual review queue</li>
+                            <li><i class="fas fa-check"></i> Duplicate invoice detection</li>
+                            <li><i class="fas fa-check"></i> Comprehensive audit trail</li>
+                        </ul>
+
+                        <h3>Technical Implementation</h3>
+                        <p>Built with Python and Django for robust backend processing, the system uses Tesseract OCR for document scanning and Celery with Redis for asynchronous task processing. Machine learning models trained on thousands of invoice formats ensure high accuracy across different document types and layouts.</p>
+
+                        <h3>Results & Impact</h3>
+                        <p>The implementation has transformed the client's accounts payable department, reducing manual processing time from hours to minutes per invoice. The system processes over 1,000 invoices daily with minimal human intervention, significantly improving cash flow management and vendor relationships.</p>
+
+                        <!-- Engagement Section -->
+                        <div class="engagement-section">
+                            <div class="project-stats">
+                                <div class="stat-item">
+                                    <i class="fas fa-eye"></i>
+                                    <span id="viewCount">892</span> views
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-heart"></i>
+                                    <span id="likeCount">67</span> likes
+                                </div>
+                            </div>
+                            <button class="like-btn" id="likeBtn" onclick="toggleLike()">
+                                <i class="fas fa-heart"></i>
+                                <span>Like this project</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="sidebar">
+                        <!-- Technologies Used -->
+                        <div class="sidebar-card">
+                            <h3>Technologies Used</h3>
+                            <div class="tech-grid">
+                                <div class="tech-item">Python</div>
+                                <div class="tech-item">Tesseract OCR</div>
+                                <div class="tech-item">Django</div>
+                                <div class="tech-item">Celery</div>
+                                <div class="tech-item">Redis</div>
+                                <div class="tech-item">PostgreSQL</div>
+                                <div class="tech-item">Docker</div>
+                                <div class="tech-item">AWS</div>
+                            </div>
+                        </div>
+
+                        <!-- Project Impact -->
+                        <div class="sidebar-card">
+                            <h3>Project Impact</h3>
+                            <div class="impact-grid">
+                                <div class="impact-item">
+                                    <span class="impact-label">Processing Time</span>
+                                    <span class="impact-value">90% reduction</span>
+                                </div>
+                                <div class="impact-item">
+                                    <span class="impact-label">Accuracy Rate</span>
+                                    <span class="impact-value">99.2%</span>
+                                </div>
+                                <div class="impact-item">
+                                    <span class="impact-label">Manual Work</span>
+                                    <span class="impact-value">75% elimination</span>
+                                </div>
+                                <div class="impact-item">
+                                    <span class="impact-label">Daily Processing</span>
+                                    <span class="impact-value">1,000+ invoices</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project Links -->
+                        <div class="sidebar-card">
+                            <h3>Project Links</h3>
+                            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                                <a href="https://github.com/jagatab/invoice-automation" class="action-btn btn-primary" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    GitHub Repository
+                                </a>
+                                <a href="https://demo.jagatab.uk/invoices" class="action-btn btn-secondary" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Live Demo
+                                </a>
+                                <a href="index.html#contact" class="action-btn btn-secondary">
+                                    <i class="fas fa-envelope"></i>
+                                    Get Similar Solution
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: var(--text-dark); color: var(--white); padding: 2rem 0; text-align: center;">
+        <div class="container">
+            <p>&copy; 2024 Jagatab.UK. All rights reserved. | AI Automation & Python Development Services</p>
+        </div>
+    </footer>
+
+    <script>
+        // Project data
+        const projectId = 'invoice-automation-system';
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeProjectPage();
+            trackProjectView();
+        });
+
+        function initializeProjectPage() {
+            // Update view count
+            const viewCount = getProjectViews(projectId);
+            document.getElementById('viewCount').textContent = viewCount;
+
+            // Update like count and button state
+            const likeCount = getProjectLikes(projectId);
+            const isLiked = isProjectLiked(projectId);
+
+            document.getElementById('likeCount').textContent = likeCount;
+
+            const likeBtn = document.getElementById('likeBtn');
+            if (isLiked) {
+                likeBtn.classList.add('liked');
+                likeBtn.querySelector('span').textContent = 'Liked!';
+            }
+        }
+
+        function trackProjectView() {
+            const views = getProjectViews(projectId);
+            setProjectViews(projectId, views + 1);
+            document.getElementById('viewCount').textContent = views + 1;
+
+            // Track in analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'project_detail_view', {
+                    'event_category': 'Projects',
+                    'event_label': projectId
+                });
+            }
+        }
+
+        function toggleLike() {
+            const isCurrentlyLiked = isProjectLiked(projectId);
+            const likes = getProjectLikes(projectId);
+            const likeBtn = document.getElementById('likeBtn');
+            const likeCount = document.getElementById('likeCount');
+
+            if (isCurrentlyLiked) {
+                setProjectLikes(projectId, Math.max(0, likes - 1));
+                removeProjectLike(projectId);
+                likeBtn.classList.remove('liked');
+                likeBtn.querySelector('span').textContent = 'Like this project';
+            } else {
+                setProjectLikes(projectId, likes + 1);
+                addProjectLike(projectId);
+                likeBtn.classList.add('liked');
+                likeBtn.querySelector('span').textContent = 'Liked!';
+            }
+
+            likeCount.textContent = getProjectLikes(projectId);
+
+            // Track in analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'project_like', {
+                    'event_category': 'Projects',
+                    'event_label': projectId,
+                    'value': isCurrentlyLiked ? 0 : 1
+                });
+            }
+        }
+
+        // Local storage functions
+        function getProjectViews(projectId) {
+            const views = JSON.parse(localStorage.getItem('jagatab_project_views') || '{}');
+            return views[projectId] || 892; // Default view count
+        }
+
+        function setProjectViews(projectId, count) {
+            const views = JSON.parse(localStorage.getItem('jagatab_project_views') || '{}');
+            views[projectId] = count;
+            localStorage.setItem('jagatab_project_views', JSON.stringify(views));
+        }
+
+        function getProjectLikes(projectId) {
+            const likes = JSON.parse(localStorage.getItem('jagatab_project_likes') || '{}');
+            return likes[projectId] || 67; // Default like count
+        }
+
+        function setProjectLikes(projectId, count) {
+            const likes = JSON.parse(localStorage.getItem('jagatab_project_likes') || '{}');
+            likes[projectId] = count;
+            localStorage.setItem('jagatab_project_likes', JSON.stringify(likes));
+        }
+
+        function isProjectLiked(projectId) {
+            const likedProjects = JSON.parse(localStorage.getItem('jagatab_liked_projects') || '[]');
+            return likedProjects.includes(projectId);
+        }
+
+        function addProjectLike(projectId) {
+            const likedProjects = JSON.parse(localStorage.getItem('jagatab_liked_projects') || '[]');
+            if (!likedProjects.includes(projectId)) {
+                likedProjects.push(projectId);
+                localStorage.setItem('jagatab_liked_projects', JSON.stringify(likedProjects));
+            }
+        }
+
+        function removeProjectLike(projectId) {
+            const likedProjects = JSON.parse(localStorage.getItem('jagatab_liked_projects') || '[]');
+            const index = likedProjects.indexOf(projectId);
+            if (index > -1) {
+                likedProjects.splice(index, 1);
+                localStorage.setItem('jagatab_liked_projects', JSON.stringify(likedProjects));
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Assistant Services | Jagatab.UK - Professional VA Solutions</title>
+    <meta name="description" content="Professional Virtual Assistant services in Cambridgeshire. Administrative, technical, creative, and specialized VA support. Hourly, daily, or monthly packages available.">
+    <meta name="keywords" content="virtual assistant, VA services, administrative support, technical assistance, Cambridgeshire, remote work, business support">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Virtual Assistant Services | Jagatab.UK">
+    <meta property="og:description" content="Professional Virtual Assistant services with flexible packages. Get dedicated support for your business needs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jagatab.uk/virtual-assistant">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script src="js/analytics.js"></script>
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --success-color: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --background: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header Styles */
+        .main-header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 6rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .location-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            opacity: 0.8;
+        }
+
+        /* Services Overview Section */
+        .services-overview {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-category {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .service-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .service-category h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .service-category p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-list li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-list li i {
+            color: var(--success-color);
+            font-size: 0.875rem;
+        }
+
+        .service-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Services Table */
+        .services-table-container {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .services-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .services-table thead {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+        }
+
+        .services-table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .services-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        .services-table tbody tr:hover {
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .service-category-cell {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .service-category-cell i {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .price-cell {
+            font-weight: 700;
+            color: var(--accent-color);
+            font-size: 1rem;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 5rem 0;
+            background: var(--background);
+        }
+
+        /* Pricing Table */
+        .pricing-table-container {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .pricing-table thead {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+        }
+
+        .pricing-table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .pricing-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: middle;
+        }
+
+        .pricing-table tbody tr:hover {
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .featured-row {
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .package-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .package-name i {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .popular-badge {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .btn-small {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn-small:hover {
+            background: var(--secondary-color);
+            transform: translateY(-1px);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .pricing-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .pricing-header h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            margin-bottom: 1rem;
+        }
+
+        .currency {
+            font-size: 1.5rem;
+            vertical-align: top;
+        }
+
+        .amount {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        .period {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .pricing-header p {
+            opacity: 0.9;
+            font-size: 0.875rem;
+        }
+
+        .pricing-body {
+            padding: 2rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .features-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .features-list i {
+            color: var(--success-color);
+            font-size: 0.875rem;
+        }
+
+        .custom-package {
+            background: linear-gradient(135deg, var(--accent-color), #f97316);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .custom-content h3 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .custom-content p {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item h3 {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 5rem 0;
+            background: var(--background);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-form-container {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form-container h3 {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+            font-family: var(--font-body);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact-info {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info h3 {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info > p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .contact-methods {
+            margin-bottom: 2rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .method-icon {
+            background: var(--primary-color);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .method-info h4 {
+            font-family: var(--font-heading);
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .method-info p {
+            color: var(--text-dark);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .method-info small {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        .quick-actions h4 {
+            font-family: var(--font-heading);
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .quick-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .quick-action:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.125rem;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-section ul li i {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                font-size: 4rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-container,
+            .contact-info {
+                padding: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            /* Table Responsive */
+            .services-table-container,
+            .pricing-table-container {
+                overflow-x: auto;
+            }
+
+            .services-table,
+            .pricing-table {
+                min-width: 800px;
+            }
+
+            .services-table th,
+            .services-table td,
+            .pricing-table th,
+            .pricing-table td {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="index.html" class="logo">Jagatab</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="virtual-assistant.html" class="active">Virtual Assistant</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="location-badge">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Based in Wisbech, Cambridgeshire
+                    </div>
+                    <h1>Professional Virtual Assistant Services</h1>
+                    <p class="subtitle">Get dedicated, skilled virtual assistant support for your business. From administrative tasks to technical projects, we provide comprehensive VA services with flexible packages to match your needs.</p>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Tasks Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Support Available</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-calendar-check"></i>
+                            Book Free Consultation
+                        </a>
+                        <a href="#pricing" class="btn btn-secondary">
+                            <i class="fas fa-pound-sign"></i>
+                            View Pricing
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    🤝
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Comprehensive Virtual Assistant Services</h2>
+                <p>We offer a complete range of virtual assistant services to help streamline your business operations and boost productivity.</p>
+            </div>
+
+            <!-- Services Table -->
+            <div class="services-table-container">
+                <table class="services-table">
+                    <thead>
+                        <tr>
+                            <th>Service Category</th>
+                            <th>Service Description</th>
+                            <th>Hourly Rate</th>
+                            <th>Typical Tasks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="service-category-cell">
+                                <i class="fas fa-clipboard-list"></i>
+                                <strong>Administrative Support</strong>
+                            </td>
+                            <td>Professional administrative assistance to keep your business running smoothly</td>
+                            <td class="price-cell">£25/hour</td>
+                            <td>Email management, Calendar scheduling, Data entry, Document creation</td>
+                        </tr>
+                        <tr>
+                            <td class="service-category-cell">
+                                <i class="fas fa-phone-alt"></i>
+                                <strong>Customer Service</strong>
+                            </td>
+                            <td>Professional customer support and communication management</td>
+                            <td class="price-cell">£28/hour</td>
+                            <td>Live chat support, Phone handling, Ticket management, Follow-ups</td>
+                        </tr>
+                        <tr>
+                            <td class="service-category-cell">
+                                <i class="fas fa-code"></i>
+                                <strong>Technical Assistance</strong>
+                            </td>
+                            <td>Specialized technical support for digital projects and automation</td>
+                            <td class="price-cell">£35/hour</td>
+                            <td>Website updates, Social media, Basic automation, Software support</td>
+                        </tr>
+                        <tr>
+                            <td class="service-category-cell">
+                                <i class="fas fa-palette"></i>
+                                <strong>Creative & Content</strong>
+                            </td>
+                            <td>Creative support for marketing and content to enhance brand presence</td>
+                            <td class="price-cell">£30/hour</td>
+                            <td>Content writing, Social media content, Basic design, Presentations</td>
+                        </tr>
+                        <tr>
+                            <td class="service-category-cell">
+                                <i class="fas fa-chart-line"></i>
+                                <strong>Digital Marketing</strong>
+                            </td>
+                            <td>Comprehensive digital marketing support and campaign management</td>
+                            <td class="price-cell">£38/hour</td>
+                            <td>SEO optimization, Email campaigns, Analytics, Ad management</td>
+                        </tr>
+                        <tr>
+                            <td class="service-category-cell">
+                                <i class="fas fa-search"></i>
+                                <strong>Research & Analysis</strong>
+                            </td>
+                            <td>In-depth research and data analysis for business intelligence</td>
+                            <td class="price-cell">£32/hour</td>
+                            <td>Market research, Competitor analysis, Data collection, Reports</td>
+                        </tr>
+                        <tr>
+                            <td class="service-category-cell">
+                                <i class="fas fa-users"></i>
+                                <strong>HR & Recruitment</strong>
+                            </td>
+                            <td>Human resources support and recruitment assistance</td>
+                            <td class="price-cell">£36/hour</td>
+                            <td>Job posting, CV screening, Interview scheduling, Onboarding</td>
+                        </tr>
+                        <tr>
+                            <td class="service-category-cell">
+                                <i class="fas fa-calculator"></i>
+                                <strong>Financial Management</strong>
+                            </td>
+                            <td>Financial data management and bookkeeping support</td>
+                            <td class="price-cell">£40/hour</td>
+                            <td>Invoice processing, Expense tracking, Financial reports, Budgeting</td>
+                        </tr>
+                        <tr>
+                            <td class="service-category-cell">
+                                <i class="fas fa-project-diagram"></i>
+                                <strong>Project Management</strong>
+                            </td>
+                            <td>Professional project coordination and management support</td>
+                            <td class="price-cell">£42/hour</td>
+                            <td>Project planning, Task coordination, Progress tracking, Reporting</td>
+                        </tr>
+                        <tr>
+                            <td class="service-category-cell">
+                                <i class="fas fa-star"></i>
+                                <strong>Specialized Consulting</strong>
+                            </td>
+                            <td>Expert consultation for specific business functions and strategies</td>
+                            <td class="price-cell">£45/hour</td>
+                            <td>Business analysis, Process optimization, Strategic planning, Training</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Flexible Pricing Packages</h2>
+                <p>Choose the perfect package for your business needs. All packages include dedicated support and regular progress updates.</p>
+            </div>
+
+            <!-- Pricing Table -->
+            <div class="pricing-table-container">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Package Type</th>
+                            <th>Duration</th>
+                            <th>Price Range</th>
+                            <th>Hours Included</th>
+                            <th>Key Features</th>
+                            <th>Best For</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="package-name">
+                                <i class="fas fa-clock"></i>
+                                <strong>Hourly Support</strong>
+                            </td>
+                            <td>Per Hour</td>
+                            <td class="price-cell">£25-45/hour</td>
+                            <td>Minimum 2 hours</td>
+                            <td>Same-day turnaround, Email support, Basic reporting</td>
+                            <td>Small tasks, One-off projects</td>
+                            <td><a href="#contact" class="btn-small">Get Started</a></td>
+                        </tr>
+                        <tr class="featured-row">
+                            <td class="package-name">
+                                <i class="fas fa-calendar-day"></i>
+                                <strong>Half-Day Support</strong>
+                                <span class="popular-badge">Popular</span>
+                            </td>
+                            <td>4 Hours</td>
+                            <td class="price-cell">£100-180</td>
+                            <td>4 hours</td>
+                            <td>Priority support, Progress updates, Video calls</td>
+                            <td>Regular tasks, Project work</td>
+                            <td><a href="#contact" class="btn-small">Get Started</a></td>
+                        </tr>
+                        <tr>
+                            <td class="package-name">
+                                <i class="fas fa-sun"></i>
+                                <strong>Full-Day Support</strong>
+                            </td>
+                            <td>8 Hours</td>
+                            <td class="price-cell">£200-360</td>
+                            <td>8 hours</td>
+                            <td>Dedicated work, Daily reports, 15% discount</td>
+                            <td>Ongoing projects, Busy periods</td>
+                            <td><a href="#contact" class="btn-small">Get Started</a></td>
+                        </tr>
+                        <tr>
+                            <td class="package-name">
+                                <i class="fas fa-calendar-week"></i>
+                                <strong>Weekly Support</strong>
+                            </td>
+                            <td>5 Days</td>
+                            <td class="price-cell">£850-1530</td>
+                            <td>40 hours</td>
+                            <td>Dedicated VA, Weekly calls, 20% discount</td>
+                            <td>Regular support, Multiple projects</td>
+                            <td><a href="#contact" class="btn-small">Get Started</a></td>
+                        </tr>
+                        <tr>
+                            <td class="package-name">
+                                <i class="fas fa-calendar-alt"></i>
+                                <strong>Bi-Weekly Support</strong>
+                            </td>
+                            <td>2 Weeks</td>
+                            <td class="price-cell">£1530-2750</td>
+                            <td>80 hours</td>
+                            <td>Project management, Bi-weekly reviews, 25% discount</td>
+                            <td>Medium-term projects, Seasonal work</td>
+                            <td><a href="#contact" class="btn-small">Get Started</a></td>
+                        </tr>
+                        <tr>
+                            <td class="package-name">
+                                <i class="fas fa-calendar"></i>
+                                <strong>Monthly Support</strong>
+                            </td>
+                            <td>1 Month</td>
+                            <td class="price-cell">£2800-5040</td>
+                            <td>160+ hours</td>
+                            <td>Full partnership, Monthly strategy, 30% discount</td>
+                            <td>Long-term projects, Business growth</td>
+                            <td><a href="#contact" class="btn-small">Get Started</a></td>
+                        </tr>
+                        <tr>
+                            <td class="package-name">
+                                <i class="fas fa-calendar-plus"></i>
+                                <strong>Quarterly Support</strong>
+                            </td>
+                            <td>3 Months</td>
+                            <td class="price-cell">£7650-13770</td>
+                            <td>480+ hours</td>
+                            <td>Strategic partnership, Quarterly planning, 35% discount</td>
+                            <td>Major projects, Business transformation</td>
+                            <td><a href="#contact" class="btn-small">Get Started</a></td>
+                        </tr>
+                        <tr>
+                            <td class="package-name">
+                                <i class="fas fa-star"></i>
+                                <strong>Custom Package</strong>
+                            </td>
+                            <td>Flexible</td>
+                            <td class="price-cell">Custom Quote</td>
+                            <td>As needed</td>
+                            <td>Tailored solution, Custom terms, Flexible pricing</td>
+                            <td>Unique requirements, Special projects</td>
+                            <td><a href="#contact" class="btn-small">Discuss</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Custom Package -->
+            <div class="custom-package">
+                <div class="custom-content">
+                    <h3>Need a Custom Package?</h3>
+                    <p>We understand every business is unique. Let's discuss your specific requirements and create a tailored solution that fits your needs and budget perfectly.</p>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-comments"></i>
+                        Discuss Custom Package
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Our Virtual Assistant Services?</h2>
+                <p>We're not just another VA service. We're your dedicated business partners committed to your success.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Trusted & Reliable</h3>
+                    <p>Vetted professionals with proven track records. Your business data is secure with our strict confidentiality protocols.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Fast Turnaround</h3>
+                    <p>Quick response times and efficient task completion. Most requests are handled within 24 hours or less.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Skilled Professionals</h3>
+                    <p>Our VAs are trained in the latest tools and technologies, ensuring high-quality work every time.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock availability for urgent tasks and emergency support when you need it most.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Scalable Solutions</h3>
+                    <p>Easily scale up or down based on your business needs. No long-term contracts or hidden fees.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-pound-sign"></i>
+                    </div>
+                    <h3>Cost-Effective</h3>
+                    <p>Save up to 60% compared to hiring full-time staff. Pay only for the work you need, when you need it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ready to Get Started?</h2>
+                <p>Book your free consultation today and discover how our virtual assistant services can transform your business operations.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h3>Book Your Free Consultation</h3>
+                    <form class="contact-form" id="vaContactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="serviceType">Service Type *</label>
+                            <select id="serviceType" name="serviceType" required>
+                                <option value="">Select a service type</option>
+                                <option value="administrative">Administrative Support</option>
+                                <option value="technical">Technical Assistance</option>
+                                <option value="creative">Creative & Content</option>
+                                <option value="specialized">Specialized Support</option>
+                                <option value="custom">Custom Package</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="packageType">Preferred Package *</label>
+                            <select id="packageType" name="packageType" required>
+                                <option value="">Select a package</option>
+                                <option value="hourly">Hourly Support</option>
+                                <option value="daily">Daily Support</option>
+                                <option value="weekly">Weekly Support</option>
+                                <option value="monthly">Monthly Support</option>
+                                <option value="custom">Custom Package</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Project Details *</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Please describe your requirements, timeline, and any specific needs..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Estimated Budget</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select budget range</option>
+                                <option value="under-500">Under £500/month</option>
+                                <option value="500-1000">£500 - £1,000/month</option>
+                                <option value="1000-2500">£1,000 - £2,500/month</option>
+                                <option value="2500-5000">£2,500 - £5,000/month</option>
+                                <option value="over-5000">Over £5,000/month</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Book Free Consultation
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Ready to streamline your business operations? Contact us today for a free consultation and discover how our virtual assistant services can help you achieve more.</p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Phone</h4>
+                                <p>+44 7864880790</p>
+                                <small>Mon-Sat: 7AM-11PM GMT</small>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Email</h4>
+                                <p>sreejagatab@yahoo.com</p>
+                                <small>Response within 2 hours</small>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Location</h4>
+                                <p>Wisbech, Cambridgeshire</p>
+                                <small>Serving UK & International</small>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Availability</h4>
+                                <p>24/7 Support Available</p>
+                                <small>Emergency support included</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+                        <h4>Quick Actions</h4>
+                        <a href="tel:+447864880790" class="quick-action">
+                            <i class="fas fa-phone"></i>
+                            Call Now
+                        </a>
+                        <a href="mailto:sreejagatab@yahoo.com" class="quick-action">
+                            <i class="fas fa-envelope"></i>
+                            Send Email
+                        </a>
+                        <a href="https://calendly.com/jagatab-va" class="quick-action" target="_blank">
+                            <i class="fas fa-calendar"></i>
+                            Book Meeting
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Jagatab Virtual Assistant Services</h3>
+                    <p>Professional virtual assistant services to help streamline your business operations and boost productivity. Based in Cambridgeshire, serving clients worldwide.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Administrative Support</a></li>
+                        <li><a href="#services">Technical Assistance</a></li>
+                        <li><a href="#services">Creative & Content</a></li>
+                        <li><a href="#services">Specialized Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Packages</h4>
+                    <ul>
+                        <li><a href="#pricing">Hourly Support</a></li>
+                        <li><a href="#pricing">Daily Support</a></li>
+                        <li><a href="#pricing">Weekly Support</a></li>
+                        <li><a href="#pricing">Monthly Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +44 7864880790</li>
+                        <li><i class="fas fa-envelope"></i> sreejagatab@yahoo.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Wisbech, Cambridgeshire</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Jagatab.UK. All rights reserved. | Virtual Assistant Services | AI Automation & Python Development</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeNavigation();
+            initializeContactForm();
+            initializeAnalytics();
+        });
+
+        // Navigation functionality
+        function initializeNavigation() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    const icon = this.querySelector('i');
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                });
+            }
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Contact form functionality
+        function initializeContactForm() {
+            const form = document.getElementById('vaContactForm');
+
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    // Get form data
+                    const formData = new FormData(form);
+                    const data = Object.fromEntries(formData);
+
+                    // Basic validation
+                    if (!data.firstName || !data.lastName || !data.email || !data.serviceType || !data.packageType || !data.message) {
+                        alert('Please fill in all required fields.');
+                        return;
+                    }
+
+                    // Email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(data.email)) {
+                        alert('Please enter a valid email address.');
+                        return;
+                    }
+
+                    // Show loading state
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                    submitBtn.disabled = true;
+
+                    // Simulate form submission (replace with actual form handling)
+                    setTimeout(() => {
+                        alert('Thank you for your inquiry! We will contact you within 24 hours to schedule your free consultation.');
+                        form.reset();
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+
+                        // Track form submission
+                        trackEvent('va_form_submission', {
+                            'event_category': 'Virtual Assistant',
+                            'event_label': data.serviceType + '_' + data.packageType
+                        });
+                    }, 2000);
+                });
+            }
+        }
+
+        // Analytics tracking
+        function initializeAnalytics() {
+            // Track page view
+            trackEvent('page_view', {
+                'event_category': 'Virtual Assistant',
+                'event_label': 'va_page'
+            });
+
+            // Track scroll depth
+            let maxScroll = 0;
+            window.addEventListener('scroll', function() {
+                const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                if (scrollPercent > maxScroll) {
+                    maxScroll = scrollPercent;
+                    if (maxScroll % 25 === 0) { // Track at 25%, 50%, 75%, 100%
+                        trackEvent('scroll_depth', {
+                            'event_category': 'Engagement',
+                            'event_label': `${maxScroll}%`
+                        });
+                    }
+                }
+            });
+
+            // Track pricing card clicks
+            document.querySelectorAll('.pricing-card .btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const packageType = this.closest('.pricing-card').querySelector('h3').textContent;
+                    trackEvent('pricing_click', {
+                        'event_category': 'Virtual Assistant',
+                        'event_label': packageType
+                    });
+                });
+            });
+
+            // Track contact method clicks
+            document.querySelectorAll('.quick-action').forEach(action => {
+                action.addEventListener('click', function() {
+                    const actionType = this.textContent.trim();
+                    trackEvent('contact_action', {
+                        'event_category': 'Virtual Assistant',
+                        'event_label': actionType
+                    });
+                });
+            });
+        }
+
+        // Generic event tracking function
+        function trackEvent(eventName, parameters) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, parameters);
+            }
+
+            // Also log to console for debugging
+            console.log('Event tracked:', eventName, parameters);
+        }
+    </script>
+</body>
+</html>

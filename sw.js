@@ -7,6 +7,8 @@ const CACHE_FILES = [
   '/',
   '/index.html',
   '/blog.html',
+  '/projects.html',
+  '/virtual-assistant.html',
   '/sitemap.xml',
   '/robots.txt',
   '/privacy-policy.html',
@@ -17,6 +19,10 @@ const CACHE_FILES = [
   '/js/analytics.js',
   '/js/contact-enhancement.js',
   '/js/performance-optimizer.js',
+  // Project pages
+  '/project-ai-chatbot-platform.html',
+  '/project-invoice-automation-system.html',
+  '/project-seo-automation-suite.html',
   // Service pages
   '/services/python-automation-scripts.html',
   '/services/ai-chatbots.html',
