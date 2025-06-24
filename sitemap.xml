@@ -170,6 +170,22 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- Projects Page -->
+    <url>
+        <loc>https://jagatabuk.com/projects.html</loc>
+        <lastmod>2024-12-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Virtual Assistant Page -->
+    <url>
+        <loc>https://jagatabuk.com/virtual-assistant.html</loc>
+        <lastmod>2024-12-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
     <!-- Case Studies (when created) -->
     <url>
         <loc>https://jagatabuk.com/case-studies/invoice-processing-automation</loc>
