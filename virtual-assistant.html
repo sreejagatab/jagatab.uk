@@ -956,6 +956,72 @@
                 padding: 0.75rem 0.5rem;
                 font-size: 0.8rem;
             }
+
+            /* Floating Actions Mobile */
+            .floating-actions {
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            .fab-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.25rem;
+            }
+        }
+
+        /* Floating Action Buttons */
+        .floating-actions {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 1000;
+        }
+
+        .fab-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            color: var(--white);
+        }
+
+        .fab-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .fab-phone {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+
+        .fab-phone:hover {
+            background: linear-gradient(135deg, #059669, #047857);
+        }
+
+        .fab-email {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+
+        .fab-email:hover {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        }
+
+        .fab-whatsapp {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+        }
+
+        .fab-whatsapp:hover {
+            background: linear-gradient(135deg, #128c7e, #075e54);
         }
     </style>
 </head>
@@ -1669,6 +1735,19 @@
                     });
                 });
             });
+
+            // Track floating action button clicks
+            document.querySelectorAll('.fab-btn').forEach(fab => {
+                fab.addEventListener('click', function() {
+                    const fabType = this.className.includes('fab-phone') ? 'Phone' :
+                                   this.className.includes('fab-email') ? 'Email' :
+                                   this.className.includes('fab-whatsapp') ? 'WhatsApp' : 'Unknown';
+                    trackEvent('floating_contact', {
+                        'event_category': 'Virtual Assistant',
+                        'event_label': fabType
+                    });
+                });
+            });
         }
 
         // Generic event tracking function
@@ -1681,5 +1760,18 @@
             console.log('Event tracked:', eventName, parameters);
         }
     </script>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+        <a href="tel:+447864880790" class="fab-btn fab-phone" title="Call Now">
+            <i class="fas fa-phone"></i>
+        </a>
+        <a href="mailto:sreejagatab@yahoo.com" class="fab-btn fab-email" title="Send Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://wa.me/447864880790" class="fab-btn fab-whatsapp" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 </body>
 </html>
