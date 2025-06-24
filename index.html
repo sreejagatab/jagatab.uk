@@ -185,9 +185,11 @@
             "name": "Sree Jagatab"
         },
         "sameAs": [
-            "https://linkedin.com/in/sreejagatab",
-            "https://twitter.com/jagatab",
-            "https://github.com/jagatab"
+            "https://www.linkedin.com/in/sreejagatab/",
+            "https://github.com/sreejagatab",
+            "https://www.facebook.com/Jagatabandsonsukltd/",
+            "https://www.instagram.com/gotvan_savingbargainsltd/",
+            "https://x.com/SavingBargain"
         ]
     }
     </script>
@@ -1383,6 +1385,79 @@ a:hover {
     border-radius: 50px;
     font-size: 0.875rem;
     font-weight: 500;
+    transition: var(--transition);
+}
+
+.cert-item:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Professional Presence Section */
+.professional-presence {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.professional-presence h3 {
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.professional-presence p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.social-proof {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.social-proof-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--background-light);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
+
+.social-proof-item:hover {
+    background: var(--white);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.social-proof-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    width: 24px;
+    text-align: center;
+}
+
+.social-proof-item div {
+    flex: 1;
+}
+
+.social-proof-item strong {
+    display: block;
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.social-proof-item span {
+    color: var(--text-light);
+    font-size: 0.875rem;
 }
 
 .about-visual {
@@ -3371,7 +3446,7 @@ textarea:focus {
                 <li role="none"><a href="#home" class="nav-link" role="menuitem" aria-label="Go to Home section">Home</a></li>
                 <li role="none"><a href="#services" class="nav-link" role="menuitem" aria-label="Go to Services section">Services</a></li>
                 <li role="none"><a href="#portfolio" class="nav-link" role="menuitem" aria-label="Go to Portfolio section">Portfolio</a></li>
-                <li role="none"><a href="projects.html" class="nav-link" role="menuitem" aria-label="Go to Projects page">Projects</a></li>
+                <li role="none"><a href="projects.html" class="nav-link" role="menuitem" aria-label="Go to Repositories page">Repositories</a></li>
                 <li role="none"><a href="virtual-assistant.html" class="nav-link" role="menuitem" aria-label="Go to Virtual Assistant page">Virtual Assistant</a></li>
                 <li role="none"><a href="#about" class="nav-link" role="menuitem" aria-label="Go to About section">About</a></li>
                 <li role="none"><a href="#testimonials" class="nav-link" role="menuitem" aria-label="Go to Testimonials section">Testimonials</a></li>
@@ -3403,7 +3478,7 @@ textarea:focus {
                         <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
                             <div style="text-align: center;">
                                 <div style="font-size: 2rem; font-weight: 800; color: #1e40af; margin-bottom: 0.25rem;">100+</div>
-                                <div style="font-size: 0.875rem; color: #6b7280;">Projects Delivered</div>
+                                <div style="font-size: 0.875rem; color: #6b7280;">Repositories Created</div>
                             </div>
                             <div style="text-align: center;">
                                 <div style="font-size: 2rem; font-weight: 800; color: #10b981; margin-bottom: 0.25rem;">50+</div>
@@ -3893,7 +3968,7 @@ textarea:focus {
                         </div>
                         <div class="stat-content">
                             <span class="stat-number">100+</span>
-                            <span class="stat-label">Projects Delivered</span>
+                            <span class="stat-label">Repositories Created</span>
                         </div>
                     </div>
                     <div class="stat-card">
@@ -3922,15 +3997,15 @@ textarea:focus {
         <section id="portfolio" class="portfolio section" role="region" aria-labelledby="portfolio-title">
             <div class="container">
                 <div class="section-header text-center">
-                    <h2 id="portfolio-title">Featured Projects & Success Stories</h2>
+                    <h2 id="portfolio-title">Featured Repositories & Success Stories</h2>
                     <p>Discover how we've helped businesses across Cambridgeshire achieve remarkable results through AI automation and Python development</p>
                 </div>
                 <div class="portfolio-filters" role="group" aria-label="Filter portfolio projects by category">
-                    <button class="filter-btn active" data-filter="all" aria-pressed="true" aria-label="Show all projects">All Projects</button>
-                    <button class="filter-btn" data-filter="automation" aria-pressed="false" aria-label="Show automation projects only">Automation</button>
-                    <button class="filter-btn" data-filter="ai" aria-pressed="false" aria-label="Show AI solution projects only">AI Solutions</button>
-                    <button class="filter-btn" data-filter="seo" aria-pressed="false" aria-label="Show SEO projects only">SEO</button>
-                    <button class="filter-btn" data-filter="saas" aria-pressed="false" aria-label="Show SaaS projects only">SaaS</button>
+                    <button class="filter-btn active" data-filter="all" aria-pressed="true" aria-label="Show all repositories">All Repositories</button>
+                    <button class="filter-btn" data-filter="automation" aria-pressed="false" aria-label="Show automation repositories only">Automation</button>
+                    <button class="filter-btn" data-filter="ai" aria-pressed="false" aria-label="Show AI solution repositories only">AI Solutions</button>
+                    <button class="filter-btn" data-filter="seo" aria-pressed="false" aria-label="Show SEO repositories only">SEO</button>
+                    <button class="filter-btn" data-filter="saas" aria-pressed="false" aria-label="Show SaaS repositories only">SaaS</button>
                 </div>
                 <div class="portfolio-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
                     <!-- Portfolio Item 1 -->
@@ -4106,6 +4181,34 @@ textarea:focus {
                                 <span class="cert-item">AWS Cloud Practitioner</span>
                             </div>
                         </div>
+
+                        <div class="professional-presence">
+                            <h3>Connect & Follow</h3>
+                            <p>Stay updated with my latest projects, insights, and industry developments:</p>
+                            <div class="social-proof">
+                                <a href="https://www.linkedin.com/in/sreejagatab/" class="social-proof-item" target="_blank" rel="noopener">
+                                    <i class="fab fa-linkedin-in"></i>
+                                    <div>
+                                        <strong>LinkedIn</strong>
+                                        <span>Professional Network & Industry Insights</span>
+                                    </div>
+                                </a>
+                                <a href="https://github.com/sreejagatab" class="social-proof-item" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i>
+                                    <div>
+                                        <strong>GitHub</strong>
+                                        <span>Open Source Projects & Code Repositories</span>
+                                    </div>
+                                </a>
+                                <a href="https://www.facebook.com/Jagatabandsonsukltd/" class="social-proof-item" target="_blank" rel="noopener">
+                                    <i class="fab fa-facebook-f"></i>
+                                    <div>
+                                        <strong>Facebook</strong>
+                                        <span>Business Updates & Community Engagement</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="about-visual">
                         <div class="profile-card">
@@ -4118,7 +4221,7 @@ textarea:focus {
                             <div class="profile-stats">
                                 <div class="stat-item">
                                     <span class="stat-number">100+</span>
-                                    <span class="stat-label">Projects</span>
+                                    <span class="stat-label">Repositories</span>
                                 </div>
                                 <div class="stat-item">
                                     <span class="stat-number">5+</span>
@@ -4939,23 +5042,20 @@ textarea:focus {
                         </div>
 
                         <div class="social-links">
-                            <a href="https://linkedin.com/in/sreejagatab" class="social-link" title="LinkedIn">
+                            <a href="https://www.linkedin.com/in/sreejagatab/" class="social-link" title="LinkedIn - Sree Jagatab" target="_blank" rel="noopener">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="https://twitter.com/jagatab" class="social-link" title="Twitter">
-                                <i class="fab fa-twitter"></i>
+                            <a href="https://github.com/sreejagatab" class="social-link" title="GitHub - Sree Jagatab" target="_blank" rel="noopener">
+                                <i class="fab fa-github"></i>
                             </a>
-                            <a href="https://facebook.com/jagatab" class="social-link" title="Facebook">
+                            <a href="https://x.com/SavingBargain" class="social-link" title="X (Twitter) - SavingBargain" target="_blank" rel="noopener">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            <a href="https://www.facebook.com/Jagatabandsonsukltd/" class="social-link" title="Facebook - Jagatab and Sons UK Ltd" target="_blank" rel="noopener">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="https://instagram.com/jagatab" class="social-link" title="Instagram">
+                            <a href="https://www.instagram.com/gotvan_savingbargainsltd/" class="social-link" title="Instagram - GotVan Saving Bargains Ltd" target="_blank" rel="noopener">
                                 <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://youtube.com/jagatab" class="social-link" title="YouTube">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                            <a href="https://github.com/jagatab" class="social-link" title="GitHub">
-                                <i class="fab fa-github"></i>
                             </a>
                         </div>
                     </div>
@@ -5016,23 +5116,20 @@ textarea:focus {
                     <h3>Jagatab.UK</h3>
                     <p>Transforming businesses across Cambridgeshire with AI automation and Python development solutions. Based in Wisbech, serving the UK and international clients.</p>
                     <div class="social-links">
-                        <a href="https://linkedin.com/in/sreejagatab" class="social-link" title="LinkedIn">
+                        <a href="https://www.linkedin.com/in/sreejagatab/" class="social-link" title="LinkedIn - Sree Jagatab" target="_blank" rel="noopener">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="https://twitter.com/jagatab" class="social-link" title="Twitter">
-                            <i class="fab fa-twitter"></i>
+                        <a href="https://github.com/sreejagatab" class="social-link" title="GitHub - Sree Jagatab" target="_blank" rel="noopener">
+                            <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://facebook.com/jagatab" class="social-link" title="Facebook">
+                        <a href="https://x.com/SavingBargain" class="social-link" title="X (Twitter) - SavingBargain" target="_blank" rel="noopener">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.facebook.com/Jagatabandsonsukltd/" class="social-link" title="Facebook - Jagatab and Sons UK Ltd" target="_blank" rel="noopener">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://instagram.com/jagatab" class="social-link" title="Instagram">
+                        <a href="https://www.instagram.com/gotvan_savingbargainsltd/" class="social-link" title="Instagram - GotVan Saving Bargains Ltd" target="_blank" rel="noopener">
                             <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://youtube.com/jagatab" class="social-link" title="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="https://github.com/jagatab" class="social-link" title="GitHub">
-                            <i class="fab fa-github"></i>
                         </a>
                     </div>
                 </div>
