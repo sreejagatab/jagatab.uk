@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 AV Planning Tool by Jagatab.UK | Jagatab</title>
+    <meta name="description" content="https://github.com/sreejagatab/plantool">
+    <meta name="keywords" content="plantool-demo, GitHub project, open source">
+    <link rel="canonical" href="https://jagatab.uk/blog/av-planning-tool-by-jagatabuk.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="🎬 AV Planning Tool by Jagatab.UK">
+    <meta property="og:description" content="https://github.com/sreejagatab/plantool">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://jagatab.uk/blog/av-planning-tool-by-jagatabuk.html">
+    
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "🎬 AV Planning Tool by Jagatab.UK",
+        "description": "https://github.com/sreejagatab/plantool",
+        "author": {
+            "@type": "Person",
+            "name": "Sree Jagatab",
+            "url": "https://jagatab.uk"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Jagatab.UK",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://jagatab.uk/logo.png"
+            }
+        },
+        "datePublished": "2025-07-02",
+        "dateModified": "2025-07-02",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://jagatab.uk/blog/av-planning-tool-by-jagatabuk.html"
+        }
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --accent-color: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --background-light: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --transition: all 0.3s ease;
+            --font-primary: 'Inter', sans-serif;
+            --font-heading: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Article */
+        .article {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .article-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            margin: 1rem 0;
+            transition: var(--transition);
+        }
+
+        .github-link:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Content Styling */
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content h1,
+        .article-content h2,
+        .article-content h3,
+        .article-content h4,
+        .article-content h5,
+        .article-content h6 {
+            font-family: var(--font-heading);
+            margin: 2rem 0 1rem 0;
+            color: var(--text-dark);
+        }
+
+        .article-content h1 { font-size: 2rem; }
+        .article-content h2 { font-size: 1.75rem; }
+        .article-content h3 { font-size: 1.5rem; }
+        .article-content h4 { font-size: 1.25rem; }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content pre {
+            background: #2d3748;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        .article-content code {
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.9rem;
+        }
+
+        .article-content p code {
+            background: var(--background-light);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            color: var(--primary-color);
+        }
+
+        .blog-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        .blog-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .blog-table th,
+        .blog-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .blog-table th {
+            background: var(--background-light);
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .article {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="logo">Jagatab.UK</a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../services/python-automation-scripts.html">Services</a></li>
+                <li><a href="../projects.html">Repositories</a></li>
+                <li><a href="../blog/index.html">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <article class="article">
+            <header class="article-header">
+                <h1 class="article-title">🎬 AV Planning Tool by Jagatab.UK</h1>
+                <div class="article-meta">
+                    <span><i class="fas fa-calendar"></i> 2025-07-02</span>
+                    <span><i class="fas fa-user"></i> Sree Jagatab</span>
+                    <span><i class="fas fa-tag"></i> GitHub Project</span>
+                </div>
+                <a href="https://github.com/sreejagatab/plantool-demo" class="github-link" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i>
+                    View on GitHub
+                </a>
+            </header>
+            
+            <div class="article-content">
+                <h1>🎬 AV Planning Tool by Jagatab.UK</h1>
+<p><a href="https://github.com/sreejagatab/plantool">https://github.com/sreejagatab/plantool</a></p>
+<p>Private : For access to the main project repository email: <a href="mailto:Sreejagatab@yahoo.com">Sreejagatab@yahoo.com</a></p>
+<div align="center">
+
+<p><img class="blog-image" src="https://img.shields.io/badge/AV%20Planning%20Tool-Professional-blue?style=for-the-badge" alt="AV Planning Tool"><br><img class="blog-image" src="https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react" alt="React"><br><img class="blog-image" src="https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript"><br><img class="blog-image" src="https://img.shields.io/badge/Tailwind%20CSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind CSS"><br><img class="blog-image" src="https://img.shields.io/badge/Vite-7.x-646CFF?style=for-the-badge&logo=vite" alt="Vite"></p>
+<p><strong>A comprehensive, professional audiovisual planning and quoting solution for event planners and AV companies</strong></p>
+<p><a href="#-live-demo">🚀 Live Demo</a> • <a href="#-documentation">📖 Documentation</a> • <a href="#-installation">🔧 Installation</a> • <a href="#-wordpress-integration">🌐 WordPress Integration</a></p>
+</div>
+
+<hr>
+<p><img class="blog-image" src="https://github.com/user-attachments/assets/4d1e5eb5-096a-4414-8ad5-199cd7d4e1cd" alt="20250702_2204_Audiovisual Planning Solution_simple_compose_01jz6f752fes2r66rv6652rd2j"></p>
+<hr>
+<h2>📋 Table of Contents</h2>
+<ul>
+<li><a href="#-overview">🎯 Overview</a></li>
+<li><a href="#-key-features">✨ Key Features</a></li>
+<li><a href="#%EF%B8%8F-technology-stack">🛠️ Technology Stack</a></li>
+<li><a href="#-live-demo">🚀 Live Demo</a></li>
+<li><a href="#-installation">🔧 Installation</a></li>
+<li><a href="#-project-structure">📁 Project Structure</a></li>
+<li><a href="#-usage-guide">🎯 Usage Guide</a></li>
+<li><a href="#-pricing-engine">💰 Pricing Engine</a></li>
+<li><a href="#-uiux-features">🎨 UI/UX Features</a></li>
+<li><a href="#-accessibility">♿ Accessibility</a></li>
+<li><a href="#-wordpress-integration">🌐 WordPress Integration</a></li>
+<li><a href="#-responsive-design">📱 Responsive Design</a></li>
+<li><a href="#-security-features">🔒 Security Features</a></li>
+<li><a href="#-performance">⚡ Performance</a></li>
+<li><a href="#-testing">🧪 Testing</a></li>
+<li><a href="#-deployment">🚀 Deployment</a></li>
+<li><a href="#-configuration">🔧 Configuration</a></li>
+<li><a href="#-analytics--tracking">📊 Analytics &amp; Tracking</a></li>
+<li><a href="#-api-integration">🔌 API Integration</a></li>
+<li><a href="#-customization">🎨 Customization</a></li>
+<li><a href="#-documentation">📝 Documentation</a></li>
+<li><a href="#-contributing">🤝 Contributing</a></li>
+<li><a href="#-license">📄 License</a></li>
+<li><a href="#-support">🆘 Support</a></li>
+</ul>
+<hr>
+<h2>🎯 Overview</h2>
+<p>The <strong>AV Planning Tool</strong> is a state-of-the-art, professional-grade web application designed specifically for audiovisual event planning and quote generation. Built with modern web technologies, it provides a comprehensive solution for AV companies, event planners, and venue managers to create detailed, accurate quotes for audiovisual equipment and services.</p>
+<h3>🎪 Perfect For:</h3>
+<ul>
+<li><strong>AV Rental Companies</strong> - Streamline quote generation and equipment planning</li>
+<li><strong>Event Planners</strong> - Get accurate AV estimates for client proposals</li>
+<li><strong>Venue Managers</strong> - Provide instant AV quotes to event organizers</li>
+<li><strong>Corporate Event Teams</strong> - Plan internal events with professional AV setups</li>
+<li><strong>Wedding Planners</strong> - Include AV services in comprehensive event packages</li>
+</ul>
+<hr>
+<h2>✨ Key Features</h2>
+<h3>🧙‍♂️ <strong>Intelligent Wizard Interface</strong></h3>
+<ul>
+<li><strong>7-Step Guided Process</strong>: Intuitive step-by-step quote generation</li>
+<li><strong>Smart Navigation</strong>: Progress tracking with ability to jump between completed steps</li>
+<li><strong>Auto-Save Functionality</strong>: Never lose progress with automatic form data persistence</li>
+<li><strong>Validation Engine</strong>: Real-time form validation with helpful error messages</li>
+<li><strong>Progress Indicators</strong>: Visual feedback on completion status</li>
+</ul>
+<h3>💰 <strong>Advanced Pricing Engine</strong></h3>
+<ul>
+<li><strong>Dynamic Calculations</strong>: Real-time pricing based on multiple variables</li>
+<li><strong>Seasonal Adjustments</strong>: Automatic pricing for peak seasons and holidays</li>
+<li><strong>Guest Count Scaling</strong>: Intelligent pricing tiers based on event size</li>
+<li><strong>Complexity Analysis</strong>: Pricing adjustments for technical requirements</li>
+<li><strong>Day-of-Week Premiums</strong>: Weekend and special day pricing</li>
+<li><strong>Event Type Modifiers</strong>: Different pricing for in-person, virtual, and hybrid events</li>
+</ul>
+<h3>📦 <strong>Three-Tier Package System</strong></h3>
+<ul>
+<li><strong>Essential Package</strong> ($2,500 base): Perfect for small events (up to 100 guests)</li>
+<li><strong>Recommended Package</strong> ($4,500 base): Ideal for medium events (up to 300 guests)</li>
+<li><strong>Premium Package</strong> ($7,500 base): Complete solution for large events (up to 500+ guests)</li>
+</ul>
+<h3>🎛️ <strong>Comprehensive Equipment Database</strong></h3>
+<ul>
+<li><strong>Audio Equipment</strong>: Microphones, speakers, mixing consoles, amplifiers</li>
+<li><strong>Visual Equipment</strong>: Projectors, screens, LED walls, cameras</li>
+<li><strong>Lighting Systems</strong>: Stage lighting, ambient lighting, special effects</li>
+<li><strong>Streaming Technology</strong>: Live streaming equipment and platforms</li>
+<li><strong>Accessories</strong>: Cables, stands, power distribution, backup equipment</li>
+</ul>
+<h3>📄 <strong>Professional Quote Generation</strong></h3>
+<ul>
+<li><strong>PDF Export</strong>: Branded, professional quotes with detailed breakdowns</li>
+<li><strong>Equipment Specifications</strong>: Detailed technical information for each item</li>
+<li><strong>Pricing Transparency</strong>: Clear breakdown of costs and adjustments</li>
+<li><strong>Terms &amp; Conditions</strong>: Customizable legal terms and service agreements</li>
+<li><strong>Company Branding</strong>: Logo, colors, and contact information integration</li>
+</ul>
+<h3>🔗 <strong>Sharing &amp; Collaboration</strong></h3>
+<ul>
+<li><strong>Email Integration</strong>: Direct email sharing with customizable messages</li>
+<li><strong>Social Media Sharing</strong>: LinkedIn, Twitter, Facebook integration</li>
+<li><strong>Link Generation</strong>: Shareable links for quote reviews</li>
+<li><strong>Download Options</strong>: Multiple export formats (PDF, print-friendly)</li>
+</ul>
+<hr>
+<h2>🛠️ Technology Stack</h2>
+<h3><strong>Frontend Framework</strong></h3>
+<ul>
+<li><strong>React 18.x</strong> - Modern component-based architecture</li>
+<li><strong>TypeScript 5.x</strong> - Type safety and enhanced developer experience</li>
+<li><strong>Vite 7.x</strong> - Lightning-fast build tool and development server</li>
+</ul>
+<h3><strong>Styling &amp; UI</strong></h3>
+<ul>
+<li><strong>Tailwind CSS 3.x</strong> - Utility-first CSS framework</li>
+<li><strong>Framer Motion</strong> - Smooth animations and micro-interactions</li>
+<li><strong>Lucide React</strong> - Beautiful, customizable icons</li>
+<li><strong>Custom CSS Components</strong> - Specialized styling for AV industry needs</li>
+</ul>
+<h3><strong>Form Management</strong></h3>
+<ul>
+<li><strong>React Hook Form</strong> - Performant form handling with validation</li>
+<li><strong>Custom Validation</strong> - Industry-specific validation rules</li>
+<li><strong>Real-time Feedback</strong> - Instant validation and error messaging</li>
+</ul>
+<h3><strong>PDF Generation</strong></h3>
+<ul>
+<li><strong>jsPDF</strong> - Client-side PDF generation</li>
+<li><strong>html2canvas</strong> - HTML to canvas conversion for complex layouts</li>
+<li><strong>Custom Templates</strong> - Professional quote layouts</li>
+</ul>
+<h3><strong>State Management</strong></h3>
+<ul>
+<li><strong>React Hooks</strong> - Modern state management patterns</li>
+<li><strong>localStorage</strong> - Persistent form data across sessions</li>
+<li><strong>Custom Hooks</strong> - Reusable business logic</li>
+</ul>
+<h3><strong>Build &amp; Deployment</strong></h3>
+<ul>
+<li><strong>ES Modules</strong> - Modern JavaScript module system</li>
+<li><strong>Code Splitting</strong> - Optimized bundle sizes</li>
+<li><strong>Tree Shaking</strong> - Eliminate unused code</li>
+<li><strong>Asset Optimization</strong> - Compressed images and fonts</li>
+</ul>
+<hr>
+<h2>🚀 Live Demo</h2>
+<p><strong>Development Server</strong>: <code>http://localhost:5174</code></p>
+<p>To start the application locally:</p>
+<pre class="language-bash"><code class="language-bash">npm install
+npm run dev
+</code></pre>
+<p>The application will be available at the URL shown in your terminal (typically port 5174).</p>
+<h3>🎮 Demo Features to Try:</h3>
+<ol>
+<li><strong>Complete Wizard Flow</strong> - Go through all 7 steps</li>
+<li><strong>Dynamic Pricing</strong> - Change guest count and see real-time price updates</li>
+<li><strong>Package Comparison</strong> - Compare different package options</li>
+<li><strong>PDF Generation</strong> - Generate and download professional quotes</li>
+<li><strong>Responsive Design</strong> - Test on different screen sizes</li>
+<li><strong>Accessibility</strong> - Try keyboard navigation and screen reader support</li>
+</ol>
+<hr>
+<h2>🔧 Installation</h2>
+<h3><strong>Prerequisites</strong></h3>
+<ul>
+<li><strong>Node.js</strong> 18.0 or higher</li>
+<li><strong>npm</strong> 9.0 or higher</li>
+<li><strong>Modern Browser</strong> (Chrome 90+, Firefox 88+, Safari 14+, Edge 90+)</li>
+</ul>
+<h3><strong>Quick Start</strong></h3>
+<pre class="language-bash"><code class="language-bash"># Clone the repository
+git clone https://github.com/your-repo/av-planner.git
+cd av-planner
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Open browser to http://localhost:5174
+</code></pre>
+<h3><strong>Available Scripts</strong></h3>
+<pre class="language-bash"><code class="language-bash"># Development
+npm run dev              # Start development server
+npm run build           # Build for production
+npm run build:check     # Build with TypeScript checking
+npm run build:wordpress # Build WordPress integration
+npm run preview         # Preview production build
+npm run lint           # Run ESLint
+
+# Testing
+npm test               # Run test suite (when implemented)
+npm run test:e2e       # Run end-to-end tests (when implemented)
+</code></pre>
+<h3><strong>Environment Setup</strong></h3>
+<p>Create a <code>.env</code> file in the root directory:</p>
+<pre class="language-env"><code class="language-env"># Company Information
+VITE_COMPANY_NAME=&quot;Your AV Company&quot;
+VITE_CONTACT_EMAIL=&quot;info@yourcompany.com&quot;
+VITE_PHONE=&quot;(555) 123-4567&quot;
+VITE_WEBSITE=&quot;https://yourcompany.com&quot;
+
+# API Configuration (optional)
+VITE_API_URL=&quot;https://api.yourcompany.com&quot;
+VITE_ANALYTICS_ID=&quot;GA-XXXXXXXXX&quot;
+
+# Feature Flags
+VITE_ENABLE_ANALYTICS=true
+VITE_ENABLE_CHAT=false
+VITE_DEBUG_MODE=false
+</code></pre>
+<hr>
+<h2>📁 Project Structure</h2>
+<pre class="language-text"><code>av-planner/
+├── 📁 public/                    # Static assets
+│   ├── vite.svg                 # Favicon
+│   └── images/                  # Equipment images
+├── 📁 src/
+│   ├── 📁 components/           # React components
+│   │   ├── 📁 wizard/          # Main wizard components
+│   │   │   ├── WizardContainer.tsx
+│   │   │   ├── StepIndicator.tsx
+│   │   │   └── NavigationButtons.tsx
+│   │   ├── 📁 steps/           # Individual step components
+│   │   │   ├── WelcomeStep.tsx
+│   │   │   ├── EventBasicsStep.tsx
+│   │   │   ├── EventTypeStep.tsx
+│   │   │   ├── AVRequirementsStep.tsx
+│   │   │   ├── PackageSelectionStep.tsx
+│   │   │   ├── CustomizationStep.tsx
+│   │   │   └── SummaryStep.tsx
+│   │   ├── 📁 ui/              # Reusable UI components
+│   │   │   ├── PricingCard.tsx
+│   │   │   ├── EquipmentVisualizer.tsx
+│   │   │   ├── BudgetEstimator.tsx
+│   │   │   └── Tooltip.tsx
+│   │   └── 📁 export/          # Export functionality
+│   │       ├── PDFGenerator.tsx
+│   │       └── ShareModal.tsx
+│   ├── 📁 data/                # Business data
+│   │   ├── packages.js         # Package definitions
+│   │   ├── equipment.js        # Equipment database
+│   │   └── pricing.js          # Pricing logic
+│   ├── 📁 hooks/               # Custom React hooks
+│   │   ├── useWizard.ts        # Wizard state management
+│   │   └── usePricing.ts       # Pricing calculations
+│   ├── 📁 utils/               # Utility functions
+│   │   ├── calculations.ts     # Business calculations
+│   │   └── formatters.ts       # Data formatting
+│   ├── 📁 types/               # TypeScript definitions
+│   │   └── index.ts           # Type definitions
+│   ├── App.tsx                # Main application component
+│   ├── main.tsx               # Application entry point
+│   └── index.css              # Global styles
+├── 📁 scripts/                # Build and deployment scripts
+│   └── build-wordpress.js     # WordPress integration builder
+├── �� wordpress-integration/   # WordPress plugin (generated)
+│   ├── 📁 av-planner-plugin/  # Complete WordPress plugin
+│   ├── 📁 shortcode/          # Shortcode integration
+│   └── 📁 theme-integration/   # Theme integration files
+├── 📄 package.json            # Dependencies and scripts
+├── 📄 tsconfig.json           # TypeScript configuration
+├── 📄 tailwind.config.js      # Tailwind CSS configuration
+├── 📄 vite.config.ts          # Vite configuration
+├── 📄 WORDPRESS_INTEGRATION.md # WordPress setup guide
+└── 📄 README.md               # This file
+</code></pre>
+
+            </div>
+        </article>
+    </main>
+
+    <!-- Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

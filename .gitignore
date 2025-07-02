@@ -346,6 +346,11 @@ invoices/
 contracts/
 pricing-internal/
 
+#Dashboards
+dashboard/
+dashboard\
+scripts/
+
 # ========================================
 # COMMENTS & NOTES
 # ========================================
