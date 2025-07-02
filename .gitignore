@@ -374,3 +374,10 @@ scripts/
 # 1. Remove it immediately from the repository
 # 2. Change any exposed credentials
 # 3. Consider the data compromised and take appropriate action
+/dashboard
+*.bat
+/dashboard
+/dashboard
+*.sh
+/dashboard
+/dashboard
