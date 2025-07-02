@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Video Scraper & AI Analysis Platform | Jagatab</title>
+    <meta name="description" content="A comprehensive, production-ready web application that automatically scrapes, downloads, processes, and performs AI-powered analysis on videos from any target URL.">
+    <meta name="keywords" content="video processing, AI analysis, Python development, video scraper, automation tools, machine learning">
+    <link rel="canonical" href="https://jagatab.uk/blog/videoprocessing-demo.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Universal Video Scraper & AI Analysis Platform">
+    <meta property="og:description" content="A comprehensive, production-ready web application that automatically scrapes, downloads, processes, and performs AI-powered analysis on videos from any target URL.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://jagatab.uk/blog/videoprocessing-demo.html">
+    
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Universal Video Scraper & AI Analysis Platform",
+        "description": "A comprehensive, production-ready web application that automatically scrapes, downloads, processes, and performs AI-powered analysis on videos from any target URL.",
+        "author": {
+            "@type": "Person",
+            "name": "Sree Jagatab",
+            "url": "https://jagatab.uk"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Jagatab.UK",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://jagatab.uk/logo.png"
+            }
+        },
+        "datePublished": "2025-07-02",
+        "dateModified": "2025-07-02",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://jagatab.uk/blog/videoprocessing-demo.html"
+        }
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --accent-color: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --background-light: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --transition: all 0.3s ease;
+            --font-primary: 'Inter', sans-serif;
+            --font-heading: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Article */
+        .article {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .article-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 500;
+            margin: 1rem 0;
+            transition: var(--transition);
+        }
+
+        .github-link:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Content Styling */
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-content h1,
+        .article-content h2,
+        .article-content h3,
+        .article-content h4,
+        .article-content h5,
+        .article-content h6 {
+            font-family: var(--font-heading);
+            margin: 2rem 0 1rem 0;
+            color: var(--text-dark);
+        }
+
+        .article-content h1 { font-size: 2rem; }
+        .article-content h2 { font-size: 1.75rem; }
+        .article-content h3 { font-size: 1.5rem; }
+        .article-content h4 { font-size: 1.25rem; }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-content pre {
+            background: #2d3748;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        .article-content code {
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 0.9rem;
+        }
+
+        .article-content p code {
+            background: var(--background-light);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            color: var(--primary-color);
+        }
+
+        .blog-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        .blog-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .blog-table th,
+        .blog-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .blog-table th {
+            background: var(--background-light);
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .article {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="../index.html" class="logo">Jagatab.UK</a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../services/python-automation-scripts.html">Services</a></li>
+                <li><a href="../projects.html">Repositories</a></li>
+                <li><a href="../blog/index.html">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <article class="article">
+            <header class="article-header">
+                <h1 class="article-title">Universal Video Scraper & AI Analysis Platform</h1>
+                <div class="article-meta">
+                    <span><i class="fas fa-calendar"></i> July 2, 2025</span>
+                    <span><i class="fas fa-user"></i> Sree Jagatab</span>
+                    <span><i class="fas fa-tag"></i> AI Development</span>
+                    <span><i class="fas fa-code"></i> Python</span>
+                </div>
+                <a href="https://github.com/sreejagatab/videoprocessing-demo" class="github-link" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i>
+                    View on GitHub
+                </a>
+            </header>
+            
+            <div class="article-content">
+                <h1>videoprocessing-demo</h1>
+<p>Universal Video Scraper &amp; AI Analysis Platform<br><a href="https://github.com/sreejagatab/videoprocessing">https://github.com/sreejagatab/videoprocessing</a></p>
+<p><img class="blog-image" src="https://github.com/user-attachments/assets/23752b62-ae33-445e-a5ad-2441b67f8c14" alt="20250702_1926_AI Analysis Platform_simple_compose_01jz665e8df54bft3myahefy67"></p>
+<h1>Universal Video Scraper &amp; AI Analysis Platform</h1>
+<p>A comprehensive, production-ready web application that automatically scrapes, downloads, processes, and performs AI-powered analysis on videos from any target URL.</p>
+<h2>🚀 Features</h2>
+<ul>
+<li><strong>Universal Video Support</strong>: Works with YouTube, Vimeo, Facebook, Twitter, TikTok, direct URLs, and 50+ platforms</li>
+<li><strong>AI-Powered Analysis</strong>: Transcription, summarization, sentiment analysis, topic modeling, and more</li>
+<li><strong>Real-time Processing</strong>: Live progress updates with WebSocket notifications</li>
+<li><strong>Scalable Architecture</strong>: Handle viral content and traffic spikes</li>
+<li><strong>Enterprise Ready</strong>: Production-grade security, monitoring, and reliability</li>
+</ul>
+<h2>🏗️ Architecture</h2>
+<h3>Backend Stack</h3>
+<ul>
+<li><strong>FastAPI</strong> with SQLAlchemy and Alembic</li>
+<li><strong>Celery + Redis</strong> for async video processing</li>
+<li><strong>PostgreSQL</strong> for data storage</li>
+<li><strong>MinIO/S3</strong> for object storage</li>
+<li><strong>FFmpeg</strong> for video processing</li>
+<li><strong>yt-dlp</strong> for universal video downloading</li>
+</ul>
+<h3>AI/ML Stack</h3>
+<ul>
+<li><strong>OpenAI GPT</strong> for content analysis</li>
+<li><strong>Whisper/AssemblyAI</strong> for transcription</li>
+<li><strong>Transformers</strong> for NLP processing</li>
+<li><strong>OpenCV</strong> for computer vision</li>
+</ul>
+<h3>Frontend Stack</h3>
+<ul>
+<li><strong>Next.js 14</strong> with TypeScript</li>
+<li><strong>Tailwind CSS</strong> for styling</li>
+<li><strong>React Player</strong> for video playback</li>
+<li><strong>SWR</strong> for data fetching</li>
+<li><strong>Zustand</strong> for state management</li>
+</ul>
+<h2>🚀 Quick Start</h2>
+<h3>Prerequisites</h3>
+<ul>
+<li>Docker and Docker Compose</li>
+<li>Node.js 18+ (for frontend development)</li>
+<li>Python 3.11+ (for backend development)</li>
+</ul>
+<h3>Development Setup</h3>
+<ol>
+<li><strong>Clone the repository</strong></li>
+</ol>
+<pre class="language-bash"><code class="language-bash">git clone &lt;repository-url&gt;
+cd videoprocessing
+</code></pre>
+<ol start="2">
+<li><strong>Start the development environment</strong></li>
+</ol>
+<pre class="language-bash"><code class="language-bash">docker-compose up -d
+</code></pre>
+<ol start="3">
+<li><strong>Install dependencies</strong></li>
+</ol>
+<pre class="language-bash"><code class="language-bash"># Backend
+cd backend
+pip install -r requirements.txt
+
+# Frontend
+cd ../frontend
+npm install
+</code></pre>
+<ol start="4">
+<li><strong>Run database migrations</strong></li>
+</ol>
+<pre class="language-bash"><code class="language-bash">cd backend
+alembic upgrade head
+</code></pre>
+<ol start="5">
+<li><strong>Start the development servers</strong></li>
+</ol>
+<pre class="language-bash"><code class="language-bash"># Backend (in one terminal)
+cd backend
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+
+# Frontend (in another terminal)
+cd frontend
+npm run dev
+</code></pre>
+<h2>📁 Project Structure</h2>
+<pre class="language-text"><code>videoprocessing/
+├── backend/                 # FastAPI backend
+│   ├── app/
+│   │   ├── api/            # API routes
+│   │   ├── core/           # Core configuration
+│   │   ├── models/         # Database models
+│   │   ├── services/       # Business logic
+│   │   ├── tasks/          # Celery tasks
+│   │   ���── utils/          # Utilities
+│   ├── alembic/            # Database migrations
+│   ├── tests/              # Backend tests
+│   └── requirements.txt
+├── frontend/               # Next.js frontend
+│   ├── src/
+│   │   ├── components/     # React components
+│   │   ├── pages/          # Next.js pages
+│   │   ├── hooks/          # Custom hooks
+│   │   ├── utils/          # Utilities
+│   │   └── types/          # TypeScript types
+│   ├── public/             # Static assets
+│   └── package.json
+├── docker/                 # Docker configurations
+├── k8s/                    # Kubernetes manifests
+├── terraform/              # Infrastructure as Code
+├── docs/                   # Documentation
+└── docker-compose.yml      # Development environment
+</code></pre>
+<h2>🔧 Configuration</h2>
+<h3>Environment Variables</h3>
+<p>Create <code>.env</code> files in both <code>backend/</code> and <code>frontend/</code> directories:</p>
+<p><strong>Backend (.env)</strong></p>
+<pre class="language-env"><code class="language-env">DATABASE_URL=postgresql://user:password@localhost:5432/videoprocessing
+REDIS_URL=redis://localhost:6379/0
+MINIO_ENDPOINT=localhost:9000
+MINIO_ACCESS_KEY=minioadmin
+MINIO_SECRET_KEY=minioadmin
+OPENAI_API_KEY=your-openai-key
+ASSEMBLYAI_API_KEY=your-assemblyai-key
+SECRET_KEY=your-secret-key
+</code></pre>
+<p><strong>Frontend (.env.local)</strong></p>
+<pre class="language-env"><code class="language-env">NEXT_PUBLIC_API_URL=http://localhost:8000
+NEXT_PUBLIC_WS_URL=ws://localhost:8000
+</code></pre>
+<h2>🧪 Testing</h2>
+<pre class="language-bash"><code class="language-bash"># Backend tests
+cd backend
+pytest
+
+# Frontend tests
+cd frontend
+npm test
+
+# E2E tests
+npm run test:e2e
+</code></pre>
+<h2>📊 Monitoring</h2>
+<ul>
+<li><strong>Health Check</strong>: <code>GET /health</code></li>
+<li><strong>Metrics</strong>: <code>GET /metrics</code></li>
+<li><strong>API Documentation</strong>: <code>http://localhost:8000/docs</code></li>
+</ul>
+<h2>🚀 Deployment</h2>
+<h3>Production Deployment</h3>
+<ol>
+<li><strong>Build Docker images</strong></li>
+</ol>
+<pre class="language-bash"><code class="language-bash">docker build -t videoprocessing-backend ./backend
+docker build -t videoprocessing-frontend ./frontend
+</code></pre>
+<ol start="2">
+<li><strong>Deploy with Kubernetes</strong></li>
+</ol>
+<pre class="language-bash"><code class="language-bash">kubectl apply -f k8s/
+</code></pre>
+<ol start="3">
+<li><strong>Or deploy with Docker Compose</strong></li>
+</ol>
+<pre class="language-bash"><code class="language-bash">docker-compose -f docker-compose.prod.yml up -d
+</code></pre>
+<h2>📝 API Documentation</h2>
+<p>Interactive API documentation is available at:</p>
+<ul>
+<li><strong>Swagger UI</strong>: <code>http://localhost:8000/docs</code></li>
+<li><strong>ReDoc</strong>: <code>http://localhost:8000/redoc</code></li>
+</ul>
+<h2>🤝 Contributing</h2>
+<ol>
+<li>Fork the repository</li>
+<li>Create a feature branch</li>
+<li>Make your changes</li>
+<li>Add tests</li>
+<li>Submit a pull request</li>
+</ol>
+<h2>📄 License</h2>
+<p>This project is licensed under the MIT License - see the LICENSE file for details.</p>
+<h2>🆘 Support</h2>
+<p>For support, please open an issue on GitHub or contact the development team.</p>
+
+            </div>
+        </article>
+    </main>
+
+    <!-- Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jagatab Blog Dashboard - GitHub to Blog Converter</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Dashboard Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Dashboard Header -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <i class="fas fa-blog"></i>
+                <h1>Jagatab Blog Dashboard</h1>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-secondary" onclick="refreshDashboard()">
+                    <i class="fas fa-sync-alt"></i> Refresh
+                </button>
+                <button class="btn btn-primary" onclick="openSettings()">
+                    <i class="fas fa-cog"></i> Settings
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-main">
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <nav class="sidebar-nav">
+                <a href="#converter" class="nav-item active" data-section="converter">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Add Repository</span>
+                </a>
+                <a href="#queue" class="nav-item" data-section="queue">
+                    <i class="fas fa-list-ul"></i>
+                    <span>Processing Queue</span>
+                </a>
+                <a href="#posts" class="nav-item" data-section="posts">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Blog Posts</span>
+                </a>
+                <a href="#analytics" class="nav-item" data-section="analytics">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="#templates" class="nav-item" data-section="templates">
+                    <i class="fas fa-palette"></i>
+                    <span>Templates</span>
+                </a>
+                <a href="#seo" class="nav-item" data-section="seo">
+                    <i class="fas fa-search"></i>
+                    <span>SEO Tools</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Dashboard Content Area -->
+        <div class="dashboard-content">
+            <!-- GitHub Repository Converter Section -->
+            <section id="converter" class="content-section active">
+                <div class="section-header">
+                    <h2><i class="fab fa-github"></i> GitHub Repository Converter</h2>
+                    <p>Convert your GitHub repositories into professional blog posts</p>
+                </div>
+
+                <!-- Single Repository Converter -->
+                <div class="converter-card">
+                    <h3>Single Repository</h3>
+                    <div class="input-group">
+                        <input type="url" id="github-url" placeholder="https://github.com/username/repository" class="form-input">
+                        <button onclick="convertSingle()" class="btn btn-primary">
+                            <i class="fas fa-magic"></i> Convert
+                        </button>
+                    </div>
+                    <div class="converter-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="auto-publish" checked>
+                            <span>Auto-publish to blog index</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="preview-first">
+                            <span>Preview before publishing</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Batch Repository Converter -->
+                <div class="converter-card">
+                    <h3>Batch Processing</h3>
+                    <div class="batch-input">
+                        <textarea id="batch-urls" placeholder="Enter multiple GitHub URLs (one per line)&#10;https://github.com/username/repo1&#10;https://github.com/username/repo2&#10;https://github.com/username/repo3" class="form-textarea"></textarea>
+                        <div class="batch-actions">
+                            <button onclick="validateBatchUrls()" class="btn btn-secondary">
+                                <i class="fas fa-check"></i> Validate URLs
+                            </button>
+                            <button onclick="convertBatch()" class="btn btn-primary">
+                                <i class="fas fa-rocket"></i> Convert All
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <button onclick="importFromGitHubProfile()" class="btn btn-outline">
+                            <i class="fab fa-github"></i> Import from Profile
+                        </button>
+                        <button onclick="loadFromFile()" class="btn btn-outline">
+                            <i class="fas fa-file-upload"></i> Load from File
+                        </button>
+                        <button onclick="openTemplateSelector()" class="btn btn-outline">
+                            <i class="fas fa-palette"></i> Choose Template
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Processing Queue Section -->
+            <section id="queue" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-list-ul"></i> Processing Queue</h2>
+                    <p>Monitor conversion progress and manage queue</p>
+                </div>
+
+                <div class="queue-controls">
+                    <button onclick="pauseQueue()" class="btn btn-secondary">
+                        <i class="fas fa-pause"></i> Pause Queue
+                    </button>
+                    <button onclick="clearCompleted()" class="btn btn-outline">
+                        <i class="fas fa-trash"></i> Clear Completed
+                    </button>
+                    <button onclick="retryFailed()" class="btn btn-warning">
+                        <i class="fas fa-redo"></i> Retry Failed
+                    </button>
+                </div>
+
+                <div id="queue-list" class="queue-list">
+                    <!-- Queue items will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Blog Posts Management Section -->
+            <section id="posts" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-file-alt"></i> Blog Posts Management</h2>
+                    <p>Manage your existing blog posts</p>
+                </div>
+
+                <div class="posts-controls">
+                    <div class="search-filter">
+                        <input type="search" id="posts-search" placeholder="Search posts..." class="form-input">
+                        <select id="posts-filter" class="form-select">
+                            <option value="all">All Posts</option>
+                            <option value="published">Published</option>
+                            <option value="draft">Drafts</option>
+                            <option value="github">GitHub Projects</option>
+                        </select>
+                    </div>
+                    <div class="view-options">
+                        <button onclick="setPostsView('grid')" class="btn btn-sm btn-outline active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button onclick="setPostsView('list')" class="btn btn-sm btn-outline" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="posts-grid" class="posts-grid">
+                    <!-- Blog posts will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Analytics Section -->
+            <section id="analytics" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-chart-bar"></i> Analytics & Performance</h2>
+                    <p>Track your blog performance and SEO metrics</p>
+                </div>
+
+                <div class="analytics-cards">
+                    <div class="analytics-card">
+                        <div class="card-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3 id="total-views">0</h3>
+                            <p>Total Views</p>
+                        </div>
+                    </div>
+                    <div class="analytics-card">
+                        <div class="card-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3 id="total-posts">0</h3>
+                            <p>Blog Posts</p>
+                        </div>
+                    </div>
+                    <div class="analytics-card">
+                        <div class="card-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3 id="github-posts">0</h3>
+                            <p>GitHub Projects</p>
+                        </div>
+                    </div>
+                    <div class="analytics-card">
+                        <div class="card-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3 id="avg-seo-score">0</h3>
+                            <p>Avg SEO Score</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analytics-charts">
+                    <div class="chart-container">
+                        <h3>Conversion Activity</h3>
+                        <canvas id="activity-chart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Top Performing Posts</h3>
+                        <div id="top-posts-list"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Templates Section -->
+            <section id="templates" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-palette"></i> Blog Templates</h2>
+                    <p>Customize the appearance of your blog posts</p>
+                </div>
+
+                <div class="templates-grid">
+                    <!-- Templates will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- SEO Tools Section -->
+            <section id="seo" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-search"></i> SEO Optimization Tools</h2>
+                    <p>Optimize your blog posts for search engines</p>
+                </div>
+
+                <div class="seo-tools">
+                    <div class="seo-analyzer">
+                        <h3>SEO Analyzer</h3>
+                        <div class="analyzer-input">
+                            <select id="seo-post-select" class="form-select">
+                                <option value="">Select a blog post to analyze</option>
+                            </select>
+                            <button onclick="analyzeSEO()" class="btn btn-primary">
+                                <i class="fas fa-search"></i> Analyze
+                            </button>
+                        </div>
+                        <div id="seo-results" class="seo-results"></div>
+                    </div>
+
+                    <div class="keyword-tools">
+                        <h3>Keyword Research</h3>
+                        <div class="keyword-input">
+                            <input type="text" id="keyword-input" placeholder="Enter keywords..." class="form-input">
+                            <button onclick="researchKeywords()" class="btn btn-secondary">
+                                <i class="fas fa-search"></i> Research
+                            </button>
+                        </div>
+                        <div id="keyword-results" class="keyword-results"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modals and Overlays -->
+    <div id="preview-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Blog Post Preview</h3>
+                <button onclick="closeModal('preview-modal')" class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="preview-content"></div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="closeModal('preview-modal')" class="btn btn-secondary">Cancel</button>
+                <button onclick="publishFromPreview()" class="btn btn-primary">Publish</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p id="loading-text">Processing...</p>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="dashboard.js"></script>
+    <script src="converter.js"></script>
+    <script src="analytics.js"></script>
+    <script src="seo-tools.js"></script>
+</body>
+</html>

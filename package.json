@@ -1,0 +1,26 @@
+{
+  "name": "jagatab-blog-tools",
+  "version": "1.0.0",
+  "description": "Blog management tools for Jagatab.UK website",
+  "main": "index.js",
+  "scripts": {
+    "convert-github": "node scripts/github-to-blog-converter.js",
+    "add-to-index": "node scripts/add-to-blog-index.js",
+    "install-deps": "npm install marked"
+  },
+  "keywords": [
+    "blog",
+    "github",
+    "markdown",
+    "converter"
+  ],
+  "author": "Sree Jagatab",
+  "license": "MIT",
+  "dependencies": {
+    "marked": "^9.1.6"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
