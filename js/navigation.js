@@ -1,11 +1,26 @@
 /**
  * Shared Navigation Component for Jagatab.UK
- * Ensures consistent navigation links across all pages
- * Prevents blog.html vs blog/ inconsistencies
+ *
+ * ⚠️  DEPRECATED: This file is deprecated as of 2024
+ *
+ * Please use the new Universal Components system instead:
+ * - File: js/universal-components.js
+ * - Features: Responsive design, accessibility, consistent styling
+ * - Migration guide: UNIVERSAL-COMPONENTS-MIGRATION.md
+ *
+ * This file is kept for backward compatibility only.
+ *
+ * @deprecated Use js/universal-components.js instead
+ * @version 2.0.0 (DEPRECATED)
+ * @author Jagatab.UK
  */
+
+console.warn('⚠️  NavigationManager is DEPRECATED. Please migrate to Universal Components (js/universal-components.js)');
 
 class NavigationManager {
     constructor() {
+        // Show deprecation warning
+        this.showDeprecationWarning();
         this.navigationConfig = {
             // Standard navigation links - always use these exact URLs
             links: {
@@ -122,6 +137,48 @@ class NavigationManager {
                 }
             });
         });
+    }
+
+    // Deprecation warning method
+    showDeprecationWarning() {
+        if (typeof document !== 'undefined') {
+            // Create a visual warning banner
+            const banner = document.createElement('div');
+            banner.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: #f59e0b;
+                color: white;
+                padding: 10px;
+                text-align: center;
+                font-weight: bold;
+                z-index: 10000;
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+            `;
+            banner.innerHTML = `
+                ⚠️ DEPRECATED: NavigationManager is deprecated. Please migrate to Universal Components (js/universal-components.js)
+                <button onclick="this.parentElement.remove()" style="margin-left: 10px; background: white; color: #f59e0b; border: none; padding: 2px 8px; border-radius: 3px; cursor: pointer;">×</button>
+            `;
+
+            // Show banner for 10 seconds
+            document.body.insertBefore(banner, document.body.firstChild);
+            setTimeout(() => {
+                if (banner.parentElement) {
+                    banner.remove();
+                }
+            }, 10000);
+        }
+
+        console.group('🚨 NavigationManager Deprecation Notice');
+        console.warn('This NavigationManager is DEPRECATED and will be removed in a future version.');
+        console.info('Please migrate to the new Universal Components system:');
+        console.info('• File: js/universal-components.js');
+        console.info('• Migration guide: UNIVERSAL-COMPONENTS-MIGRATION.md');
+        console.info('• Benefits: Responsive design, accessibility, consistent styling');
+        console.groupEnd();
     }
 
     /**

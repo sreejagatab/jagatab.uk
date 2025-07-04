@@ -568,26 +568,7 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="index.html" class="logo">Jagatab.UK</a>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="index.html#services" class="nav-link">Services</a></li>
-                <li><a href="index.html#portfolio" class="nav-link">Portfolio</a></li>
-                <li><a href="projects.html" class="nav-link active">Repositories</a></li>
-                <li><a href="virtual-assistant.html" class="nav-link">Virtual Assistant</a></li>
-                <li><a href="index.html#about" class="nav-link">About</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-                <li><a href="blog/" class="nav-link">Blog</a></li>
-                <li><a href="https://universal-blog-platform.vercel.app/" class="nav-link" target="_blank" rel="noopener noreferrer">UniBlog</a></li>
-            </ul>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
-        </nav>
-    </header>
+    <!-- Universal Navigation will be injected here by universal-components.js -->
 
     <!-- Main Content -->
     <main class="main-content">
@@ -851,7 +832,6 @@
             initializeProjects();
             initializeFilters();
             initializeViewToggle();
-            initializeNavigation();
             initializeAnalytics();
         });
 
@@ -1021,28 +1001,7 @@
             renderProjects(filteredProjects);
         }
 
-        // Initialize navigation
-        function initializeNavigation() {
-            const header = document.getElementById('header');
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            const navMenu = document.getElementById('navMenu');
-
-            // Header scroll effect
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-
-            // Mobile menu toggle
-            if (mobileMenuToggle) {
-                mobileMenuToggle.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                });
-            }
-        }
+        // Navigation functionality now handled by universal-components.js
 
         // Analytics and tracking functions
         function initializeAnalytics() {
@@ -1184,5 +1143,8 @@
             console.log('Event tracked:', eventName, parameters);
         }
     </script>
+
+    <!-- Universal Components -->
+    <script src="js/universal-components.js"></script>
 </body>
 </html>

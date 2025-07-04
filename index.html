@@ -104,37 +104,11 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        .header {
-            background: var(--white);
-            box-shadow: var(--shadow);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            transition: var(--transition);
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
+        /* Header and navigation styles now handled by universal-components.js */
 
         .hero {
             background: linear-gradient(135deg, var(--background-light) 0%, #e0f2fe 100%);
-            padding-top: 8rem;
+            padding-top: 2rem;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -589,88 +563,7 @@ a:hover {
 
 
 
-/* Header Styles */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: var(--white);
-    box-shadow: var(--shadow);
-    z-index: 1000;
-    transition: var(--transition);
-}
-
-.header.scrolled {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-}
-
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
-}
-
-.logo {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #1e40af;
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-link {
-    font-weight: 500;
-    transition: var(--transition);
-}
-
-.nav-link:hover {
-    color: var(--secondary-color);
-}
-
-.mobile-menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    cursor: pointer;
-}
-
-/* Mobile Menu */
-@media (max-width: 768px) {
-    .mobile-menu-toggle {
-        display: block;
-    }
-    
-    .nav-menu {
-        position: fixed;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--white);
-        flex-direction: column;
-        padding: 2rem;
-        box-shadow: var(--shadow);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: var(--transition);
-    }
-    
-    .nav-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-}
+/* Navigation styles now handled by universal-components.js */
 
 /* Hero Section Styles */
 .hero {
@@ -3832,27 +3725,7 @@ textarea:focus {
 
 
 
-    <!-- Header -->
-    <header class="header" id="header" role="banner">
-        <nav class="nav container" role="navigation" aria-label="Main navigation">
-            <div class="logo" aria-label="Jagatab - AI Automation and Python Development">Jagatab.UK</div>
-            <ul class="nav-menu" id="navMenu" role="menubar" aria-label="Main menu">
-                <li role="none"><a href="#home" class="nav-link" role="menuitem" aria-label="Go to Home section">Home</a></li>
-                <li role="none"><a href="#services" class="nav-link" role="menuitem" aria-label="AI Automation & Python Services">AI Automation</a></li>
-                <li role="none"><a href="#portfolio" class="nav-link" role="menuitem" aria-label="View our project portfolio">Portfolio</a></li>
-                <li role="none"><a href="projects.html" class="nav-link" role="menuitem" aria-label="Python Projects & Code Examples">Python Projects</a></li>
-                <li role="none"><a href="virtual-assistant.html" class="nav-link" role="menuitem" aria-label="Virtual Assistant Services">Virtual Assistant</a></li>
-                <li role="none"><a href="#about" class="nav-link" role="menuitem" aria-label="About Sree Jagatab">About</a></li>
-                <li role="none"><a href="#testimonials" class="nav-link" role="menuitem" aria-label="Client testimonials and reviews">Testimonials</a></li>
-                <li role="none"><a href="blog/" class="nav-link" role="menuitem" aria-label="Latest insights and resources">Blog</a></li>
-                <li role="none"><a href="https://universal-blog-platform.vercel.app/" class="nav-link" role="menuitem" aria-label="Universal Blog Platform" target="_blank" rel="noopener noreferrer">UniBlog</a></li>
-                <li role="none"><a href="#contact" class="nav-link" role="menuitem" aria-label="Get in touch for consultation">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navMenu">
-                <i class="fas fa-bars" aria-hidden="true"></i>
-            </button>
-        </nav>
-    </header>
+    <!-- Universal Navigation will be injected here by universal-components.js -->
 
     <!-- Main Content -->
     <main id="main-content">
@@ -5618,78 +5491,7 @@ textarea:focus {
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Jagatab.UK</h3>
-                    <p>Transforming businesses across Cambridgeshire with AI automation and Python development solutions. Based in Wisbech, serving the UK and international clients.</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/sreejagatab/" class="social-link" title="LinkedIn - Sree Jagatab" target="_blank" rel="noopener">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/sreejagatab" class="social-link" title="GitHub - Sree Jagatab" target="_blank" rel="noopener">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://x.com/SavingBargain" class="social-link" title="X (Twitter) - SavingBargain" target="_blank" rel="noopener">
-                            <i class="fab fa-x-twitter"></i>
-                        </a>
-                        <a href="https://www.facebook.com/Jagatabandsonsukltd/" class="social-link" title="Facebook - Jagatab and Sons UK Ltd" target="_blank" rel="noopener">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://www.instagram.com/gotvan_savingbargainsltd/" class="social-link" title="Instagram - GotVan Saving Bargains Ltd" target="_blank" rel="noopener">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="python-development-cambridge.html">Python Development Cambridge</a></li>
-                        <li><a href="ai-automation-cambridgeshire.html">AI Automation Cambridgeshire</a></li>
-                        <li><a href="virtual-assistant-wisbech.html">Virtual Assistant Wisbech</a></li>
-                        <li><a href="#services">Micro SaaS Development</a></li>
-                        <li><a href="#services">Technical SEO + Automation</a></li>
-                        <li><a href="#services">AI-Powered Content Creation</a></li>
-                        <li><a href="#services">Web Development + SEO</a></li>
-                        <li><a href="#services">Chatbot Creation</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="blog/">Blog</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html">Terms of Service</a></li>
-                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> sreejagatab@yahoo.com</li>
-                        <li><i class="fas fa-phone"></i> 07864 880790</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Wisbech, Cambridgeshire, UK</li>
-                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM</li>
-                    </ul>
-                    <p>Serving Cambridgeshire, UK, and international clients with cutting-edge AI automation solutions.</p>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2024 Jagatab. All rights reserved. | AI Automation & Python Development Services in Wisbech, Cambridgeshire, UK</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Universal Footer will be injected here by universal-components.js -->
 
     <!-- Floating Action Buttons -->
     <div class="floating-actions">
@@ -5854,7 +5656,6 @@ textarea:focus {
             // Check browser support first
             checkBrowserSupport();
             // Initialize all functionality
-            initializeNavigation();
             initializeScrollEffects();
             initializePortfolioFilter();
             initializeFormValidation();
@@ -5874,79 +5675,7 @@ textarea:focus {
 
 
 
-        // Navigation Functionality
-        function initializeNavigation() {
-            const header = document.getElementById('header');
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            const navMenu = document.getElementById('navMenu');
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            // Header scroll effect
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-
-            // Mobile menu toggle
-            mobileMenuToggle.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-                const icon = this.querySelector('i');
-                const isActive = navMenu.classList.contains('active');
-
-                if (isActive) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                    this.setAttribute('aria-expanded', 'true');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                    this.setAttribute('aria-expanded', 'false');
-                }
-            });
-
-            // Smooth scrolling for navigation links
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const targetId = this.getAttribute('href');
-
-                    // Check if it's an external link (contains .html or starts with http)
-                    if (targetId.includes('.html') || targetId.startsWith('http')) {
-                        // Allow default behavior for external links
-                        // Close mobile menu if open
-                        navMenu.classList.remove('active');
-                        const icon = mobileMenuToggle.querySelector('i');
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                        return; // Don't prevent default, let the link navigate normally
-                    }
-
-                    // Handle internal section links
-                    e.preventDefault();
-                    const targetSection = document.querySelector(targetId);
-
-                    if (targetSection) {
-                        const headerHeight = header.offsetHeight;
-                        const targetPosition = targetSection.offsetTop - headerHeight - 20; // Add 20px buffer
-
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-
-                    // Close mobile menu if open
-                    navMenu.classList.remove('active');
-                    const icon = mobileMenuToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                });
-            });
-        }
+        // Navigation functionality now handled by universal-components.js
 
         // Scroll Effects and Animations
         function initializeScrollEffects() {
@@ -7833,7 +7562,7 @@ textarea:focus {
         console.log('✅ SEO and accessibility features implemented');
     </script>
 
-    <!-- Navigation Manager -->
-    <script src="js/navigation.js"></script>
+    <!-- Universal Components -->
+    <script src="js/universal-components.js"></script>
 </body>
 </html>

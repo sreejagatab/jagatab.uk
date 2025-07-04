@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Fixes Test | Jagatab.UK</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --background-light: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --font-primary: 'Inter', sans-serif;
+            --font-heading: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .test-section {
+            background: var(--white);
+            margin: 2rem 0;
+            padding: 3rem 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .test-section h1 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .test-section h2 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .test-section p {
+            color: var(--text-light);
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+        }
+
+        .test-instructions {
+            background: rgba(30, 64, 175, 0.1);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .test-instructions h3 {
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .test-instructions ol {
+            padding-left: 2rem;
+        }
+
+        .test-instructions li {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+            margin: 0.5rem;
+        }
+
+        .status-pass {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+        }
+
+        .status-fail {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+        }
+
+        .spacer {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        #home {
+            background: linear-gradient(135deg, var(--background-light) 0%, #e0f2fe 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        #services, #portfolio, #about, #testimonials, #contact {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #services { background: #fef3c7; }
+        #portfolio { background: #ddd6fe; }
+        #about { background: #fce7f3; }
+        #testimonials { background: #d1fae5; }
+        #contact { background: #fed7d7; }
+    </style>
+</head>
+<body>
+    <!-- Universal Navigation will be injected here -->
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container">
+            <div class="test-section">
+                <h1>🧪 Navigation Fixes Test</h1>
+                <p>This page tests the two navigation fixes:</p>
+                
+                <div class="test-instructions">
+                    <h3>🎯 Test Instructions:</h3>
+                    <ol>
+                        <li><strong>Logo Click Test:</strong> Click on "Jagatab.UK" in the navigation bar - it should scroll smoothly to the top of this page</li>
+                        <li><strong>UniBlog Visibility Test:</strong> Look for "UniBlog" in the navigation bar - it should be visible with an external link indicator (↗)</li>
+                        <li><strong>UniBlog Click Test:</strong> Click on "UniBlog" - it should open the Universal Blog Platform in a new tab</li>
+                        <li><strong>Scroll Test:</strong> Scroll down and then click the logo again to test scroll-to-top functionality</li>
+                    </ol>
+                </div>
+
+                <div id="test-results">
+                    <h3>Test Results:</h3>
+                    <div class="status-indicator status-pass">
+                        <i class="fas fa-check"></i> Logo click should scroll to top
+                    </div>
+                    <div class="status-indicator status-pass">
+                        <i class="fas fa-check"></i> UniBlog should be visible in nav
+                    </div>
+                    <div class="status-indicator status-pass">
+                        <i class="fas fa-external-link-alt"></i> UniBlog should open in new tab
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="test-section">
+                <h2>🛠️ Services Section</h2>
+                <p>This section tests internal navigation. Click "AI Automation" in the nav to scroll here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="test-section">
+                <h2>📁 Portfolio Section</h2>
+                <p>This section tests internal navigation. Click "Portfolio" in the nav to scroll here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="test-section">
+                <h2>👨‍💻 About Section</h2>
+                <p>This section tests internal navigation. Click "About" in the nav to scroll here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="test-section">
+                <h2>⭐ Testimonials Section</h2>
+                <p>This section tests internal navigation. Click "Testimonials" in the nav to scroll here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="test-section">
+                <h2>📞 Contact Section</h2>
+                <p>This section tests internal navigation. Click "Contact" in the nav to scroll here.</p>
+                
+                <div class="test-instructions">
+                    <h3>🔄 Final Test:</h3>
+                    <ol>
+                        <li>Scroll back to the top by clicking the "Jagatab.UK" logo</li>
+                        <li>Verify smooth scrolling behavior</li>
+                        <li>Check that UniBlog is still visible in the navigation</li>
+                        <li>Test mobile menu if on a mobile device</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Universal Footer will be injected here -->
+
+    <!-- Universal Components -->
+    <script src="js/universal-components.js"></script>
+    
+    <script>
+        // Additional test logging
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                console.log('🧪 Navigation Test Page Loaded');
+                
+                // Check if UniBlog is in the DOM
+                const uniblogLink = document.querySelector('a[href*="universal-blog-platform"]');
+                if (uniblogLink) {
+                    console.log('✅ UniBlog link found in DOM:', uniblogLink);
+                    console.log('✅ UniBlog text:', uniblogLink.textContent);
+                    console.log('✅ UniBlog URL:', uniblogLink.href);
+                    console.log('✅ UniBlog target:', uniblogLink.target);
+                } else {
+                    console.error('❌ UniBlog link NOT found in DOM');
+                }
+                
+                // Check logo
+                const logo = document.querySelector('.universal-logo');
+                if (logo) {
+                    console.log('✅ Logo found:', logo.textContent);
+                } else {
+                    console.error('❌ Logo NOT found');
+                }
+                
+                // List all navigation links
+                const navLinks = document.querySelectorAll('.universal-nav-link');
+                console.log('🔗 All navigation links:');
+                navLinks.forEach((link, index) => {
+                    console.log(`  ${index + 1}. ${link.textContent.trim()} → ${link.href}`);
+                });
+                
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

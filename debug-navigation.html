@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Debug | Jagatab.UK</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            padding: 2rem;
+            background: #f8fafc;
+        }
+        
+        .debug-panel {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+        
+        .debug-panel h2 {
+            color: #1e40af;
+            margin-bottom: 1rem;
+        }
+        
+        .debug-info {
+            background: #f1f5f9;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            font-family: monospace;
+        }
+        
+        .nav-item {
+            background: #e0f2fe;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border-radius: 4px;
+            border-left: 4px solid #1e40af;
+        }
+        
+        .error {
+            background: #fee2e2;
+            border-left-color: #ef4444;
+        }
+        
+        .success {
+            background: #d1fae5;
+            border-left-color: #10b981;
+        }
+    </style>
+</head>
+<body>
+    <!-- Universal Navigation will be injected here -->
+    
+    <div class="debug-panel">
+        <h2>🔍 Navigation Debug Panel</h2>
+        <p>This page will help diagnose navigation issues.</p>
+        
+        <div id="debug-output">
+            <div class="debug-info">Loading navigation debug information...</div>
+        </div>
+    </div>
+
+    <!-- Universal Components -->
+    <script src="js/universal-components.js"></script>
+    
+    <script>
+        function debugNavigation() {
+            const debugOutput = document.getElementById('debug-output');
+            let html = '';
+            
+            // Check if universal components loaded
+            html += '<div class="debug-info"><strong>Universal Components Status:</strong><br>';
+            if (window.UniversalComponents) {
+                html += '✅ UniversalComponents class found<br>';
+            } else {
+                html += '❌ UniversalComponents class NOT found<br>';
+            }
+            
+            if (window.universalComponentsInitialized) {
+                html += '✅ Universal components initialized<br>';
+            } else {
+                html += '❌ Universal components NOT initialized<br>';
+            }
+            html += '</div>';
+            
+            // Check navigation elements
+            html += '<div class="debug-info"><strong>Navigation Elements:</strong><br>';
+            
+            const header = document.querySelector('.universal-header');
+            if (header) {
+                html += '✅ Universal header found<br>';
+            } else {
+                html += '❌ Universal header NOT found<br>';
+            }
+            
+            const logo = document.querySelector('.universal-logo');
+            if (logo) {
+                html += `✅ Logo found: "${logo.textContent}"<br>`;
+                html += `   Logo href: ${logo.href}<br>`;
+            } else {
+                html += '❌ Logo NOT found<br>';
+            }
+            
+            const navMenu = document.querySelector('.universal-nav-menu');
+            if (navMenu) {
+                html += '✅ Navigation menu found<br>';
+            } else {
+                html += '❌ Navigation menu NOT found<br>';
+            }
+            html += '</div>';
+            
+            // List all navigation links
+            const navLinks = document.querySelectorAll('.universal-nav-link');
+            html += `<div class="debug-info"><strong>Navigation Links (${navLinks.length} found):</strong><br>`;
+            
+            if (navLinks.length === 0) {
+                html += '<div class="nav-item error">❌ No navigation links found!</div>';
+            } else {
+                navLinks.forEach((link, index) => {
+                    const isExternal = link.classList.contains('external');
+                    const isActive = link.classList.contains('active');
+                    const text = link.textContent.trim();
+                    const href = link.href;
+                    const target = link.target;
+                    
+                    html += `<div class="nav-item ${isExternal ? 'success' : ''}">
+                        <strong>${index + 1}. ${text}</strong><br>
+                        URL: ${href}<br>
+                        External: ${isExternal ? '✅ Yes' : '❌ No'}<br>
+                        Target: ${target || 'none'}<br>
+                        Active: ${isActive ? '✅ Yes' : '❌ No'}<br>
+                        Classes: ${link.className}
+                    </div>`;
+                });
+            }
+            html += '</div>';
+            
+            // Check for UniBlog specifically
+            const uniblogLink = document.querySelector('a[href*="universal-blog-platform"]');
+            html += '<div class="debug-info"><strong>UniBlog Link Check:</strong><br>';
+            if (uniblogLink) {
+                html += `✅ UniBlog link found!<br>`;
+                html += `   Text: "${uniblogLink.textContent.trim()}"<br>`;
+                html += `   URL: ${uniblogLink.href}<br>`;
+                html += `   Target: ${uniblogLink.target}<br>`;
+                html += `   Classes: ${uniblogLink.className}<br>`;
+                html += `   External icon: ${uniblogLink.innerHTML.includes('fa-external-link') ? '✅ Yes' : '❌ No'}<br>`;
+            } else {
+                html += '❌ UniBlog link NOT found!<br>';
+                
+                // Check if it exists in the HTML source
+                const bodyHTML = document.body.innerHTML;
+                if (bodyHTML.includes('universal-blog-platform')) {
+                    html += '⚠️ UniBlog URL found in HTML but not as a proper link<br>';
+                } else {
+                    html += '❌ UniBlog URL not found anywhere in HTML<br>';
+                }
+                
+                if (bodyHTML.includes('UniBlog')) {
+                    html += '⚠️ "UniBlog" text found in HTML<br>';
+                } else {
+                    html += '❌ "UniBlog" text not found in HTML<br>';
+                }
+            }
+            html += '</div>';
+            
+            // Check viewport and responsive behavior
+            html += '<div class="debug-info"><strong>Viewport Information:</strong><br>';
+            html += `Window width: ${window.innerWidth}px<br>`;
+            html += `Window height: ${window.innerHeight}px<br>`;
+            html += `Mobile view: ${window.innerWidth <= 768 ? '✅ Yes' : '❌ No'}<br>`;
+            
+            const mobileToggle = document.querySelector('.universal-mobile-toggle');
+            if (mobileToggle) {
+                const isVisible = window.getComputedStyle(mobileToggle).display !== 'none';
+                html += `Mobile toggle visible: ${isVisible ? '✅ Yes' : '❌ No'}<br>`;
+            }
+            html += '</div>';
+            
+            // Performance information
+            if (typeof performance !== 'undefined' && performance.getEntriesByName) {
+                const initMeasure = performance.getEntriesByName('universal-components-init')[0];
+                if (initMeasure) {
+                    html += `<div class="debug-info"><strong>Performance:</strong><br>`;
+                    html += `Initialization time: ${initMeasure.duration.toFixed(2)}ms<br>`;
+                    html += '</div>';
+                }
+            }
+            
+            debugOutput.innerHTML = html;
+        }
+        
+        // Run debug after components load
+        window.addEventListener('load', () => {
+            setTimeout(debugNavigation, 2000);
+        });
+        
+        // Also run debug when clicking anywhere
+        document.addEventListener('click', () => {
+            setTimeout(debugNavigation, 100);
+        });
+        
+        // Console logging
+        console.log('🔍 Navigation Debug Page Loaded');
+        console.log('Click anywhere on the page to refresh debug information');
+    </script>
+</body>
+</html>
