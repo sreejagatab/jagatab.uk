@@ -18,6 +18,7 @@ class NavigationManager {
                 about: 'index.html#about',
                 testimonials: 'index.html#testimonials',
                 blog: 'blog/', // Always use directory structure for SEO
+                uniblog: 'https://universal-blog-platform.vercel.app/',
                 contact: 'index.html#contact'
             },
             

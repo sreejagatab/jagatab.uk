@@ -336,6 +336,8 @@ development/
 # Client-specific files
 client-data/
 customer-info/
+blogplatform/
+blogplatform1/
 
 # Marketing materials (if sensitive)
 marketing-drafts/
