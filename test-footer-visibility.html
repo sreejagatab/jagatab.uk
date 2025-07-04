@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Visibility Test | Jagatab.UK</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --background-light: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --font-primary: 'Inter', sans-serif;
+            --font-heading: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .test-section {
+            background: var(--white);
+            margin: 2rem 0;
+            padding: 3rem 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .test-section h1 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .test-section p {
+            color: var(--text-light);
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+        }
+
+        .visibility-test {
+            background: rgba(30, 64, 175, 0.1);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .visibility-test h3 {
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .visibility-test ol {
+            padding-left: 2rem;
+        }
+
+        .visibility-test li {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .comparison-box {
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .before {
+            background: #fee2e2;
+            border: 2px solid #ef4444;
+        }
+
+        .after {
+            background: #d1fae5;
+            border: 2px solid #10b981;
+        }
+
+        .comparison-box h4 {
+            margin-bottom: 1rem;
+            font-family: var(--font-heading);
+        }
+
+        .before h4 { color: #ef4444; }
+        .after h4 { color: #10b981; }
+
+        .mock-footer-text {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .old-opacity { opacity: 0.8; }
+        .new-opacity { opacity: 1; color: rgba(255, 255, 255, 0.95); }
+
+        .spacer {
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--background-light) 0%, #e0f2fe 100%);
+            font-size: 1.5rem;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            .before-after {
+                grid-template-columns: 1fr;
+            }
+            
+            .test-section h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Universal Navigation will be injected here -->
+
+    <main>
+        <div class="container">
+            <!-- Test Header -->
+            <div class="test-section">
+                <h1>👁️ Footer Visibility Test</h1>
+                <p>Testing the improved visibility of footer text elements</p>
+                
+                <div class="visibility-test">
+                    <h3>🎯 What Was Fixed:</h3>
+                    <ol>
+                        <li><strong>Company Description Text:</strong> Increased opacity from 0.9 to 1.0 with better color contrast</li>
+                        <li><strong>Copyright Text:</strong> Increased opacity from 0.8 to 1.0 with improved color</li>
+                        <li><strong>Footer Links:</strong> Enhanced visibility with better color contrast</li>
+                        <li><strong>Privacy/Terms Links:</strong> Added underlines and improved color for better visibility</li>
+                    </ol>
+                </div>
+
+                <div class="before-after">
+                    <div class="comparison-box before">
+                        <h4>❌ Before (Too Light)</h4>
+                        <div class="mock-footer-text old-opacity">
+                            Transforming businesses across Cambridgeshire with AI automation and Python development solutions. Based in Wisbech, serving the UK and international clients.
+                        </div>
+                        <div class="mock-footer-text old-opacity">
+                            © 2025 Jagatab.UK - AI Automation & Python Development. All rights reserved.
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-box after">
+                        <h4>✅ After (Better Visibility)</h4>
+                        <div class="mock-footer-text new-opacity">
+                            Transforming businesses across Cambridgeshire with AI automation and Python development solutions. Based in Wisbech, serving the UK and international clients.
+                        </div>
+                        <div class="mock-footer-text new-opacity">
+                            © 2025 Jagatab.UK - AI Automation & Python Development. All rights reserved.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visibility-test">
+                    <h3>🧪 Test Instructions:</h3>
+                    <ol>
+                        <li>Scroll down to the footer at the bottom of this page</li>
+                        <li>Check the visibility of the company description text</li>
+                        <li>Verify the copyright text is clearly readable</li>
+                        <li>Ensure Privacy Policy and Terms of Service links are visible</li>
+                        <li>Test on different devices and screen sizes</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spacer to push footer down -->
+        <div class="spacer">
+            <div>
+                <h2>📱 Test on Different Devices</h2>
+                <p>Resize your browser window or test on mobile devices</p>
+            </div>
+        </div>
+
+        <div class="spacer" style="background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);">
+            <div>
+                <h2>🔍 Footer Visibility Check</h2>
+                <p>Scroll down to see the improved footer text visibility</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Universal Footer will be injected here with improved visibility -->
+
+    <!-- Universal Components -->
+    <script src="js/universal-components.js"></script>
+    
+    <script>
+        // Test footer visibility after page loads
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                console.log('🧪 Footer Visibility Test Page Loaded');
+                
+                // Check footer elements
+                const footer = document.querySelector('.universal-footer');
+                if (footer) {
+                    console.log('✅ Universal footer found');
+                    
+                    // Check company description
+                    const companyDesc = footer.querySelector('.universal-footer-section p');
+                    if (companyDesc) {
+                        const styles = window.getComputedStyle(companyDesc);
+                        console.log('📝 Company description opacity:', styles.opacity);
+                        console.log('📝 Company description color:', styles.color);
+                    }
+                    
+                    // Check copyright section
+                    const copyright = footer.querySelector('.universal-footer-bottom');
+                    if (copyright) {
+                        const styles = window.getComputedStyle(copyright);
+                        console.log('©️ Copyright section opacity:', styles.opacity);
+                        console.log('©️ Copyright section color:', styles.color);
+                    }
+                    
+                    // Check footer links
+                    const footerLinks = footer.querySelectorAll('.universal-footer-links a');
+                    console.log(`🔗 Found ${footerLinks.length} footer links`);
+                    if (footerLinks.length > 0) {
+                        const linkStyles = window.getComputedStyle(footerLinks[0]);
+                        console.log('🔗 Footer link color:', linkStyles.color);
+                        console.log('🔗 Footer link opacity:', linkStyles.opacity);
+                    }
+                    
+                } else {
+                    console.error('❌ Universal footer not found');
+                }
+                
+                // Scroll to footer for testing
+                setTimeout(() => {
+                    footer?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 2000);
+                
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

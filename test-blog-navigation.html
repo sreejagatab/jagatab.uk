@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Navigation Test | Jagatab.UK</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            padding: 2rem;
+            background: #f8fafc;
+            margin: 0;
+        }
+        
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .status {
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+        
+        .success { background: #d1fae5; border-left: 4px solid #10b981; }
+        .error { background: #fee2e2; border-left: 4px solid #ef4444; }
+        .warning { background: #fef3c7; border-left: 4px solid #f59e0b; }
+        
+        .nav-test {
+            background: #f1f5f9;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+        
+        h1 { color: #1e40af; }
+        h2 { color: #374151; margin-top: 2rem; }
+    </style>
+</head>
+<body>
+    <!-- Universal Navigation will be injected here -->
+    
+    <div class="test-container">
+        <h1>🧪 Blog Navigation Test</h1>
+        <p>This page simulates the blog directory structure to test navigation functionality.</p>
+        
+        <div id="test-results">
+            <div class="status warning">
+                <strong>⏳ Testing in progress...</strong><br>
+                Checking universal navigation components...
+            </div>
+        </div>
+        
+        <h2>📋 Test Checklist</h2>
+        <div id="checklist">
+            <div class="nav-test">Loading test checklist...</div>
+        </div>
+        
+        <h2>🔍 Navigation Debug Info</h2>
+        <div id="debug-info">
+            <div class="nav-test">Loading debug information...</div>
+        </div>
+    </div>
+
+    <!-- Universal Components -->
+    <script src="js/universal-components.js"></script>
+    
+    <script>
+        function runNavigationTest() {
+            const testResults = document.getElementById('test-results');
+            const checklist = document.getElementById('checklist');
+            const debugInfo = document.getElementById('debug-info');
+            
+            let results = '';
+            let checklistHtml = '';
+            let debugHtml = '';
+            
+            // Test 1: Check if universal components loaded
+            if (window.UniversalComponents) {
+                results += '<div class="status success"><strong>✅ Universal Components Loaded</strong><br>UniversalComponents class is available</div>';
+            } else {
+                results += '<div class="status error"><strong>❌ Universal Components Failed</strong><br>UniversalComponents class not found</div>';
+            }
+            
+            // Test 2: Check if navigation is injected
+            const header = document.querySelector('.universal-header');
+            if (header) {
+                results += '<div class="status success"><strong>✅ Navigation Header Injected</strong><br>Universal header element found in DOM</div>';
+            } else {
+                results += '<div class="status error"><strong>❌ Navigation Header Missing</strong><br>Universal header not found in DOM</div>';
+            }
+            
+            // Test 3: Check navigation links
+            const navLinks = document.querySelectorAll('.universal-nav-link');
+            if (navLinks.length > 0) {
+                results += `<div class="status success"><strong>✅ Navigation Links Found</strong><br>Found ${navLinks.length} navigation links</div>`;
+                
+                // List all navigation links
+                checklistHtml += '<strong>Navigation Links:</strong><br>';
+                navLinks.forEach((link, index) => {
+                    const text = link.textContent.trim();
+                    const href = link.href;
+                    const isExternal = link.classList.contains('external');
+                    const isActive = link.classList.contains('active');
+                    
+                    checklistHtml += `${index + 1}. ${text} → ${href} ${isExternal ? '(External)' : ''} ${isActive ? '(Active)' : ''}<br>`;
+                });
+            } else {
+                results += '<div class="status error"><strong>❌ No Navigation Links</strong><br>No navigation links found in DOM</div>';
+            }
+            
+            // Test 4: Check for JavaScript errors
+            let hasErrors = false;
+            const originalError = window.onerror;
+            window.onerror = function(msg, url, line) {
+                hasErrors = true;
+                debugHtml += `<strong>JavaScript Error:</strong><br>${msg}<br>File: ${url}<br>Line: ${line}<br><br>`;
+                return false;
+            };
+            
+            // Test 5: Check specific navigation items
+            const expectedItems = ['Services', 'Portfolio', 'Repositories', 'V.Assistant', 'About', 'Blog', 'UniBlog', 'Contact'];
+            const foundItems = [];
+            const missingItems = [];
+            
+            expectedItems.forEach(item => {
+                const found = Array.from(navLinks).some(link => link.textContent.trim() === item);
+                if (found) {
+                    foundItems.push(item);
+                } else {
+                    missingItems.push(item);
+                }
+            });
+            
+            if (missingItems.length === 0) {
+                results += '<div class="status success"><strong>✅ All Expected Navigation Items Found</strong><br>All navigation items are present</div>';
+            } else {
+                results += `<div class="status warning"><strong>⚠️ Some Navigation Items Missing</strong><br>Missing: ${missingItems.join(', ')}</div>`;
+            }
+            
+            // Test 6: Check mobile menu
+            const mobileToggle = document.querySelector('.universal-mobile-toggle');
+            if (mobileToggle) {
+                results += '<div class="status success"><strong>✅ Mobile Menu Toggle Found</strong><br>Mobile navigation toggle is available</div>';
+            } else {
+                results += '<div class="status warning"><strong>⚠️ Mobile Menu Toggle Missing</strong><br>Mobile navigation toggle not found</div>';
+            }
+            
+            // Test 7: Check footer
+            const footer = document.querySelector('.universal-footer');
+            if (footer) {
+                results += '<div class="status success"><strong>✅ Footer Injected</strong><br>Universal footer found in DOM</div>';
+            } else {
+                results += '<div class="status warning"><strong>⚠️ Footer Missing</strong><br>Universal footer not found</div>';
+            }
+            
+            // Debug information
+            debugHtml += `<strong>Page Information:</strong><br>`;
+            debugHtml += `URL: ${window.location.href}<br>`;
+            debugHtml += `Pathname: ${window.location.pathname}<br>`;
+            debugHtml += `Window Width: ${window.innerWidth}px<br>`;
+            debugHtml += `Window Height: ${window.innerHeight}px<br>`;
+            debugHtml += `User Agent: ${navigator.userAgent}<br><br>`;
+            
+            debugHtml += `<strong>Universal Components Status:</strong><br>`;
+            debugHtml += `Initialized: ${window.universalComponentsInitialized ? 'Yes' : 'No'}<br>`;
+            debugHtml += `Class Available: ${window.UniversalComponents ? 'Yes' : 'No'}<br><br>`;
+            
+            // Check for console errors
+            const consoleErrors = [];
+            const originalConsoleError = console.error;
+            console.error = function(...args) {
+                consoleErrors.push(args.join(' '));
+                originalConsoleError.apply(console, args);
+            };
+            
+            if (consoleErrors.length > 0) {
+                debugHtml += `<strong>Console Errors:</strong><br>`;
+                consoleErrors.forEach(error => {
+                    debugHtml += `${error}<br>`;
+                });
+            }
+            
+            // Update DOM
+            testResults.innerHTML = results;
+            checklist.innerHTML = `<div class="nav-test">${checklistHtml}</div>`;
+            debugInfo.innerHTML = `<div class="nav-test">${debugHtml}</div>`;
+            
+            // Final status
+            const errorCount = (results.match(/❌/g) || []).length;
+            const warningCount = (results.match(/⚠️/g) || []).length;
+            const successCount = (results.match(/✅/g) || []).length;
+            
+            let finalStatus = '';
+            if (errorCount === 0 && warningCount === 0) {
+                finalStatus = '<div class="status success"><strong>🎉 All Tests Passed!</strong><br>Navigation is working perfectly.</div>';
+            } else if (errorCount === 0) {
+                finalStatus = `<div class="status warning"><strong>⚠️ Tests Passed with Warnings</strong><br>${warningCount} warning(s) found.</div>`;
+            } else {
+                finalStatus = `<div class="status error"><strong>❌ Tests Failed</strong><br>${errorCount} error(s) and ${warningCount} warning(s) found.</div>`;
+            }
+            
+            testResults.innerHTML = finalStatus + results;
+        }
+        
+        // Run tests after page loads
+        window.addEventListener('load', () => {
+            setTimeout(runNavigationTest, 2000);
+        });
+        
+        // Console logging
+        console.log('🧪 Blog Navigation Test Page Loaded');
+        console.log('Testing navigation functionality...');
+    </script>
+</body>
+</html>

@@ -230,8 +230,9 @@ class UniversalComponents {
 
         .universal-footer-section p {
             line-height: 1.6;
-            opacity: 0.9;
+            opacity: 1;
             margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.95);
         }
 
         .universal-footer-links {
@@ -245,9 +246,9 @@ class UniversalComponents {
         }
 
         .universal-footer-links a {
-            color: white;
+            color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
-            opacity: 0.8;
+            opacity: 1;
             transition: all 0.3s ease;
         }
 
@@ -285,7 +286,8 @@ class UniversalComponents {
             margin-top: 2rem;
             padding-top: 1rem;
             text-align: center;
-            opacity: 0.8;
+            opacity: 1;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         @media (max-width: 768px) {
@@ -317,12 +319,12 @@ class UniversalComponents {
     createNavigation() {
         const navigation = {
             home: { url: `${this.basePath}index.html`, label: 'Home', section: '#home' },
-            services: { url: `${this.basePath}index.html#services`, label: 'AI Automation', section: '#services' },
+            services: { url: `${this.basePath}index.html#services`, label: 'Services', section: '#services' },
             portfolio: { url: `${this.basePath}index.html#portfolio`, label: 'Portfolio', section: '#portfolio' },
-            projects: { url: `${this.basePath}projects.html`, label: 'Python Projects' },
-            virtualAssistant: { url: `${this.basePath}virtual-assistant.html`, label: 'Virtual Assistant' },
+            projects: { url: `${this.basePath}projects.html`, label: 'Repositories' },
+            virtualAssistant: { url: `${this.basePath}virtual-assistant.html`, label: 'V.Assistant' },
             about: { url: `${this.basePath}index.html#about`, label: 'About', section: '#about' },
-            testimonials: { url: `${this.basePath}index.html#testimonials`, label: 'Testimonials', section: '#testimonials' },
+            // testimonials: { url: `${this.basePath}index.html#testimonials`, label: 'Testimonials', section: '#testimonials' },
             blog: { url: `${this.basePath}blog/`, label: 'Blog' },
             uniblog: { url: 'https://universal-blog-platform.vercel.app/', label: 'UniBlog', external: true },
             contact: { url: `${this.basePath}index.html#contact`, label: 'Contact', section: '#contact' }
@@ -458,8 +460,8 @@ class UniversalComponents {
 
             <div class="universal-footer-bottom">
                 <p>&copy; ${new Date().getFullYear()} Jagatab.UK - AI Automation & Python Development. All rights reserved. |
-                   <a href="${this.basePath}privacy-policy.html" style="color: inherit;">Privacy Policy</a> |
-                   <a href="${this.basePath}terms-of-service.html" style="color: inherit;">Terms of Service</a>
+                   <a href="${this.basePath}privacy-policy.html" style="color: rgba(255, 255, 255, 0.9); text-decoration: underline;">Privacy Policy</a> |
+                   <a href="${this.basePath}terms-of-service.html" style="color: rgba(255, 255, 255, 0.9); text-decoration: underline;">Terms of Service</a>
                 </p>
             </div>
         </footer>
