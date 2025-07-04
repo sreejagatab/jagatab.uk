@@ -13,20 +13,19 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    serverComponentsExternalPackages: ['@prisma/client', 'bcryptjs'],
-    esmExternals: 'loose',
-  },
+
   eslint: {
     ignoreDuringBuilds: true,
   },
   typescript: {
     ignoreBuildErrors: true,
   },
-  staticPageGenerationTimeout: 30,
   output: 'standalone',
-  async rewrites() {
-    return []
+  trailingSlash: false,
+  experimental: {
+    serverComponentsExternalPackages: ['@prisma/client', 'bcryptjs'],
+    esmExternals: 'loose',
+    forceSwcTransforms: true,
   },
   generateBuildId: async () => {
     return 'universal-blog-platform-build'

@@ -594,15 +594,15 @@ a:hover {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    background-color: #ffffff;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    right: 0;
+    background: var(--white);
+    box-shadow: var(--shadow);
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .header.scrolled {
-    background-color: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
 }
 
@@ -3840,8 +3840,8 @@ textarea:focus {
                 <li role="none"><a href="#home" class="nav-link" role="menuitem" aria-label="Go to Home section">Home</a></li>
                 <li role="none"><a href="#services" class="nav-link" role="menuitem" aria-label="AI Automation & Python Services">AI Automation</a></li>
                 <li role="none"><a href="#portfolio" class="nav-link" role="menuitem" aria-label="View our project portfolio">Portfolio</a></li>
-                <li role="none"><a href="python-projects-portfolio.html" class="nav-link" role="menuitem" aria-label="Python Projects & Code Examples">Python Projects</a></li>
-                <li role="none"><a href="virtual-assistant-wisbech.html" class="nav-link" role="menuitem" aria-label="Virtual Assistant Services">Virtual Assistant</a></li>
+                <li role="none"><a href="projects.html" class="nav-link" role="menuitem" aria-label="Python Projects & Code Examples">Python Projects</a></li>
+                <li role="none"><a href="virtual-assistant.html" class="nav-link" role="menuitem" aria-label="Virtual Assistant Services">Virtual Assistant</a></li>
                 <li role="none"><a href="#about" class="nav-link" role="menuitem" aria-label="About Sree Jagatab">About</a></li>
                 <li role="none"><a href="#testimonials" class="nav-link" role="menuitem" aria-label="Client testimonials and reviews">Testimonials</a></li>
                 <li role="none"><a href="blog/" class="nav-link" role="menuitem" aria-label="Latest insights and resources">Blog</a></li>
@@ -5397,9 +5397,9 @@ textarea:focus {
                         <form id="contactForm" action="https://formspree.io/f/xpwzgkqr" method="POST" role="form" aria-labelledby="contact-form-title" novalidate>
                             <!-- Hidden fields for Formspree configuration -->
                             <input type="hidden" name="_replyto" value="">
-                            <input type="hidden" name="_subject" value="New inquiry from jagatabuk.com">
-                            <input type="hidden" name="_next" value="https://jagatabuk.com/thank-you.html">
-                            <input type="hidden" name="_cc" value="ai-assistant@jagatabuk.com">
+                            <input type="hidden" name="_subject" value="New inquiry from jagatab.uk">
+                            <input type="hidden" name="_next" value="https://jagatab.uk/thank-you.html">
+                            <input type="hidden" name="_cc" value="sreejagatab@yahoo.com">
 
                             <div class="form-group">
                                 <label for="name">Full Name *</label>
@@ -5826,8 +5826,32 @@ textarea:focus {
     </div>
 
     <script>
+        // Browser Compatibility Checks
+        function checkBrowserSupport() {
+            const requiredFeatures = [
+                'addEventListener' in document,
+                'querySelector' in document,
+                'classList' in document.createElement('div'),
+                'IntersectionObserver' in window
+            ];
+
+            if (!requiredFeatures.every(feature => feature)) {
+                console.warn('Some features may not work in this browser. Please update to a modern browser.');
+                // Fallback for older browsers
+                if (!('IntersectionObserver' in window)) {
+                    // Simple fallback - show all elements immediately
+                    document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+                        el.style.opacity = '1';
+                        el.style.transform = 'none';
+                    });
+                }
+            }
+        }
+
         // DOM Content Loaded Event
         document.addEventListener('DOMContentLoaded', function() {
+            // Check browser support first
+            checkBrowserSupport();
             // Initialize all functionality
             initializeNavigation();
             initializeScrollEffects();
@@ -5869,12 +5893,16 @@ textarea:focus {
             mobileMenuToggle.addEventListener('click', function() {
                 navMenu.classList.toggle('active');
                 const icon = this.querySelector('i');
-                if (navMenu.classList.contains('active')) {
+                const isActive = navMenu.classList.contains('active');
+
+                if (isActive) {
                     icon.classList.remove('fa-bars');
                     icon.classList.add('fa-times');
+                    this.setAttribute('aria-expanded', 'true');
                 } else {
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
+                    this.setAttribute('aria-expanded', 'false');
                 }
             });
 
@@ -5900,7 +5928,7 @@ textarea:focus {
 
                     if (targetSection) {
                         const headerHeight = header.offsetHeight;
-                        const targetPosition = targetSection.offsetTop - headerHeight;
+                        const targetPosition = targetSection.offsetTop - headerHeight - 20; // Add 20px buffer
 
                         window.scrollTo({
                             top: targetPosition,
@@ -5913,6 +5941,8 @@ textarea:focus {
                     const icon = mobileMenuToggle.querySelector('i');
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
                 });
             });
         }
@@ -6363,6 +6393,7 @@ textarea:focus {
                     const icon = mobileMenuToggle.querySelector('i');
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
                 }
             }
         });

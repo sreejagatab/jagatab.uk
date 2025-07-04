@@ -9,6 +9,10 @@ import { QueryProvider } from '@/components/query-provider'
 import { PWAProvider } from '@/components/pwa-provider'
 import './globals.css'
 
+// Force dynamic rendering for entire app
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {

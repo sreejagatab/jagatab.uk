@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { auth } from '@/lib/auth';
-import { platformManager } from '@/lib/platforms/platform-manager';
+import { platformManager } from '@/lib/platforms/platform-manager'
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 
 // GET /api/platforms - Get all available platforms
 export async function GET(request: NextRequest) {
