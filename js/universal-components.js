@@ -326,7 +326,7 @@ class UniversalComponents {
             about: { url: `${this.basePath}index.html#about`, label: 'About', section: '#about' },
             // testimonials: { url: `${this.basePath}index.html#testimonials`, label: 'Testimonials', section: '#testimonials' },
             blog: { url: `${this.basePath}blog/`, label: 'Blog' },
-            uniblog: { url: 'https://universal-blog-platform.vercel.app/', label: 'UniBlog', external: true },
+            uniblog: { url: 'https://universal-blog-platform.vercel.app/', label: 'UniBlog' },
             contact: { url: `${this.basePath}index.html#contact`, label: 'Contact', section: '#contact' }
         };
 
