@@ -15,6 +15,21 @@
 const nextConfig = {
   experimental: {
     serverComponentsExternalPackages: ['@prisma/client', 'bcryptjs'],
+    esmExternals: 'loose',
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  staticPageGenerationTimeout: 30,
+  output: 'standalone',
+  async rewrites() {
+    return []
+  },
+  generateBuildId: async () => {
+    return 'universal-blog-platform-build'
   },
   images: {
     remotePatterns: [

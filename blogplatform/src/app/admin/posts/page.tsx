@@ -2,6 +2,9 @@ import { Suspense } from 'react'
 import { Metadata } from 'next'
 import { PostManagement } from '@/components/admin/post-management'
 
+// Force dynamic rendering for admin pages
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: 'Post Management - Admin',
   description: 'Manage blog posts and content',

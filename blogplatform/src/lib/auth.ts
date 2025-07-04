@@ -5,7 +5,7 @@ import GitHubProvider from "next-auth/providers/github"
 import CredentialsProvider from "next-auth/providers/credentials"
 import { prisma } from "@/lib/prisma"
 
-export const { handlers, auth, signIn, signOut } = NextAuth({
+const authConfig = {
   adapter: PrismaAdapter(prisma) as any,
   providers: [
     CredentialsProvider({
@@ -99,4 +99,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     signIn: '/auth/signin',
     error: '/auth/error',
   },
-})
+}
+
+export const { handlers, auth, signIn, signOut } = NextAuth(authConfig)
+
+// Export for compatibility with v4 API routes
+export const authOptions = authConfig
+export { auth as getServerSession }

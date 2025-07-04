@@ -1,24 +1,49 @@
-import { redirect } from 'next/navigation'
-import { auth } from '@/lib/auth'
+'use client'
+
+import { useEffect } from 'react'
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 import AdminSidebar from '@/components/admin/admin-sidebar'
 import AdminHeader from '@/components/admin/admin-header'
 
-export default async function AdminLayout({
+export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const session = await auth()
+  const { data: session, status } = useSession()
+  const router = useRouter()
 
-  // Check if user is authenticated
-  if (!session?.user) {
-    redirect('/auth/signin?callbackUrl=/admin')
+  useEffect(() => {
+    if (status === 'loading') return // Still loading
+
+    // Check if user is authenticated
+    if (!session?.user) {
+      router.push('/auth/signin?callbackUrl=/admin')
+      return
+    }
+
+    // Check if user has admin or editor role
+    const userRole = (session.user as any).role
+    if (!userRole || !['ADMIN', 'EDITOR'].includes(userRole)) {
+      router.push('/unauthorized')
+      return
+    }
+  }, [session, status, router])
+
+  // Show loading state while checking authentication
+  if (status === 'loading') {
+    return <div>Loading...</div>
   }
 
-  // Check if user has admin or editor role
+  // Don't render anything if not authenticated (will redirect)
+  if (!session?.user) {
+    return null
+  }
+
   const userRole = (session.user as any).role
   if (!userRole || !['ADMIN', 'EDITOR'].includes(userRole)) {
-    redirect('/unauthorized')
+    return null
   }
 
   const user = {

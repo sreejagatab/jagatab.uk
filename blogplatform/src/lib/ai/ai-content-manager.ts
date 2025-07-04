@@ -251,10 +251,10 @@ export class AIContentManager implements AIContentService {
 }
 
 // Singleton instance
-let aiContentManager: AIContentManager | null = null;
+let aiContentManagerInstance: AIContentManager | null = null;
 
 export function getAIContentManager(): AIContentManager {
-  if (!aiContentManager) {
+  if (!aiContentManagerInstance) {
     const config: AIContentConfig = {
       defaultProvider: 'openai',
       providers: {
@@ -307,8 +307,11 @@ export function getAIContentManager(): AIContentManager {
       },
     };
 
-    aiContentManager = new AIContentManager(config);
+    aiContentManagerInstance = new AIContentManager(config);
   }
 
-  return aiContentManager;
+  return aiContentManagerInstance;
 }
+
+// Export the singleton instance
+export const aiContentManager = getAIContentManager();

@@ -4,6 +4,9 @@ import { auth } from '@/lib/auth'
 import { prisma } from '@/lib/prisma'
 import { AdminDashboard } from '../../components/admin/admin-dashboard'
 
+// Force dynamic rendering for admin pages
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: 'Admin Dashboard',
   description: 'Manage your blog posts and content',

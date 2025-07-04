@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -73,12 +73,12 @@ const interestOptions = [
   'Monetization Strategies'
 ]
 
-export function EventRegistrationForm() {
+function EventRegistrationFormContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const eventId = searchParams.get('event') || 'ai-workshop-dec'
   const event = events[eventId as keyof typeof events] || events['ai-workshop-dec']
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [selectedInterests, setSelectedInterests] = useState<string[]>([])
 
@@ -353,5 +353,20 @@ export function EventRegistrationForm() {
         </CardContent>
       </Card>
     </div>
+  )
+}
+
+export function EventRegistrationForm() {
+  return (
+    <Suspense fallback={
+      <div className="space-y-8">
+        <div className="animate-pulse">
+          <div className="h-32 bg-gray-200 rounded-lg mb-4"></div>
+          <div className="h-96 bg-gray-200 rounded-lg"></div>
+        </div>
+      </div>
+    }>
+      <EventRegistrationFormContent />
+    </Suspense>
   )
 }

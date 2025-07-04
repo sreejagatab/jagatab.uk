@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Template - Jagatab.UK</title>
+    <meta name="description" content="Template showing consistent navigation implementation">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Navigation Manager -->
+    <script src="js/navigation.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --background-light: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e5e7eb;
+            --font-primary: 'Inter', sans-serif;
+            --font-heading: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        /* Header Styles */
+        .header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary-color);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .content-section {
+            background: var(--background-light);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        .validation-results {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .issue {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-radius: 4px;
+        }
+
+        .success {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-radius: 4px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">Jagatab.UK</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="projects.html">Repositories</a></li>
+                <li><a href="virtual-assistant.html">Virtual Assistant</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="blog/">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="content-section">
+            <h1 class="section-title">🧭 Navigation System Template</h1>
+            <p>This template demonstrates the consistent navigation system for Jagatab.UK. All navigation links are automatically validated and corrected using the NavigationManager.</p>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">📋 Navigation Rules</h2>
+            <ul>
+                <li><strong>Blog Links:</strong> Always use <code>blog/</code> (directory structure) instead of <code>blog.html</code></li>
+                <li><strong>Home Sections:</strong> Use <code>index.html#section</code> for sections on the home page</li>
+                <li><strong>Consistency:</strong> All pages should use the same navigation structure</li>
+                <li><strong>SEO Optimization:</strong> Directory structure is preferred for better SEO</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">🔧 Usage Example</h2>
+            <p>Include the navigation manager in your HTML:</p>
+            <div class="code-block">
+&lt;script src="js/navigation.js"&gt;&lt;/script&gt;
+            </div>
+            
+            <p>The navigation manager will automatically:</p>
+            <ul>
+                <li>Fix any <code>blog.html</code> links to use <code>blog/</code></li>
+                <li>Validate navigation consistency</li>
+                <li>Log issues in development mode</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">✅ Validation Results</h2>
+            <button onclick="runValidation()" style="background: var(--primary-color); color: white; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer;">Run Navigation Validation</button>
+            <div id="validation-results" class="validation-results" style="display: none;">
+                <!-- Results will be populated by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function runValidation() {
+            const resultsDiv = document.getElementById('validation-results');
+            resultsDiv.style.display = 'block';
+            resultsDiv.innerHTML = '<p>Running validation...</p>';
+            
+            setTimeout(() => {
+                const issues = window.NavigationManager.validateNavigation();
+                let html = '';
+                
+                if (issues.length === 0) {
+                    html = '<div class="success"><strong>✅ All Good!</strong> No navigation issues found.</div>';
+                } else {
+                    html = '<h3>Issues Found:</h3>';
+                    issues.forEach(issue => {
+                        html += `<div class="issue"><strong>${issue.type}:</strong> ${issue.message}</div>`;
+                    });
+                }
+                
+                resultsDiv.innerHTML = html;
+            }, 500);
+        }
+
+        // Auto-run validation on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                runValidation();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
