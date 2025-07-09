@@ -28,6 +28,7 @@ class UniversalComponents {
         if (path.includes('/blog/')) return 'blog';
         if (path.includes('/projects')) return 'projects';
         if (path.includes('/virtual-assistant')) return 'virtual-assistant';
+        if (path.includes('/cv.html')) return 'cv';
         return 'home';
     }
 
@@ -323,6 +324,7 @@ class UniversalComponents {
             portfolio: { url: `${this.basePath}index.html#portfolio`, label: 'Portfolio', section: '#portfolio' },
             projects: { url: `${this.basePath}projects.html`, label: 'Repositories' },
             virtualAssistant: { url: `${this.basePath}virtual-assistant.html`, label: 'V.Assistant' },
+            cv: { url: `${this.basePath}cv.html`, label: 'MyCV' },
             about: { url: `${this.basePath}index.html#about`, label: 'About', section: '#about' },
             // testimonials: { url: `${this.basePath}index.html#testimonials`, label: 'Testimonials', section: '#testimonials' },
             blog: { url: `${this.basePath}blog/`, label: 'Blog' },
@@ -476,6 +478,7 @@ class UniversalComponents {
             'home': this.currentPage === 'home',
             'projects': this.currentPage === 'projects',
             'virtualAssistant': this.currentPage === 'virtual-assistant',
+            'cv': this.currentPage === 'cv',
             'blog': this.currentPage === 'blog'
         };
         return activeMap[navKey] || false;

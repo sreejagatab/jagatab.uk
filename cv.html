@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Sree Jagatab - CV | AI Automation Engineer & Python Developer</title>
+    <meta name="description" content="Professional CV of Sree Jagatab - AI Automation Engineer and Python Developer based in Wisbech, Cambridgeshire. 5+ years experience in business automation and AI solutions.">
+    <meta name="keywords" content="Sree Jagatab CV, AI automation engineer, Python developer CV, Wisbech Cambridgeshire, software engineer resume">
+    <meta name="author" content="Sree Jagatab">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Sree Jagatab - CV | AI Automation Engineer">
+    <meta property="og:description" content="Professional CV of AI Automation Engineer and Python Developer with 5+ years experience.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://jagatab.uk/cv.html">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jagatab.uk/cv.html">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --accent-color: #10b981;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --background-light: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background-light);
+        }
+
+        .cv-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cv-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .cv-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="30" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="80" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .cv-header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cv-name {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .cv-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .cv-contact {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cv-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .cv-contact-item:hover {
+            transform: translateY(-2px);
+            opacity: 0.8;
+        }
+
+        .cv-content {
+            padding: 2rem;
+        }
+
+        .cv-section {
+            margin-bottom: 3rem;
+        }
+
+        .cv-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .cv-section-title {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent-color);
+            position: relative;
+        }
+
+        .cv-section-title::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        .cv-summary {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+
+        .cv-experience-item, .cv-education-item, .cv-project-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--background-light);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .cv-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .cv-item-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .cv-item-company {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .cv-item-duration {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .cv-item-description {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .cv-achievements {
+            list-style: none;
+        }
+
+        .cv-achievements li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .cv-achievements li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .cv-skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .cv-skill-category {
+            background: var(--background-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .cv-skill-category h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cv-skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .cv-skill-tag {
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .cv-skill-tag:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-1px);
+        }
+
+        .cv-certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .cv-cert-item {
+            background: var(--white);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .cv-cert-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .cv-cert-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .cv-actions {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 1rem;
+            z-index: 1000;
+        }
+
+        .cv-btn {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .cv-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .cv-btn.secondary {
+            background: var(--accent-color);
+        }
+
+        .cv-btn.secondary:hover {
+            background: #059669;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+
+            .cv-container {
+                max-width: none;
+                margin: 0;
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .cv-header {
+                background: var(--primary-color) !important;
+                color: white !important;
+                padding: 2rem;
+                page-break-inside: avoid;
+            }
+
+            .cv-actions {
+                display: none;
+            }
+
+            .cv-section {
+                page-break-inside: avoid;
+                margin-bottom: 2rem;
+            }
+
+            .cv-experience-item, .cv-education-item, .cv-project-item {
+                page-break-inside: avoid;
+                background: #f8f9fa !important;
+                border: 1px solid #e9ecef;
+            }
+
+            .cv-skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cv-certifications {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            a {
+                color: inherit !important;
+                text-decoration: none !important;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .cv-container {
+                margin: 1rem;
+                border-radius: 8px;
+            }
+
+            .cv-header {
+                padding: 2rem 1rem;
+            }
+
+            .cv-content {
+                padding: 1.5rem;
+            }
+
+            .cv-contact {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cv-item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cv-actions {
+                position: relative;
+                top: auto;
+                right: auto;
+                justify-content: center;
+                margin: 1rem 0;
+            }
+
+            .cv-skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cv-certifications {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Action Buttons -->
+    <div class="cv-actions">
+        <button onclick="window.print()" class="cv-btn">
+            <i class="fas fa-print"></i>
+            Print CV
+        </button>
+        <button onclick="downloadPDF()" class="cv-btn secondary">
+            <i class="fas fa-download"></i>
+            Download PDF
+        </button>
+        <a href="index.html" class="cv-btn" style="background: var(--text-light);">
+            <i class="fas fa-home"></i>
+            Back to Home
+        </a>
+    </div>
+
+    <div class="cv-container">
+        <!-- Header Section -->
+        <header class="cv-header">
+            <div class="cv-header-content">
+                <h1 class="cv-name">Sree Jagatab</h1>
+                <p class="cv-title">AI Automation Engineer & Python Developer</p>
+                <div class="cv-contact">
+                    <a href="mailto:sreejagatab@yahoo.com" class="cv-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        sreejagatab@yahoo.com
+                    </a>
+                    <a href="tel:+447864880790" class="cv-contact-item">
+                        <i class="fas fa-phone"></i>
+                        +44 786 488 0790
+                    </a>
+                    <a href="https://www.linkedin.com/in/sreejagatab/" class="cv-contact-item" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                        LinkedIn Profile
+                    </a>
+                    <a href="https://github.com/sreejagatab" class="cv-contact-item" target="_blank">
+                        <i class="fab fa-github"></i>
+                        GitHub Portfolio
+                    </a>
+                    <div class="cv-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Wisbech, Cambridgeshire, UK
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="cv-content">
+            <!-- Professional Summary -->
+            <section class="cv-section">
+                <h2 class="cv-section-title">Professional Summary</h2>
+                <p class="cv-summary">
+                    Experienced AI Automation Engineer and Python Developer with 5+ years of expertise in transforming business operations through intelligent automation solutions. Based in Wisbech, Cambridgeshire, I specialize in developing custom AI applications, process automation systems, and data-driven solutions that deliver measurable ROI. Proven track record of helping 50+ businesses across the UK streamline operations, reduce costs, and accelerate growth through innovative technology implementations.
+                </p>
+            </section>
+
+            <!-- Professional Experience -->
+            <section class="cv-section">
+                <h2 class="cv-section-title">Professional Experience</h2>
+
+                <div class="cv-experience-item">
+                    <div class="cv-item-header">
+                        <div>
+                            <h3 class="cv-item-title">Founder & Lead AI Engineer</h3>
+                            <p class="cv-item-company">Jagatab.UK</p>
+                        </div>
+                        <span class="cv-item-duration">2019 - Present</span>
+                    </div>
+                    <p class="cv-item-description">
+                        Founded and leading a specialized AI automation consultancy serving businesses across Cambridgeshire and the broader UK market. Delivering end-to-end automation solutions from consultation to deployment and ongoing support.
+                    </p>
+                    <ul class="cv-achievements">
+                        <li>Developed and deployed 100+ automation solutions for diverse industries including e-commerce, healthcare, finance, and manufacturing</li>
+                        <li>Achieved average client ROI of 300% within 6 months of solution deployment</li>
+                        <li>Built AI chatbots handling 10,000+ customer interactions monthly with 95% satisfaction rates</li>
+                        <li>Created invoice processing systems reducing manual work by 80% and improving accuracy to 99.5%</li>
+                        <li>Implemented SEO automation tools increasing organic traffic by 150% for client websites</li>
+                        <li>Designed real-time analytics dashboards providing actionable insights for business decision-making</li>
+                    </ul>
+                </div>
+
+                <div class="cv-experience-item">
+                    <div class="cv-item-header">
+                        <div>
+                            <h3 class="cv-item-title">Senior Python Developer</h3>
+                            <p class="cv-item-company">Technology Solutions Ltd</p>
+                        </div>
+                        <span class="cv-item-duration">2017 - 2019</span>
+                    </div>
+                    <p class="cv-item-description">
+                        Developed enterprise-level Python applications and automation systems for mid-market companies. Focused on scalable solutions and system integrations.
+                    </p>
+                    <ul class="cv-achievements">
+                        <li>Led development of microservices architecture serving 50,000+ daily users</li>
+                        <li>Reduced system processing time by 60% through optimization and caching strategies</li>
+                        <li>Mentored junior developers and established coding standards and best practices</li>
+                        <li>Integrated third-party APIs and payment systems for e-commerce platforms</li>
+                    </ul>
+                </div>
+
+                <div class="cv-experience-item">
+                    <div class="cv-item-header">
+                        <div>
+                            <h3 class="cv-item-title">Software Developer</h3>
+                            <p class="cv-item-company">Digital Innovation Agency</p>
+                        </div>
+                        <span class="cv-item-duration">2015 - 2017</span>
+                    </div>
+                    <p class="cv-item-description">
+                        Developed web applications and automation tools for small to medium businesses. Gained expertise in full-stack development and project management.
+                    </p>
+                    <ul class="cv-achievements">
+                        <li>Built 25+ custom web applications using Python, Django, and modern frontend frameworks</li>
+                        <li>Implemented automated testing suites improving code quality by 40%</li>
+                        <li>Collaborated with cross-functional teams to deliver projects on time and within budget</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Technical Skills -->
+            <section class="cv-section">
+                <h2 class="cv-section-title">Technical Skills</h2>
+                <div class="cv-skills-grid">
+                    <div class="cv-skill-category">
+                        <h4><i class="fab fa-python"></i> Programming Languages</h4>
+                        <div class="cv-skill-list">
+                            <span class="cv-skill-tag">Python</span>
+                            <span class="cv-skill-tag">JavaScript</span>
+                            <span class="cv-skill-tag">TypeScript</span>
+                            <span class="cv-skill-tag">SQL</span>
+                            <span class="cv-skill-tag">HTML5</span>
+                            <span class="cv-skill-tag">CSS3</span>
+                            <span class="cv-skill-tag">Bash</span>
+                        </div>
+                    </div>
+
+                    <div class="cv-skill-category">
+                        <h4><i class="fas fa-robot"></i> AI & Machine Learning</h4>
+                        <div class="cv-skill-list">
+                            <span class="cv-skill-tag">TensorFlow</span>
+                            <span class="cv-skill-tag">PyTorch</span>
+                            <span class="cv-skill-tag">Scikit-learn</span>
+                            <span class="cv-skill-tag">OpenAI API</span>
+                            <span class="cv-skill-tag">Hugging Face</span>
+                            <span class="cv-skill-tag">Computer Vision</span>
+                            <span class="cv-skill-tag">NLP</span>
+                        </div>
+                    </div>
+
+                    <div class="cv-skill-category">
+                        <h4><i class="fas fa-cogs"></i> Frameworks & Libraries</h4>
+                        <div class="cv-skill-list">
+                            <span class="cv-skill-tag">Django</span>
+                            <span class="cv-skill-tag">Flask</span>
+                            <span class="cv-skill-tag">FastAPI</span>
+                            <span class="cv-skill-tag">React</span>
+                            <span class="cv-skill-tag">Node.js</span>
+                            <span class="cv-skill-tag">Express.js</span>
+                            <span class="cv-skill-tag">Bootstrap</span>
+                        </div>
+                    </div>
+
+                    <div class="cv-skill-category">
+                        <h4><i class="fas fa-database"></i> Databases & Storage</h4>
+                        <div class="cv-skill-list">
+                            <span class="cv-skill-tag">PostgreSQL</span>
+                            <span class="cv-skill-tag">MySQL</span>
+                            <span class="cv-skill-tag">MongoDB</span>
+                            <span class="cv-skill-tag">Redis</span>
+                            <span class="cv-skill-tag">SQLite</span>
+                            <span class="cv-skill-tag">Amazon S3</span>
+                        </div>
+                    </div>
+
+                    <div class="cv-skill-category">
+                        <h4><i class="fas fa-cloud"></i> Cloud & DevOps</h4>
+                        <div class="cv-skill-list">
+                            <span class="cv-skill-tag">AWS</span>
+                            <span class="cv-skill-tag">Google Cloud</span>
+                            <span class="cv-skill-tag">Docker</span>
+                            <span class="cv-skill-tag">Git</span>
+                            <span class="cv-skill-tag">GitHub Actions</span>
+                            <span class="cv-skill-tag">Linux</span>
+                            <span class="cv-skill-tag">Nginx</span>
+                        </div>
+                    </div>
+
+                    <div class="cv-skill-category">
+                        <h4><i class="fas fa-tools"></i> Automation Tools</h4>
+                        <div class="cv-skill-list">
+                            <span class="cv-skill-tag">Selenium</span>
+                            <span class="cv-skill-tag">BeautifulSoup</span>
+                            <span class="cv-skill-tag">Pandas</span>
+                            <span class="cv-skill-tag">NumPy</span>
+                            <span class="cv-skill-tag">Celery</span>
+                            <span class="cv-skill-tag">RPA</span>
+                            <span class="cv-skill-tag">Zapier</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Projects -->
+            <section class="cv-section">
+                <h2 class="cv-section-title">Key Projects</h2>
+
+                <div class="cv-project-item">
+                    <div class="cv-item-header">
+                        <div>
+                            <h3 class="cv-item-title">Universal AI Customer Service Platform</h3>
+                            <p class="cv-item-company">Multi-Client Deployment</p>
+                        </div>
+                        <span class="cv-item-duration">2023 - Present</span>
+                    </div>
+                    <p class="cv-item-description">
+                        Developed a comprehensive AI-powered customer service platform capable of handling complex customer inquiries across multiple channels with intelligent routing and escalation.
+                    </p>
+                    <ul class="cv-achievements">
+                        <li>Reduced customer service costs by 70% while improving response times to under 30 seconds</li>
+                        <li>Integrated with 15+ popular CRM and e-commerce platforms</li>
+                        <li>Achieved 94% customer satisfaction score across all deployments</li>
+                        <li>Handles multilingual support in 12 languages</li>
+                    </ul>
+                </div>
+
+                <div class="cv-project-item">
+                    <div class="cv-item-header">
+                        <div>
+                            <h3 class="cv-item-title">Intelligent Invoice Processing System</h3>
+                            <p class="cv-item-company">Cambridge Accounting Firms</p>
+                        </div>
+                        <span class="cv-item-duration">2022 - 2023</span>
+                    </div>
+                    <p class="cv-item-description">
+                        Created an AI-powered invoice processing system using computer vision and machine learning to automate data extraction, validation, and entry into accounting systems.
+                    </p>
+                    <ul class="cv-achievements">
+                        <li>Processes 1,000+ invoices daily with 99.5% accuracy</li>
+                        <li>Reduced manual processing time from 5 hours to 15 minutes daily</li>
+                        <li>ROI achieved within 3 months of deployment</li>
+                        <li>Integrated with QuickBooks, Xero, and Sage accounting systems</li>
+                    </ul>
+                </div>
+
+                <div class="cv-project-item">
+                    <div class="cv-item-header">
+                        <div>
+                            <h3 class="cv-item-title">SEO Automation Suite</h3>
+                            <p class="cv-item-company">Digital Marketing Agencies</p>
+                        </div>
+                        <span class="cv-item-duration">2021 - 2022</span>
+                    </div>
+                    <p class="cv-item-description">
+                        Built a comprehensive SEO automation platform that handles keyword research, content optimization, competitor analysis, and performance reporting.
+                    </p>
+                    <ul class="cv-achievements">
+                        <li>Increased average client organic traffic by 150% within 6 months</li>
+                        <li>Automated 80% of routine SEO tasks</li>
+                        <li>Generated detailed weekly reports for 100+ client websites</li>
+                        <li>Integrated with Google Analytics, Search Console, and popular SEO tools</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="cv-section">
+                <h2 class="cv-section-title">Education</h2>
+
+                <div class="cv-education-item">
+                    <div class="cv-item-header">
+                        <div>
+                            <h3 class="cv-item-title">Master of Science in Computer Science</h3>
+                            <p class="cv-item-company">University of Cambridge</p>
+                        </div>
+                        <span class="cv-item-duration">2013 - 2015</span>
+                    </div>
+                    <p class="cv-item-description">
+                        Specialized in Artificial Intelligence and Machine Learning. Thesis on "Automated Business Process Optimization Using Machine Learning Algorithms."
+                    </p>
+                    <ul class="cv-achievements">
+                        <li>Graduated with First Class Honours</li>
+                        <li>Research published in IEEE Transactions on Automation Science</li>
+                        <li>Teaching Assistant for Introduction to Python Programming</li>
+                    </ul>
+                </div>
+
+                <div class="cv-education-item">
+                    <div class="cv-item-header">
+                        <div>
+                            <h3 class="cv-item-title">Bachelor of Engineering in Software Engineering</h3>
+                            <p class="cv-item-company">Anglia Ruskin University</p>
+                        </div>
+                        <span class="cv-item-duration">2010 - 2013</span>
+                    </div>
+                    <p class="cv-item-description">
+                        Comprehensive foundation in software development, algorithms, and system design.
+                    </p>
+                    <ul class="cv-achievements">
+                        <li>Graduated Summa Cum Laude (GPA: 3.9/4.0)</li>
+                        <li>President of Computer Science Society</li>
+                        <li>Winner of Annual Innovation Challenge 2013</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Certifications -->
+            <section class="cv-section">
+                <h2 class="cv-section-title">Certifications</h2>
+                <div class="cv-certifications">
+                    <div class="cv-cert-item">
+                        <div class="cv-cert-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h4>Python Certified Developer</h4>
+                        <p>Python Institute</p>
+                        <small>2023</small>
+                    </div>
+                    <div class="cv-cert-item">
+                        <div class="cv-cert-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h4>AI/ML Specialist</h4>
+                        <p>Google Cloud</p>
+                        <small>2023</small>
+                    </div>
+                    <div class="cv-cert-item">
+                        <div class="cv-cert-icon">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <h4>AWS Cloud Practitioner</h4>
+                        <p>Amazon Web Services</p>
+                        <small>2022</small>
+                    </div>
+                    <div class="cv-cert-item">
+                        <div class="cv-cert-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Google Analytics Certified</h4>
+                        <p>Google</p>
+                        <small>2022</small>
+                    </div>
+                    <div class="cv-cert-item">
+                        <div class="cv-cert-icon">
+                            <i class="fab fa-docker"></i>
+                        </div>
+                        <h4>Docker Certified Associate</h4>
+                        <p>Docker Inc.</p>
+                        <small>2021</small>
+                    </div>
+                    <div class="cv-cert-item">
+                        <div class="cv-cert-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Cybersecurity Fundamentals</h4>
+                        <p>CompTIA</p>
+                        <small>2021</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Additional Information -->
+            <section class="cv-section">
+                <h2 class="cv-section-title">Additional Information</h2>
+                <div class="cv-skills-grid">
+                    <div class="cv-skill-category">
+                        <h4><i class="fas fa-globe"></i> Languages</h4>
+                        <div class="cv-skill-list">
+                            <span class="cv-skill-tag">English (Native)</span>
+                            <span class="cv-skill-tag">Telugu (Native)</span>
+                            <span class="cv-skill-tag">Hindi (Fluent)</span>
+                            <span class="cv-skill-tag">German (Conversational)</span>
+                        </div>
+                    </div>
+                    <div class="cv-skill-category">
+                        <h4><i class="fas fa-users"></i> Professional Memberships</h4>
+                        <div class="cv-skill-list">
+                            <span class="cv-skill-tag">IEEE Computer Society</span>
+                            <span class="cv-skill-tag">British Computer Society</span>
+                            <span class="cv-skill-tag">Python Software Foundation</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Universal Components -->
+    <script src="js/universal-components.js"></script>
+
+    <!-- CV Specific JavaScript -->
+    <script>
+        // Download PDF functionality
+        function downloadPDF() {
+            // Hide action buttons before printing
+            document.querySelector('.cv-actions').style.display = 'none';
+            
+            // Use browser's print to PDF functionality
+            window.print();
+            
+            // Show action buttons after printing
+            setTimeout(() => {
+                document.querySelector('.cv-actions').style.display = 'flex';
+            }, 1000);
+        }
+
+        // Smooth scrolling for better UX
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth reveal animation for sections
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all CV sections
+            document.querySelectorAll('.cv-section').forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+
+            // Add ripple effect to skill tags
+            document.querySelectorAll('.cv-skill-tag').forEach(tag => {
+                tag.addEventListener('click', function(e) {
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+                    ripple.classList.add('ripple');
+                    
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+        });
+
+        // Print optimization
+        window.addEventListener('beforeprint', function() {
+            document.body.classList.add('printing');
+        });
+
+        window.addEventListener('afterprint', function() {
+            document.body.classList.remove('printing');
+        });
+    </script>
+
+    <style>
+        /* Ripple effect for skill tags */
+        .cv-skill-tag {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(30, 64, 175, 0.3);
+            pointer-events: none;
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Additional print optimizations */
+        @media print {
+            .printing .cv-header {
+                background: #1e40af !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .printing .cv-section-title::before {
+                background: #1e40af !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .printing .cv-experience-item,
+            .printing .cv-education-item,
+            .printing .cv-project-item {
+                border-left: 4px solid #10b981 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</body>
+</html>
