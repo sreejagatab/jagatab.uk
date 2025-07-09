@@ -3733,11 +3733,11 @@ textarea:focus {
     <main id="main-content">
         <!-- Hero Section -->
         <section id="home" class="hero section" aria-labelledby="hero-title">
-            <div style="max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; text-align: center;">
-                <h1 id="hero-title" style="font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; color: #1f2937; line-height: 1.2; font-family: 'Poppins', sans-serif; margin-bottom: 1.5rem;">
+            <div style="max-width: 1200px; margin: 0 auto; padding: clamp(1rem, 4vw, 2rem) clamp(0.75rem, 3vw, 1rem); text-align: center;">
+                <h1 id="hero-title" style="font-size: clamp(1.5rem, 5vw, 3rem); font-weight: 800; color: #1f2937; line-height: 1.2; font-family: 'Poppins', sans-serif; margin-bottom: clamp(1rem, 3vw, 1.5rem);">
                     <span style="color: #1e40af;">AI Automation</span> & <span style="color: #10b981;">Python Development</span> Services
                 </h1>
-                <img src="dashboard/assets/jagatab.jpeg" alt="Jagatab.UK - AI Automation & Python Development Services" style="max-width: 400px; width: 90%; height: auto; margin: 0 auto; display: block; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+                <img src="dashboard/assets/jagatab.jpeg" alt="Jagatab.UK - AI Automation & Python Development Services" style="max-width: min(400px, 85vw); width: 100%; height: auto; margin: 0 auto; display: block; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
             </div>
         </section>
 
@@ -3754,59 +3754,59 @@ textarea:focus {
                 </div>
 
                 <!-- Modern Services Table -->
-                <div class="services-table-container" style="background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; border: 1px solid #e5e7eb;">
+                <div class="services-table-container" style="background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; border: 1px solid #e5e7eb; margin: 0 clamp(0.5rem, 2vw, 1rem);">
                     <!-- Table Header -->
-                    <div class="table-header" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: white; padding: 2rem; text-align: center;">
-                        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">🤖 Choose Your Perfect AI Solution</h3>
-                        <p style="margin: 0; opacity: 0.9;">From simple automation to complex AI systems - 22+ specialized services available</p>
+                    <div class="table-header" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: white; padding: clamp(1rem, 4vw, 2rem); text-align: center;">
+                        <h3 style="font-size: clamp(1.125rem, 3vw, 1.5rem); font-weight: 700; margin-bottom: 0.5rem; color: white;">🤖 Choose Your Perfect AI Solution</h3>
+                        <p style="margin: 0; opacity: 0.9; font-size: clamp(0.875rem, 2.5vw, 1rem);">From simple automation to complex AI systems - 22+ specialized services available</p>
                     </div>
 
                     <!-- Services Table -->
-                    <div class="responsive-table" style="overflow-x: auto;">
-                        <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                    <div class="responsive-table" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: clamp(0.75rem, 2vw, 0.95rem); min-width: 600px;">
                             <!-- Table Headers -->
                             <thead>
                                 <tr style="background: #f8fafc; border-bottom: 2px solid #e5e7eb;">
-                                    <th style="padding: 1.5rem 1rem; text-align: left; font-weight: 600; color: #1f2937; border-right: 1px solid #e5e7eb; min-width: 200px;">
+                                    <th style="padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.5rem, 1.5vw, 1rem); text-align: left; font-weight: 600; color: #1f2937; border-right: 1px solid #e5e7eb; min-width: 180px;">
                                         <i class="fas fa-cogs" style="color: #1e40af; margin-right: 0.5rem;"></i>
-                                        Service
+                                        <span style="display: inline-block; word-break: break-word;">Service</span>
                                     </th>
-                                    <th style="padding: 1.5rem 1rem; text-align: center; font-weight: 600; color: #1f2937; border-right: 1px solid #e5e7eb; min-width: 120px;">
+                                    <th style="padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.5rem, 1.5vw, 1rem); text-align: center; font-weight: 600; color: #1f2937; border-right: 1px solid #e5e7eb; min-width: 100px;">
                                         <i class="fas fa-pound-sign" style="color: #10b981; margin-right: 0.5rem;"></i>
-                                        Starting Price
+                                        <span style="display: inline-block; word-break: break-word;">Price</span>
                                     </th>
-                                    <th style="padding: 1.5rem 1rem; text-align: center; font-weight: 600; color: #1f2937; border-right: 1px solid #e5e7eb; min-width: 120px;">
+                                    <th style="padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.5rem, 1.5vw, 1rem); text-align: center; font-weight: 600; color: #1f2937; border-right: 1px solid #e5e7eb; min-width: 100px;">
                                         <i class="fas fa-clock" style="color: #f59e0b; margin-right: 0.5rem;"></i>
-                                        Delivery Time
+                                        <span style="display: inline-block; word-break: break-word;">Time</span>
                                     </th>
-                                    <th style="padding: 1.5rem 1rem; text-align: left; font-weight: 600; color: #1f2937; min-width: 300px;">
+                                    <th style="padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.5rem, 1.5vw, 1rem); text-align: left; font-weight: 600; color: #1f2937; min-width: 250px;">
                                         <i class="fas fa-check-circle" style="color: #8b5cf6; margin-right: 0.5rem;"></i>
-                                        What's Included
+                                        <span style="display: inline-block; word-break: break-word;">What's Included</span>
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <!-- Python Automation -->
                                 <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
-                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
-                                        <div style="display: flex; align-items: center; gap: 1rem;">
-                                            <div style="font-size: 2rem;">🐍</div>
-                                            <div>
-                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">Python Automation Scripts</h4>
-                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Custom business process automation</p>
+                                    <td style="padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.5rem, 1.5vw, 1rem); border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: clamp(0.5rem, 1.5vw, 1rem); flex-wrap: wrap;">
+                                            <div style="font-size: clamp(1.25rem, 3vw, 2rem); flex-shrink: 0;">🐍</div>
+                                            <div style="min-width: 0; flex: 1;">
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0; font-size: clamp(0.875rem, 2.5vw, 1rem); line-height: 1.3;">Python Automation Scripts</h4>
+                                                <p style="color: #6b7280; font-size: clamp(0.75rem, 2vw, 0.875rem); margin: 0; line-height: 1.3;">Custom business process automation</p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
-                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£500+</div>
-                                        <div style="font-size: 0.75rem; color: #6b7280;">per script</div>
+                                    <td style="padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.5rem, 1.5vw, 1rem); text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: clamp(1rem, 2.5vw, 1.5rem); font-weight: 700; color: #10b981;">£500+</div>
+                                        <div style="font-size: clamp(0.625rem, 1.5vw, 0.75rem); color: #6b7280;">per script</div>
                                     </td>
-                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
-                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">1-2 weeks</div>
-                                        <div style="font-size: 0.75rem; color: #6b7280;">typical</div>
+                                    <td style="padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.5rem, 1.5vw, 1rem); text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: clamp(0.875rem, 2vw, 1.25rem); font-weight: 600; color: #f59e0b;">1-2 weeks</div>
+                                        <div style="font-size: clamp(0.625rem, 1.5vw, 0.75rem); color: #6b7280;">typical</div>
                                     </td>
-                                    <td style="padding: 1.5rem 1rem;">
-                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                    <td style="padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.5rem, 1.5vw, 1rem);">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: clamp(0.75rem, 2vw, 0.875rem); line-height: 1.4;">
                                             <li>Custom Python script development</li>
                                             <li>Data processing & validation</li>
                                             <li>Email notifications & alerts</li>
@@ -3818,25 +3818,25 @@ textarea:focus {
 
                                 <!-- AI Automation -->
                                 <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
-                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
-                                        <div style="display: flex; align-items: center; gap: 1rem;">
-                                            <div style="font-size: 2rem;">🤖</div>
-                                            <div>
-                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">AI Chatbots & GPT Integration</h4>
-                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Intelligent customer service automation</p>
+                                    <td style="padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.5rem, 1.5vw, 1rem); border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: clamp(0.5rem, 1.5vw, 1rem); flex-wrap: wrap;">
+                                            <div style="font-size: clamp(1.25rem, 3vw, 2rem); flex-shrink: 0;">🤖</div>
+                                            <div style="min-width: 0; flex: 1;">
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0; font-size: clamp(0.875rem, 2.5vw, 1rem); line-height: 1.3;">AI Chatbots & GPT Integration</h4>
+                                                <p style="color: #6b7280; font-size: clamp(0.75rem, 2vw, 0.875rem); margin: 0; line-height: 1.3;">Intelligent customer service automation</p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
-                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£800+</div>
-                                        <div style="font-size: 0.75rem; color: #6b7280;">per chatbot</div>
+                                    <td style="padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.5rem, 1.5vw, 1rem); text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: clamp(1rem, 2.5vw, 1.5rem); font-weight: 700; color: #10b981;">£800+</div>
+                                        <div style="font-size: clamp(0.625rem, 1.5vw, 0.75rem); color: #6b7280;">per chatbot</div>
                                     </td>
-                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
-                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">2-3 weeks</div>
-                                        <div style="font-size: 0.75rem; color: #6b7280;">typical</div>
+                                    <td style="padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.5rem, 1.5vw, 1rem); text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: clamp(0.875rem, 2vw, 1.25rem); font-weight: 600; color: #f59e0b;">2-3 weeks</div>
+                                        <div style="font-size: clamp(0.625rem, 1.5vw, 0.75rem); color: #6b7280;">typical</div>
                                     </td>
-                                    <td style="padding: 1.5rem 1rem;">
-                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                    <td style="padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.5rem, 1.5vw, 1rem);">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: clamp(0.75rem, 2vw, 0.875rem); line-height: 1.4;">
                                             <li>Custom AI chatbot development</li>
                                             <li>GPT-4 integration & training</li>
                                             <li>Multi-platform deployment</li>
@@ -3848,25 +3848,25 @@ textarea:focus {
 
                                 <!-- Website Development -->
                                 <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
-                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
-                                        <div style="display: flex; align-items: center; gap: 1rem;">
-                                            <div style="font-size: 2rem;">🌐</div>
-                                            <div>
-                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">Website Development + SEO</h4>
-                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Modern responsive websites with SEO</p>
+                                    <td style="padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.5rem, 1.5vw, 1rem); border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: clamp(0.5rem, 1.5vw, 1rem); flex-wrap: wrap;">
+                                            <div style="font-size: clamp(1.25rem, 3vw, 2rem); flex-shrink: 0;">🌐</div>
+                                            <div style="min-width: 0; flex: 1;">
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0; font-size: clamp(0.875rem, 2.5vw, 1rem); line-height: 1.3;">Website Development + SEO</h4>
+                                                <p style="color: #6b7280; font-size: clamp(0.75rem, 2vw, 0.875rem); margin: 0; line-height: 1.3;">Modern responsive websites with SEO</p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
-                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£1,200+</div>
-                                        <div style="font-size: 0.75rem; color: #6b7280;">complete site</div>
+                                    <td style="padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.5rem, 1.5vw, 1rem); text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: clamp(1rem, 2.5vw, 1.5rem); font-weight: 700; color: #10b981;">£1,200+</div>
+                                        <div style="font-size: clamp(0.625rem, 1.5vw, 0.75rem); color: #6b7280;">complete site</div>
                                     </td>
-                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
-                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">3-4 weeks</div>
-                                        <div style="font-size: 0.75rem; color: #6b7280;">typical</div>
+                                    <td style="padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.5rem, 1.5vw, 1rem); text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: clamp(0.875rem, 2vw, 1.25rem); font-weight: 600; color: #f59e0b;">3-4 weeks</div>
+                                        <div style="font-size: clamp(0.625rem, 1.5vw, 0.75rem); color: #6b7280;">typical</div>
                                     </td>
-                                    <td style="padding: 1.5rem 1rem;">
-                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                    <td style="padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.5rem, 1.5vw, 1rem);">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: clamp(0.75rem, 2vw, 0.875rem); line-height: 1.4;">
                                             <li>Responsive design (mobile-first)</li>
                                             <li>SEO optimization & setup</li>
                                             <li>Contact forms & analytics</li>
@@ -4450,18 +4450,18 @@ textarea:focus {
                     </div>
 
                     <!-- Table Footer with CTA -->
-                    <div class="table-footer" style="background: #f8fafc; padding: 2rem; text-align: center; border-top: 2px solid #e5e7eb;">
-                        <h4 style="color: #1f2937; margin-bottom: 1rem;">Ready to Get Started?</h4>
-                        <p style="color: #6b7280; margin-bottom: 1.5rem;">All services include free consultation, detailed planning, and ongoing support</p>
-                        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                            <a href="#contact" style="background: #1e40af; color: white; padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: background 0.3s ease;" onmouseover="this.style.background='#3b82f6'" onmouseout="this.style.background='#1e40af'">
-                                <i class="fas fa-calendar"></i> Book Free Consultation
+                    <div class="table-footer" style="background: #f8fafc; padding: clamp(1rem, 4vw, 2rem); text-align: center; border-top: 2px solid #e5e7eb;">
+                        <h4 style="color: #1f2937; margin-bottom: 1rem; font-size: clamp(1rem, 3vw, 1.25rem);">Ready to Get Started?</h4>
+                        <p style="color: #6b7280; margin-bottom: 1.5rem; font-size: clamp(0.875rem, 2.5vw, 1rem);">All services include free consultation, detailed planning, and ongoing support</p>
+                        <div style="display: flex; gap: clamp(0.5rem, 2vw, 1rem); justify-content: center; flex-wrap: wrap;">
+                            <a href="#contact" style="background: #1e40af; color: white; padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 2rem); border-radius: 8px; text-decoration: none; font-weight: 600; transition: background 0.3s ease; font-size: clamp(0.875rem, 2.5vw, 1rem); display: inline-flex; align-items: center; justify-content: center; min-height: 44px;" onmouseover="this.style.background='#3b82f6'" onmouseout="this.style.background='#1e40af'">
+                                <i class="fas fa-calendar" style="margin-right: 0.5rem;"></i> Book Free Consultation
                             </a>
-                            <a href="tel:+447864880790" style="background: transparent; color: #1e40af; border: 2px solid #1e40af; padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='#1e40af'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#1e40af'">
-                                <i class="fas fa-phone"></i> Call: 07864 880790
+                            <a href="tel:+447864880790" style="background: transparent; color: #1e40af; border: 2px solid #1e40af; padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 2rem); border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; font-size: clamp(0.875rem, 2.5vw, 1rem); display: inline-flex; align-items: center; justify-content: center; min-height: 44px;" onmouseover="this.style.background='#1e40af'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#1e40af'">
+                                <i class="fas fa-phone" style="margin-right: 0.5rem;"></i> Call: 07864 880790
                             </a>
                         </div>
-                        <div style="margin-top: 1rem; font-size: 0.875rem; color: #6b7280;">
+                        <div style="margin-top: 1rem; font-size: clamp(0.75rem, 2vw, 0.875rem); color: #6b7280;">
                             <i class="fas fa-shield-alt" style="color: #10b981;"></i>
                             100% Satisfaction Guarantee • 30 Days Free Support • GDPR Compliant
                         </div>
