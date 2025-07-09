@@ -1984,12 +1984,14 @@ a:hover {
     padding: 0 2rem;
     max-height: 0;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
 }
 
 .faq-item.active .faq-answer {
     padding: 0 2rem 1.5rem;
-    max-height: 200px;
+    max-height: 300px;
+    opacity: 1;
 }
 
 .faq-answer p {
@@ -3731,188 +3733,738 @@ textarea:focus {
     <main id="main-content">
         <!-- Hero Section -->
         <section id="home" class="hero section" aria-labelledby="hero-title">
-            <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; min-height: 80vh; padding: 2rem 0;">
-                    <!-- Hero Content -->
-                    <div style="text-align: left;">
-                        <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(59, 130, 246, 0.1); color: #1e40af; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.875rem; font-weight: 500; margin-bottom: 2rem;">
-                            <i class="fas fa-map-marker-alt"></i>
-                            Based in Wisbech, Cambridgeshire
-                        </div>
-                        <!-- Impact-Focused Value Proposition -->
-                        <div style="background: linear-gradient(135deg, #fef3c7 0%, #d1fae5 100%); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #10b981; margin-bottom: 2rem;">
-                            <p style="font-size: 1.5rem; font-weight: 700; color: #1f2937; margin-bottom: 0.5rem; line-height: 1.3;">We automate Cambridgeshire business tasks, saving your team 5+ hours daily</p>
-                            <p style="font-size: 1rem; color: #374151; margin: 0;">Transform repetitive work into automated workflows with AI and Python solutions</p>
-                        </div>
-
-                        <h1 style="font-size: 3.5rem; font-weight: 800; color: #1f2937; line-height: 1.1; margin-bottom: 1.5rem; font-family: 'Poppins', sans-serif;"><span style="color: #1e40af;">AI Automation</span> & <span style="color: #10b981;">Python Development</span> Services in Cambridgeshire</h1>
-                        <p style="font-size: 1.25rem; color: #6b7280; line-height: 1.6; margin-bottom: 2rem;">From invoice processing to customer service automation, we help local businesses reduce costs by 40% and increase efficiency by 300% through proven AI and Python solutions.</p>
-
-                        <!-- Impact-Focused Trust Indicators -->
-                        <div style="display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
-                            <div style="text-align: center; min-width: 120px;">
-                                <div style="font-size: 2rem; font-weight: 800; color: #10b981; margin-bottom: 0.25rem;">5+ hrs</div>
-                                <div style="font-size: 0.875rem; color: #6b7280; line-height: 1.3;">Daily Time Saved<br>Per Client</div>
-                            </div>
-                            <div style="text-align: center; min-width: 120px;">
-                                <div style="font-size: 2rem; font-weight: 800; color: #1e40af; margin-bottom: 0.25rem;">40%</div>
-                                <div style="font-size: 0.875rem; color: #6b7280; line-height: 1.3;">Average Cost<br>Reduction</div>
-                            </div>
-                            <div style="text-align: center; min-width: 120px;">
-                                <div style="font-size: 2rem; font-weight: 800; color: #f59e0b; margin-bottom: 0.25rem;">300%</div>
-                                <div style="font-size: 0.875rem; color: #6b7280; line-height: 1.3;">Efficiency<br>Improvement</div>
-                            </div>
-                            <div style="text-align: center; min-width: 120px;">
-                                <div style="font-size: 2rem; font-weight: 800; color: #8b5cf6; margin-bottom: 0.25rem;">50+</div>
-                                <div style="font-size: 0.875rem; color: #6b7280; line-height: 1.3;">Businesses<br>Automated</div>
-                            </div>
-                        </div>
-
-                        <!-- CTA Buttons -->
-                        <div style="display: flex; gap: 1rem;">
-                            <a href="#contact" style="background: #1e40af; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.125rem; transition: background 0.3s ease;" onmouseover="this.style.background='#3b82f6'" onmouseout="this.style.background='#1e40af'">Book Free Consultation</a>
-                            <a href="#portfolio" style="background: transparent; color: #1e40af; border: 2px solid #1e40af; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.125rem; transition: all 0.3s ease;" onmouseover="this.style.background='#1e40af'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#1e40af'">View Portfolio</a>
-                        </div>
-                    </div>
-                    <!-- Hero Visual -->
-                    <div style="position: relative; display: flex; align-items: center; justify-content: center;">
-                        <!-- Video Placeholder -->
-                        <div style="width: 100%; max-width: 500px; height: 300px; background: linear-gradient(135deg, #1e40af, #3b82f6); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(30, 64, 175, 0.3);">
-                            <div style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.9;">▶️</div>
-                            <p style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Watch: AI Automation in Action</p>
-                            <span style="background: rgba(255, 255, 255, 0.2); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.875rem;">2:30</span>
-                        </div>
-
-                        <!-- Tech Icons -->
-                        <div style="position: absolute; top: -20px; right: -20px; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                            <div style="background: white; padding: 1rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; min-width: 100px;">
-                                <div style="font-size: 2rem; color: #1e40af; margin-bottom: 0.5rem;">🤖</div>
-                                <span style="font-size: 0.75rem; color: #6b7280; font-weight: 500;">AI Automation</span>
-                            </div>
-                            <div style="background: white; padding: 1rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; min-width: 100px;">
-                                <div style="font-size: 2rem; color: #10b981; margin-bottom: 0.5rem;">🐍</div>
-                                <span style="font-size: 0.75rem; color: #6b7280; font-weight: 500;">Python Development</span>
-                            </div>
-                            <div style="background: white; padding: 1rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; min-width: 100px;">
-                                <div style="font-size: 2rem; color: #f59e0b; margin-bottom: 0.5rem;">⚙️</div>
-                                <span style="font-size: 0.75rem; color: #6b7280; font-weight: 500;">Process Automation</span>
-                            </div>
-                            <div style="background: white; padding: 1rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; min-width: 100px;">
-                                <div style="font-size: 2rem; color: #8b5cf6; margin-bottom: 0.5rem;">📈</div>
-                                <span style="font-size: 0.75rem; color: #6b7280; font-weight: 500;">Business Growth</span>
-                            </div>
-                        </div>
-
-                        <!-- Floating Elements -->
-                        <div style="position: absolute; top: 50px; left: -30px; font-size: 2rem; animation: float 3s ease-in-out infinite;">💡</div>
-                        <div style="position: absolute; bottom: 50px; left: -20px; font-size: 2rem; animation: float 3s ease-in-out infinite 1s;">⚡</div>
-                        <div style="position: absolute; top: 20px; left: 50%; font-size: 2rem; animation: float 3s ease-in-out infinite 2s;">🚀</div>
-                    </div>
-                </div>
+            <div style="max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; text-align: center;">
+                <h1 id="hero-title" style="font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; color: #1f2937; line-height: 1.2; font-family: 'Poppins', sans-serif; margin-bottom: 1.5rem;">
+                    <span style="color: #1e40af;">AI Automation</span> & <span style="color: #10b981;">Python Development</span> Services
+                </h1>
+                <img src="dashboard/assets/jagatab.jpeg" alt="Jagatab.UK - AI Automation & Python Development Services" style="max-width: 400px; width: 90%; height: auto; margin: 0 auto; display: block; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
             </div>
         </section>
 
-        <!-- Value Proposition Section -->
-        <section class="value-proposition section">
-            <div class="container">
-                <div class="value-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    <!-- Value Card 1 -->
-                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.2); margin-bottom: 2rem;">
-                        <div style="font-size: 3rem; color: white; margin-bottom: 1rem;">⏰</div>
-                        <h3 style="color: white; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Save Time & Money</h3>
-                        <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1.5rem; line-height: 1.6;">Automate repetitive tasks and reduce manual work by up to 90%. Our clients typically save 5+ hours daily and reduce operational costs significantly.</p>
-                        <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
-                            <span style="display: block; font-size: 2rem; font-weight: 800; color: #fbbf24; margin-bottom: 0.25rem;">90%</span>
-                            <span style="color: rgba(255, 255, 255, 0.8); font-size: 0.875rem;">Time Savings</span>
-                        </div>
-                    </div>
-
-                    <!-- Value Card 2 -->
-                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.2); margin-bottom: 2rem;">
-                        <div style="font-size: 3rem; color: white; margin-bottom: 1rem;">📈</div>
-                        <h3 style="color: white; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Increase Accuracy</h3>
-                        <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1.5rem; line-height: 1.6;">Eliminate human errors with AI-powered automation. Our systems achieve 99.5%+ accuracy rates, ensuring reliable and consistent results.</p>
-                        <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
-                            <span style="display: block; font-size: 2rem; font-weight: 800; color: #10b981; margin-bottom: 0.25rem;">99.5%</span>
-                            <span style="color: rgba(255, 255, 255, 0.8); font-size: 0.875rem;">Accuracy Rate</span>
-                        </div>
-                    </div>
-
-                    <!-- Value Card 3 -->
-                    <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 12px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.2); margin-bottom: 2rem;">
-                        <div style="font-size: 3rem; color: white; margin-bottom: 1rem;">🚀</div>
-                        <h3 style="color: white; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Scale Your Business</h3>
-                        <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1.5rem; line-height: 1.6;">Handle increased workload without hiring more staff. Our automation solutions grow with your business, supporting unlimited scalability.</p>
-                        <div style="background: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
-                            <span style="display: block; font-size: 2rem; font-weight: 800; color: #8b5cf6; margin-bottom: 0.25rem;">24/7</span>
-                            <span style="color: rgba(255, 255, 255, 0.8); font-size: 0.875rem;">Operation</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Trusted By Section -->
-        <section class="trusted-by section">
+        <!-- Services Overview Table Section -->
+        <section class="services-table section">
             <div class="container">
                 <div class="section-header text-center">
-                    <h2>Trusted by Leading Businesses Across Cambridgeshire</h2>
-                    <p>Join the growing number of successful companies that have transformed their operations with our AI automation solutions</p>
+                    <div class="section-badge">
+                        <i class="fas fa-robot"></i>
+                        <span>Complete AI & Automation Services</span>
+                    </div>
+                    <h2>All Our AI Micro-Services at a Glance</h2>
+                    <p>Comprehensive AI automation solutions with transparent pricing and proven results. From basic scripts to enterprise-grade AI systems covering every business function.</p>
                 </div>
-                <div class="client-logos">
-                    <div class="logo-item">
-                        <div class="logo-placeholder">
-                            <i class="fas fa-building"></i>
-                            <span>Cambridge Tech Ltd</span>
+
+                <!-- Modern Services Table -->
+                <div class="services-table-container" style="background: white; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; border: 1px solid #e5e7eb;">
+                    <!-- Table Header -->
+                    <div class="table-header" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: white; padding: 2rem; text-align: center;">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">🤖 Choose Your Perfect AI Solution</h3>
+                        <p style="margin: 0; opacity: 0.9;">From simple automation to complex AI systems - 22+ specialized services available</p>
+                    </div>
+
+                    <!-- Services Table -->
+                    <div class="responsive-table" style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                            <!-- Table Headers -->
+                            <thead>
+                                <tr style="background: #f8fafc; border-bottom: 2px solid #e5e7eb;">
+                                    <th style="padding: 1.5rem 1rem; text-align: left; font-weight: 600; color: #1f2937; border-right: 1px solid #e5e7eb; min-width: 200px;">
+                                        <i class="fas fa-cogs" style="color: #1e40af; margin-right: 0.5rem;"></i>
+                                        Service
+                                    </th>
+                                    <th style="padding: 1.5rem 1rem; text-align: center; font-weight: 600; color: #1f2937; border-right: 1px solid #e5e7eb; min-width: 120px;">
+                                        <i class="fas fa-pound-sign" style="color: #10b981; margin-right: 0.5rem;"></i>
+                                        Starting Price
+                                    </th>
+                                    <th style="padding: 1.5rem 1rem; text-align: center; font-weight: 600; color: #1f2937; border-right: 1px solid #e5e7eb; min-width: 120px;">
+                                        <i class="fas fa-clock" style="color: #f59e0b; margin-right: 0.5rem;"></i>
+                                        Delivery Time
+                                    </th>
+                                    <th style="padding: 1.5rem 1rem; text-align: left; font-weight: 600; color: #1f2937; min-width: 300px;">
+                                        <i class="fas fa-check-circle" style="color: #8b5cf6; margin-right: 0.5rem;"></i>
+                                        What's Included
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Python Automation -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">🐍</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">Python Automation Scripts</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Custom business process automation</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£500+</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">per script</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">1-2 weeks</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">typical</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>Custom Python script development</li>
+                                            <li>Data processing & validation</li>
+                                            <li>Email notifications & alerts</li>
+                                            <li>Documentation & training</li>
+                                            <li>30 days support included</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- AI Automation -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">🤖</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">AI Chatbots & GPT Integration</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Intelligent customer service automation</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£800+</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">per chatbot</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">2-3 weeks</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">typical</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>Custom AI chatbot development</li>
+                                            <li>GPT-4 integration & training</li>
+                                            <li>Multi-platform deployment</li>
+                                            <li>Analytics dashboard</li>
+                                            <li>60 days support & optimization</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- Website Development -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">🌐</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">Website Development + SEO</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Modern responsive websites with SEO</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£1,200+</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">complete site</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">3-4 weeks</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">typical</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>Responsive design (mobile-first)</li>
+                                            <li>SEO optimization & setup</li>
+                                            <li>Contact forms & analytics</li>
+                                            <li>Content management system</li>
+                                            <li>90 days support & updates</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- Micro SaaS -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">☁️</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">Micro SaaS Development</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Build profitable recurring revenue tools</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£2,000+</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">MVP</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">6-8 weeks</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">MVP</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>Full-stack web application</li>
+                                            <li>Payment processing (Stripe)</li>
+                                            <li>User management & authentication</li>
+                                            <li>Admin dashboard & analytics</li>
+                                            <li>6 months support & scaling help</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- SEO Automation -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">🔍</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">SEO + Marketing Automation</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Monthly SEO & marketing automation</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£600</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">per month</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">Ongoing</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">monthly</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>Automated SEO monitoring</li>
+                                            <li>Content optimization</li>
+                                            <li>Keyword tracking & reporting</li>
+                                            <li>Local SEO management</li>
+                                            <li>Monthly performance reports</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- Content Creation -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">✍️</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">AI Content Creation</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Automated content & social media</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£400</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">per month</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">Ongoing</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">monthly</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>8-12 blog articles per month</li>
+                                            <li>Social media content automation</li>
+                                            <li>SEO-optimized content</li>
+                                            <li>Content calendar management</li>
+                                            <li>Performance analytics</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- Email Automation -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">📧</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">Email Automation & CRM</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Automated email marketing & lead nurturing</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£400</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">per month</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">Ongoing</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">monthly</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>Email sequence automation</li>
+                                            <li>CRM integration & management</li>
+                                            <li>Lead scoring & qualification</li>
+                                            <li>A/B testing & optimization</li>
+                                            <li>Detailed analytics & reporting</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- Business Consultation -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">💼</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">Business Automation Consulting</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Expert consultation & strategy development</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£100</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">per hour</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">Flexible</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">as needed</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>Business process analysis</li>
+                                            <li>Automation strategy development</li>
+                                            <li>ROI calculations & planning</li>
+                                            <li>Technology recommendations</li>
+                                            <li>Implementation roadmap</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- AI Document Processing -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">📄</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">AI Document Processing & OCR</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Automated document extraction and processing</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£300</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">per month</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">1-2 weeks</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">setup</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>PDF/Image text extraction</li>
+                                            <li>Invoice & receipt processing</li>
+                                            <li>Form data extraction</li>
+                                            <li>Document classification</li>
+                                            <li>Data validation & export</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- AI Social Media Management -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">📱</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">AI Social Media Management</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Automated content creation & posting</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£500</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">per month</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">Ongoing</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">monthly</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>AI-generated post content</li>
+                                            <li>Multi-platform scheduling</li>
+                                            <li>Engagement automation</li>
+                                            <li>Hashtag optimization</li>
+                                            <li>Performance analytics</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- AI Data Analysis & Insights -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">📊</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">AI Data Analysis & Insights</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Automated data processing & reporting</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£700+</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">per project</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">2-4 weeks</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">typical</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>Data cleaning & preprocessing</li>
+                                            <li>Predictive analytics models</li>
+                                            <li>Automated reporting dashboards</li>
+                                            <li>Trend analysis & forecasting</li>
+                                            <li>Custom data visualizations</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- AI Voice & Speech Processing -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">🎤</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">AI Voice & Speech Processing</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Speech-to-text & voice automation</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£600+</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">per project</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">2-3 weeks</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">typical</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>Audio transcription automation</li>
+                                            <li>Voice command interfaces</li>
+                                            <li>Meeting notes automation</li>
+                                            <li>Voice authentication systems</li>
+                                            <li>Multi-language support</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- AI Image Processing & Recognition -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">🖼️</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">AI Image Processing & Recognition</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Automated image analysis & processing</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£500+</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">per project</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">1-3 weeks</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">typical</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>Object detection & classification</li>
+                                            <li>Quality control automation</li>
+                                            <li>Image optimization & compression</li>
+                                            <li>Face/text recognition</li>
+                                            <li>Automated image tagging</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- AI Workflow Automation -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">⚡</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">AI Workflow Automation</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">End-to-end process automation</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£1,500+</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">per workflow</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">4-6 weeks</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">typical</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>Multi-step process automation</li>
+                                            <li>Decision tree implementation</li>
+                                            <li>Integration with existing systems</li>
+                                            <li>Error handling & notifications</li>
+                                            <li>Performance monitoring</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- AI Prediction & Forecasting -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">🔮</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">AI Prediction & Forecasting</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Machine learning prediction models</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£1,200+</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">per model</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">3-5 weeks</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">typical</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>Sales forecasting models</li>
+                                            <li>Demand prediction systems</li>
+                                            <li>Risk assessment algorithms</li>
+                                            <li>Trend analysis & projections</li>
+                                            <li>Custom ML model training</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- AI API Integration -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">🔗</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">AI API Integration & Custom Solutions</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Connect AI services to your systems</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£400+</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">per integration</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">1-2 weeks</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">typical</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>OpenAI API integration</li>
+                                            <li>Google AI services connection</li>
+                                            <li>Custom API development</li>
+                                            <li>Third-party AI tool integration</li>
+                                            <li>API security & optimization</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- AI Video Processing & Automation -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">🎬</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">AI Video Processing & Automation</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Automated video creation & editing</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£800+</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">per project</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">2-4 weeks</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">typical</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>Automated video editing & cuts</li>
+                                            <li>AI-generated subtitles & captions</li>
+                                            <li>Video content summarization</li>
+                                            <li>Batch video processing</li>
+                                            <li>Social media video optimization</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- AI Customer Insights & Behavior Analytics -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">🧠</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">AI Customer Insights & Behavior Analytics</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Advanced customer behavior analysis</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£900+</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">per project</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">3-5 weeks</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">typical</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>Customer journey mapping</li>
+                                            <li>Churn prediction models</li>
+                                            <li>Personalization engines</li>
+                                            <li>Sentiment analysis automation</li>
+                                            <li>Real-time behavior tracking</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- AI Fraud Detection & Security -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">🛡️</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">AI Fraud Detection & Security</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Intelligent security & fraud prevention</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£1,500+</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">per system</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">4-6 weeks</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">typical</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>Real-time fraud detection</li>
+                                            <li>Anomaly detection algorithms</li>
+                                            <li>Automated threat response</li>
+                                            <li>Risk scoring systems</li>
+                                            <li>Compliance monitoring</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- AI Web Scraping & Data Extraction -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">🕷️</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">AI Web Scraping & Data Extraction</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Intelligent data harvesting & monitoring</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£400</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">per month</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">1-2 weeks</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">setup</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>Competitor price monitoring</li>
+                                            <li>Market research automation</li>
+                                            <li>Product catalog scraping</li>
+                                            <li>Lead generation & contact extraction</li>
+                                            <li>Review & sentiment monitoring</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- AI Inventory & Supply Chain Optimization -->
+                                <tr style="border-bottom: 1px solid #e5e7eb; transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">📦</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">AI Inventory & Supply Chain Optimization</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Smart inventory & logistics automation</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£1,000+</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">per system</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">3-6 weeks</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">typical</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>Demand forecasting models</li>
+                                            <li>Automated reorder points</li>
+                                            <li>Supplier performance optimization</li>
+                                            <li>Route optimization algorithms</li>
+                                            <li>Real-time inventory tracking</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <!-- AI Training & Team Support -->
+                                <tr style="transition: background 0.2s ease;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 1.5rem 1rem; border-right: 1px solid #e5e7eb;">
+                                        <div style="display: flex; align-items: center; gap: 1rem;">
+                                            <div style="font-size: 2rem;">🎓</div>
+                                            <div>
+                                                <h4 style="color: #1e40af; font-weight: 600; margin: 0 0 0.25rem 0;">AI Training & Team Support</h4>
+                                                <p style="color: #6b7280; font-size: 0.875rem; margin: 0;">Team training & ongoing AI support</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">£150</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">per hour</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem; text-align: center; border-right: 1px solid #e5e7eb;">
+                                        <div style="font-size: 1.25rem; font-weight: 600; color: #f59e0b;">Flexible</div>
+                                        <div style="font-size: 0.75rem; color: #6b7280;">as needed</div>
+                                    </td>
+                                    <td style="padding: 1.5rem 1rem;">
+                                        <ul style="margin: 0; padding-left: 1rem; color: #374151; font-size: 0.875rem; line-height: 1.6;">
+                                            <li>AI literacy training sessions</li>
+                                            <li>Tool-specific training programs</li>
+                                            <li>Best practices workshops</li>
+                                            <li>Ongoing technical support</li>
+                                            <li>Change management guidance</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Table Footer with CTA -->
+                    <div class="table-footer" style="background: #f8fafc; padding: 2rem; text-align: center; border-top: 2px solid #e5e7eb;">
+                        <h4 style="color: #1f2937; margin-bottom: 1rem;">Ready to Get Started?</h4>
+                        <p style="color: #6b7280; margin-bottom: 1.5rem;">All services include free consultation, detailed planning, and ongoing support</p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                            <a href="#contact" style="background: #1e40af; color: white; padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: background 0.3s ease;" onmouseover="this.style.background='#3b82f6'" onmouseout="this.style.background='#1e40af'">
+                                <i class="fas fa-calendar"></i> Book Free Consultation
+                            </a>
+                            <a href="tel:+447864880790" style="background: transparent; color: #1e40af; border: 2px solid #1e40af; padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.background='#1e40af'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#1e40af'">
+                                <i class="fas fa-phone"></i> Call: 07864 880790
+                            </a>
                         </div>
-                    </div>
-                    <div class="logo-item">
-                        <div class="logo-placeholder">
-                            <i class="fas fa-industry"></i>
-                            <span>Peterborough Manufacturing</span>
+                        <div style="margin-top: 1rem; font-size: 0.875rem; color: #6b7280;">
+                            <i class="fas fa-shield-alt" style="color: #10b981;"></i>
+                            100% Satisfaction Guarantee • 30 Days Free Support • GDPR Compliant
                         </div>
-                    </div>
-                    <div class="logo-item">
-                        <div class="logo-placeholder">
-                            <i class="fas fa-hospital"></i>
-                            <span>Wisbech Healthcare</span>
-                        </div>
-                    </div>
-                    <div class="logo-item">
-                        <div class="logo-placeholder">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>Cambridge Education</span>
-                        </div>
-                    </div>
-                    <div class="logo-item">
-                        <div class="logo-placeholder">
-                            <i class="fas fa-store"></i>
-                            <span>Local Retail Group</span>
-                        </div>
-                    </div>
-                    <div class="logo-item">
-                        <div class="logo-placeholder">
-                            <i class="fas fa-balance-scale"></i>
-                            <span>Legal Associates</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="trust-stats">
-                    <div class="trust-stat">
-                        <span class="trust-number">98%</span>
-                        <span class="trust-label">Client Satisfaction</span>
-                    </div>
-                    <div class="trust-stat">
-                        <span class="trust-number">£2M+</span>
-                        <span class="trust-label">Cost Savings Generated</span>
-                    </div>
-                    <div class="trust-stat">
-                        <span class="trust-number">10,000+</span>
-                        <span class="trust-label">Hours Automated</span>
-                    </div>
-                    <div class="trust-stat">
-                        <span class="trust-number">24/7</span>
-                        <span class="trust-label">System Uptime</span>
                     </div>
                 </div>
             </div>
@@ -4829,97 +5381,6 @@ textarea:focus {
             </div>
         </section>
 
-        <!-- FAQ Section -->
-        <section class="faq section">
-            <div class="container">
-                <div class="section-header text-center">
-                    <h2>Frequently Asked Questions</h2>
-                    <p>Get answers to common questions about AI automation and Python development services</p>
-                </div>
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>What types of business processes can be automated?</h3>
-                            <i class="fas fa-plus faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>We can automate a wide range of business processes including data entry, invoice processing, email management, customer service responses, report generation, social media posting, lead qualification, appointment scheduling, and inventory management. If it's repetitive and rule-based, it can likely be automated.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>How long does it take to implement AI automation solutions?</h3>
-                            <i class="fas fa-plus faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Implementation timelines vary based on complexity. Simple Python automation scripts typically take 1-2 weeks, while comprehensive AI solutions can take 4-8 weeks. We provide detailed project timelines during our initial consultation and keep you updated throughout the development process.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Do you provide ongoing support and maintenance?</h3>
-                            <i class="fas fa-plus faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Yes! We provide 30 days of free support after project completion, including bug fixes and minor adjustments. We also offer ongoing maintenance packages with monthly retainers for continued support, updates, and enhancements to ensure your automation solutions continue running smoothly.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>What's the typical ROI for automation projects?</h3>
-                            <i class="fas fa-plus faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Most clients see ROI within 3-6 months. Our automation solutions typically save 5+ hours of manual work daily, reduce errors by 95%+, and can save thousands in labor costs annually. We provide detailed ROI calculations during our consultation to show expected returns for your specific use case.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Do I need technical knowledge to use the automated systems?</h3>
-                            <i class="fas fa-plus faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Not at all! We design all our automation solutions to be user-friendly and intuitive. We provide comprehensive training and documentation so you and your team can easily use and manage the systems. Most solutions run automatically in the background with minimal user intervention required.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Can automation solutions integrate with our existing software?</h3>
-                            <i class="fas fa-plus faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Yes! We specialize in creating automation solutions that integrate seamlessly with your existing tools and software. Whether you use CRM systems, accounting software, email platforms, or industry-specific tools, we can connect them through APIs and custom integrations.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>What makes your local Cambridgeshire service different?</h3>
-                            <i class="fas fa-plus faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Being based in Wisbech, we understand the unique challenges facing Cambridgeshire businesses. We offer face-to-face consultations, quick response times, and ongoing local support. Our deep knowledge of the local business environment allows us to create solutions that truly fit your needs and market.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>How do you ensure data security and privacy?</h3>
-                            <i class="fas fa-plus faq-icon"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Data security is our top priority. We implement industry-standard encryption, secure hosting, access controls, and follow GDPR compliance requirements. All client data is handled with strict confidentiality, and we can sign additional NDAs if required. We also provide detailed security documentation for your peace of mind.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Blog Section -->
         <section id="blog" class="blog section">
             <div class="container">
@@ -5671,6 +6132,11 @@ textarea:focus {
             initializePWA();
             initializePerformanceOptimizations();
             verifyContent();
+            
+            // Backup FAQ initialization after a short delay
+            setTimeout(() => {
+                initializeFAQ();
+            }, 1000);
         });
 
 
@@ -7296,37 +7762,56 @@ textarea:focus {
         // FAQ Functionality
         function initializeFAQ() {
             const faqItems = document.querySelectorAll('.faq-item');
+            console.log('FAQ Initialization: Found', faqItems.length, 'FAQ items');
 
-            faqItems.forEach(item => {
+            if (faqItems.length === 0) {
+                console.log('No FAQ items found, retrying in 500ms...');
+                setTimeout(initializeFAQ, 500);
+                return;
+            }
+
+            faqItems.forEach((item, index) => {
                 const question = item.querySelector('.faq-question');
-
-                question.addEventListener('click', () => {
-                    const isActive = item.classList.contains('active');
-
-                    // Close all other FAQ items
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('active');
-                        }
+                
+                if (question) {
+                    // Remove any existing listeners to prevent duplicates
+                    question.removeEventListener('click', handleFAQClick);
+                    
+                    // Add click listener
+                    question.addEventListener('click', function() {
+                        handleFAQClick(item, faqItems, question);
                     });
-
-                    // Toggle current item
-                    if (isActive) {
-                        item.classList.remove('active');
-                    } else {
-                        item.classList.add('active');
-
-                        // Track FAQ interaction
-                        if (typeof gtag !== 'undefined') {
-                            const questionText = question.querySelector('h3').textContent;
-                            gtag('event', 'faq_click', {
-                                'event_category': 'Engagement',
-                                'event_label': questionText
-                            });
-                        }
-                    }
-                });
+                    
+                    console.log('FAQ item', index + 1, 'initialized successfully');
+                }
             });
+        }
+
+        function handleFAQClick(item, allItems, question) {
+            const isActive = item.classList.contains('active');
+
+            // Close all other FAQ items
+            allItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+
+            // Toggle current item
+            if (isActive) {
+                item.classList.remove('active');
+            } else {
+                item.classList.add('active');
+
+                // Track FAQ interaction
+                if (typeof gtag !== 'undefined') {
+                    const questionText = question.querySelector('h3').textContent;
+                    gtag('event', 'faq_click', {
+                        'event_category': 'Engagement',
+                        'event_label': questionText
+                    });
+                }
+            }
         }
 
         // Video Placeholder Functionality
