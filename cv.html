@@ -1064,18 +1064,294 @@
 
     <!-- CV Specific JavaScript -->
     <script>
-        // Download PDF functionality
-        function downloadPDF() {
-            // Hide action buttons before printing
-            document.querySelector('.cv-actions').style.display = 'none';
+        // Enhanced print functionality with better document styling
+        function printCV() {
+            // Add print class for enhanced styling
+            document.body.classList.add('printing');
             
-            // Use browser's print to PDF functionality
-            window.print();
-            
-            // Show action buttons after printing
+            // Brief delay to ensure styles are applied
             setTimeout(() => {
-                document.querySelector('.cv-actions').style.display = 'flex';
-            }, 1000);
+                window.print();
+                
+                // Remove print class after printing
+                setTimeout(() => {
+                    document.body.classList.remove('printing');
+                }, 1000);
+            }, 100);
+        }
+
+        // Download as Word document (HTML format that opens in Word)
+        function downloadAsDoc() {
+            // Create a clean version of the CV content
+            const cvContent = createCleanDocumentContent();
+            
+            // Create blob with proper Word document MIME type
+            const blob = new Blob([cvContent], {
+                type: 'application/msword'
+            });
+            
+            // Create download link
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'SreeGanesh_Jagatab_CV.doc';
+            
+            // Trigger download
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Clean up
+            URL.revokeObjectURL(link.href);
+        }
+
+        // Create clean document content for Word export
+        function createCleanDocumentContent() {
+            return `
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SreeGanesh Jagatab - CV</title>
+    <style>
+        body { font-family: 'Times New Roman', serif; font-size: 11pt; line-height: 1.4; margin: 1in; color: #000; }
+        h1 { font-size: 18pt; font-weight: bold; text-align: center; margin-bottom: 10pt; text-transform: uppercase; }
+        h2 { font-size: 14pt; font-weight: bold; margin: 16pt 0 8pt 0; border-bottom: 1pt solid #000; padding-bottom: 2pt; text-transform: uppercase; }
+        h3 { font-size: 12pt; font-weight: bold; margin: 8pt 0 4pt 0; }
+        .contact { text-align: center; margin: 10pt 0; font-size: 10pt; }
+        .company { font-style: italic; }
+        .duration { float: right; font-size: 10pt; }
+        .achievements { margin: 6pt 0; }
+        .achievements li { margin-bottom: 3pt; text-align: justify; }
+        .section { margin-bottom: 16pt; page-break-inside: avoid; }
+        .experience-item { margin-bottom: 12pt; page-break-inside: avoid; }
+        .clearfix::after { content: ""; display: table; clear: both; }
+        p { margin: 6pt 0; text-align: justify; }
+    </style>
+</head>
+<body>
+    <h1>SreeGanesh Jagatab</h1>
+    <div class="contact">
+        Wisbech, Cambridgeshire, UK | +44 7864 880790 | SreeJagatab@yahoo.com<br>
+        linkedin.com/in/sreejagatab | github.com/sreejagatab | jagatab.uk
+    </div>
+    
+    <div class="section">
+        <h2>Professional Summary</h2>
+        <p>Senior AI Automation Engineer and Digital Transformation Specialist with 5+ years architecting enterprise-grade intelligent automation solutions across healthcare, fintech, edtech, and martech industries. Expert in Python development, JavaScript programming, API orchestration, workflow optimization, and machine learning implementation using OpenAI, AWS, and cloud-native architectures. Advanced expertise in prompt engineering and LLM applications for business process automation. Proven track record designing 90+ automation platforms and business process optimization solutions with documented potential for 75% operational efficiency improvements, 300% productivity gains, and £150,000+ cost savings.</p>
+        <p>Specialized in robotic process automation (RPA), DevOps automation, microservices architecture, CX automation, and cross-functional stakeholder management. Advanced expertise in Zapier automation, Make (Integromat), PowerShell scripting, no-code platforms, video processing, educational technology platforms, and multi-language processing systems. Self-taught technology leader with demonstrated ability to deliver scalable B2B tools, drive digital transformation initiatives, and optimize ROI through intelligent system design and agile development methodologies.</p>
+    </div>
+    
+    <div class="section">
+        <h2>Core Competencies</h2>
+        <p><strong>Core Competencies:</strong> Python Development | JavaScript Programming | TypeScript | PowerShell Scripting | API Orchestration | Machine Learning | OpenAI Integration | Prompt Engineering | LLM Applications | AWS Cloud Services | Docker Containerization | Git Version Control | Agile Development | DevOps Automation | Business Process Optimization | Digital Transformation | Enterprise Software Development | Robotic Process Automation (RPA) | Microservices Architecture | CX Automation | B2B Tools | No-Code Platforms | Stakeholder Management | Technical Leadership | Remote Team Management | Performance Optimization | Security Automation | Infrastructure as Code | Testing Automation</p>
+    </div>
+    
+    <div class="section">
+        <h2>Professional Experience</h2>
+        
+        <div class="experience-item clearfix">
+            <h3>AI Automation Engineer <span class="duration">March 2020 – Present</span></h3>
+            <div class="company">Jagatab.uk</div>
+            <ul class="achievements">
+                ${getExperienceAchievements('AI Automation Engineer')}
+            </ul>
+        </div>
+        
+        <div class="experience-item clearfix">
+            <h3>Business Operations Manager <span class="duration">June 2016 – February 2020</span></h3>
+            <div class="company">GotVan.uk</div>
+            <ul class="achievements">
+                ${getExperienceAchievements('Business Operations Manager')}
+            </ul>
+        </div>
+        
+        <div class="experience-item clearfix">
+            <h3>Operations Coordinator <span class="duration">September 2013 – May 2016</span></h3>
+            <div class="company">Spar Franchise</div>
+            <ul class="achievements">
+                ${getExperienceAchievements('Operations Coordinator')}
+            </ul>
+        </div>
+        
+        <div class="experience-item clearfix">
+            <h3>Store Manager <span class="duration">January 2003 – August 2014</span></h3>
+            <div class="company">99p Stores Ltd</div>
+            <ul class="achievements">
+                ${getExperienceAchievements('Store Manager')}
+            </ul>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Education</h2>
+        <div class="experience-item clearfix">
+            <h3>Master of Science in Business Administration <span class="duration">2004</span></h3>
+            <div class="company">London College of Excellence</div>
+            <p><em>Focus: Strategic Management, Operations Optimization, Technology Integration</em></p>
+        </div>
+        
+        <div class="experience-item clearfix">
+            <h3>Bachelor of Science in Computer Science <span class="duration">2002</span></h3>
+            <div class="company">Wesley Boys Degree College</div>
+            <p><em>Focus: Programming, Systems Analysis, Database Management, Software Engineering</em></p>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Technical Skills</h2>
+        <p><strong>Programming Languages:</strong> Python, JavaScript, TypeScript, PowerShell, SQL, HTML, CSS, PHP</p>
+        <p><strong>Automation Platforms:</strong> Make (Integromat), Zapier, Microsoft Power Automate, AWS Automation, RPA Tools, No-Code Platforms</p>
+        <p><strong>AI/ML Technologies:</strong> OpenAI API, GPT-4, Claude, Machine Learning, Natural Language Processing, Perplexity API, Computer Vision, Prompt Engineering, LLM Applications</p>
+        <p><strong>Development Frameworks:</strong> Django, Flask, FastAPI, React, Next.js, TypeScript, Node.js, Microservices Architecture</p>
+        <p><strong>Cloud Platforms:</strong> AWS, Google Cloud Platform, Microsoft Azure, Amazon Q Developer, Cloud-Native Architecture</p>
+        <p><strong>DevOps & Infrastructure:</strong> Docker, Kubernetes, Git, GitHub, GitLab, CI/CD Pipelines, Infrastructure as Code, Terraform</p>
+    </div>
+    
+    <div class="section">
+        <h2>Additional Information</h2>
+        <p><strong>Work Authorization:</strong> UK Resident with full working rights</p>
+        <p><strong>Availability:</strong> Immediate start available</p>
+        <p><strong>Work Arrangements:</strong> Remote, Hybrid, or On-site flexibility</p>
+        <p><strong>Languages:</strong> English (Native), Hindi (Fluent), Polish (Conversational)</p>
+        <p><strong>Professional References:</strong> Available upon request</p>
+        <p><strong>Portfolio Access:</strong> Comprehensive project examples and case studies available at jagatab.uk</p>
+    </div>
+</body>
+</html>`;
+        }
+
+        // Helper function to get experience achievements
+        function getExperienceAchievements(role) {
+            const achievements = {
+                'AI Automation Engineer': [
+                    'Architected and deployed 90+ enterprise automation solutions across healthcare, fintech, martech, edtech, and agritech industries',
+                    'Engineered scalable Python-based API integration architecture connecting 50+ enterprise platforms',
+                    'Developed advanced prompt engineering and LLM applications for intelligent automation workflows',
+                    'Architected cloud-native video processing platform utilizing machine learning algorithms',
+                    'Built comprehensive B2B tools and no-code automation platforms serving 50+ organizations',
+                    'Implemented CX automation suite with AI-powered customer journey optimization',
+                    'Developed comprehensive translation platform leveraging natural language processing',
+                    'Implemented AI-powered customer service automation using OpenAI integration',
+                    'Architected marketing automation workflows using Make (Integromat), Zapier, and RPA',
+                    'Engineered business intelligence dashboards with real-time analytics',
+                    'Developing automation solutions with potential ROI improvements totaling £150,000+',
+                    'Leading technical documentation and agile development initiatives',
+                    'Managing remote project delivery across multiple time zones'
+                ],
+                'Business Operations Manager': [
+                    'Founded and scaled logistics business from startup to profitable operation',
+                    'Developed custom automation systems for scheduling, dispatch, and customer communication',
+                    'Implemented data-driven performance tracking using Excel automation',
+                    'Created real-time GPS tracking integration with automated customer notifications',
+                    'Managed remote team coordination of 15+ drivers and support staff'
+                ],
+                'Operations Coordinator': [
+                    'Managed multi-site retail operations across 5 locations with 30+ staff members',
+                    'Developed Excel-based automation systems for inventory management and sales tracking',
+                    'Led staff training and development programs achieving high employee retention',
+                    'Created automated reporting workflows reducing administrative time',
+                    'Implemented customer experience optimization strategies'
+                ],
+                'Store Manager': [
+                    'Managed multi-site retail operations across high-traffic store locations with teams of up to 30+ staff members',
+                    'Developed automated data logging and KPI tracking systems using Excel-based reporting workflows',
+                    'Led strategic store setup operations including process flow optimization and inventory management',
+                    'Implemented customer experience optimization strategies through data-driven analysis',
+                    'Created standardized operational procedures and training documentation systems'
+                ]
+            };
+            
+            return achievements[role] ? achievements[role].map(item => `<li>${item}</li>`).join('') : '';
+        }
+
+        // Copy CV content to clipboard
+        function copyToClipboard() {
+            const textContent = extractTextContent();
+            
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(textContent).then(() => {
+                    showNotification('CV content copied to clipboard!');
+                }).catch(() => {
+                    fallbackCopyToClipboard(textContent);
+                });
+            } else {
+                fallbackCopyToClipboard(textContent);
+            }
+        }
+
+        // Fallback copy method for older browsers
+        function fallbackCopyToClipboard(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.top = '-9999px';
+            document.body.appendChild(textArea);
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showNotification('CV content copied to clipboard!');
+            } catch (err) {
+                showNotification('Failed to copy. Please use Ctrl+A and Ctrl+C to copy manually.', 'error');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        // Extract clean text content
+        function extractTextContent() {
+            const sections = document.querySelectorAll('.cv-section');
+            let text = 'SREEGANESH JAGATAB\\n';
+            text += 'Wisbech, Cambridgeshire, UK | +44 7864 880790 | SreeJagatab@yahoo.com\\n';
+            text += 'linkedin.com/in/sreejagatab | github.com/sreejagatab | jagatab.uk\\n\\n';
+            
+            sections.forEach(section => {
+                const title = section.querySelector('.cv-section-title');
+                if (title) {
+                    text += title.textContent.toUpperCase() + '\\n';
+                    text += '='.repeat(title.textContent.length) + '\\n\\n';
+                }
+                
+                const content = section.querySelector('.cv-summary, .cv-skills-grid, .cv-experience-item, .cv-education-item');
+                if (content) {
+                    text += content.textContent.replace(/\\s+/g, ' ').trim() + '\\n\\n';
+                }
+            });
+            
+            return text;
+        }
+
+        // Show notification
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: ${type === 'success' ? '#10b981' : '#ef4444'};
+                color: white;
+                padding: 12px 24px;
+                border-radius: 8px;
+                font-size: 14px;
+                font-weight: 500;
+                z-index: 10000;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                transition: all 0.3s ease;
+            `;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateX(-50%) translateY(-20px)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
         }
 
         // Smooth scrolling for better UX
