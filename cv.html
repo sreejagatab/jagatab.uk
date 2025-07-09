@@ -346,54 +346,264 @@
             background: #059669;
         }
 
-        /* Print Styles */
+        /* Print Styles - Clean Document Format */
         @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
             body {
-                background: white;
-                font-size: 12pt;
-                line-height: 1.4;
+                background: white !important;
+                font-family: 'Times New Roman', serif !important;
+                font-size: 11pt !important;
+                line-height: 1.4 !important;
+                color: #000 !important;
+                margin: 0 !important;
+                padding: 0 !important;
             }
 
             .cv-container {
-                max-width: none;
-                margin: 0;
-                box-shadow: none;
-                border-radius: 0;
+                max-width: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                background: white !important;
             }
 
             .cv-header {
-                background: var(--primary-color) !important;
-                color: white !important;
-                padding: 2rem;
-                page-break-inside: avoid;
+                background: white !important;
+                color: #000 !important;
+                padding: 20pt 30pt !important;
+                text-align: center !important;
+                border-bottom: 2pt solid #000 !important;
+                page-break-inside: avoid !important;
             }
 
-            .cv-actions {
-                display: none;
+            .cv-name {
+                font-family: 'Times New Roman', serif !important;
+                font-size: 18pt !important;
+                font-weight: bold !important;
+                color: #000 !important;
+                margin-bottom: 8pt !important;
+                text-transform: uppercase !important;
+                letter-spacing: 1pt !important;
+            }
+
+            .cv-contact {
+                display: block !important;
+                text-align: center !important;
+                margin-top: 10pt !important;
+            }
+
+            .cv-contact-item {
+                display: inline !important;
+                color: #000 !important;
+                font-size: 10pt !important;
+                margin: 0 8pt !important;
+            }
+
+            .cv-contact-item::after {
+                content: " | " !important;
+                color: #000 !important;
+            }
+
+            .cv-contact-item:last-child::after {
+                content: "" !important;
+            }
+
+            .cv-content {
+                padding: 20pt 30pt !important;
             }
 
             .cv-section {
-                page-break-inside: avoid;
-                margin-bottom: 2rem;
+                page-break-inside: avoid !important;
+                margin-bottom: 18pt !important;
+                break-inside: avoid !important;
+            }
+
+            .cv-section-title {
+                font-family: 'Times New Roman', serif !important;
+                font-size: 14pt !important;
+                font-weight: bold !important;
+                color: #000 !important;
+                margin-bottom: 10pt !important;
+                padding-bottom: 4pt !important;
+                border-bottom: 1pt solid #000 !important;
+                text-transform: uppercase !important;
+                letter-spacing: 0.5pt !important;
+            }
+
+            .cv-section-title::before {
+                display: none !important;
+            }
+
+            .cv-summary {
+                font-size: 11pt !important;
+                line-height: 1.4 !important;
+                color: #000 !important;
+                text-align: justify !important;
+                margin-bottom: 8pt !important;
             }
 
             .cv-experience-item, .cv-education-item, .cv-project-item {
-                page-break-inside: avoid;
-                background: #f8f9fa !important;
-                border: 1px solid #e9ecef;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+                background: white !important;
+                border: none !important;
+                border-left: none !important;
+                margin-bottom: 12pt !important;
+                padding: 0 !important;
+            }
+
+            .cv-item-header {
+                display: block !important;
+                margin-bottom: 6pt !important;
+            }
+
+            .cv-item-title {
+                font-family: 'Times New Roman', serif !important;
+                font-size: 12pt !important;
+                font-weight: bold !important;
+                color: #000 !important;
+                margin-bottom: 2pt !important;
+                display: inline !important;
+            }
+
+            .cv-item-company {
+                font-size: 11pt !important;
+                color: #000 !important;
+                font-weight: normal !important;
+                font-style: italic !important;
+                display: inline !important;
+            }
+
+            .cv-item-duration {
+                background: none !important;
+                color: #000 !important;
+                padding: 0 !important;
+                border-radius: 0 !important;
+                font-size: 10pt !important;
+                font-weight: normal !important;
+                float: right !important;
+                margin-top: 0 !important;
+            }
+
+            .cv-item-description {
+                color: #000 !important;
+                margin-bottom: 6pt !important;
+                font-size: 11pt !important;
+            }
+
+            .cv-achievements {
+                list-style: none !important;
+                padding-left: 0 !important;
+                margin: 0 !important;
+            }
+
+            .cv-achievements li {
+                position: relative !important;
+                padding-left: 12pt !important;
+                margin-bottom: 4pt !important;
+                color: #000 !important;
+                font-size: 10pt !important;
+                line-height: 1.3 !important;
+                text-align: justify !important;
+            }
+
+            .cv-achievements li::before {
+                content: '•' !important;
+                position: absolute !important;
+                left: 0 !important;
+                color: #000 !important;
+                font-weight: bold !important;
+            }
+
+            .cv-achievements li strong {
+                font-weight: bold !important;
+                color: #000 !important;
             }
 
             .cv-skills-grid {
-                grid-template-columns: repeat(2, 1fr);
+                display: block !important;
+                columns: 2 !important;
+                column-gap: 20pt !important;
             }
 
-            .cv-certifications {
-                grid-template-columns: repeat(3, 1fr);
+            .cv-skill-category {
+                background: white !important;
+                border: none !important;
+                border-top: none !important;
+                padding: 0 0 8pt 0 !important;
+                margin-bottom: 8pt !important;
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+
+            .cv-skill-category h4 {
+                font-size: 11pt !important;
+                font-weight: bold !important;
+                color: #000 !important;
+                margin-bottom: 4pt !important;
+            }
+
+            .cv-skill-category h4 i {
+                display: none !important;
+            }
+
+            .cv-skill-category p {
+                font-size: 10pt !important;
+                color: #000 !important;
+                line-height: 1.3 !important;
+            }
+
+            .cv-actions {
+                display: none !important;
+            }
+
+            /* Hide icons in print */
+            i, .fas, .fab {
+                display: none !important;
+            }
+
+            /* Ensure page breaks */
+            .cv-section:nth-child(n+4) {
+                page-break-before: auto !important;
             }
 
             a {
-                color: inherit !important;
+                color: #000 !important;
                 text-decoration: none !important;
+            }
+
+            /* Clean up any remaining styling */
+            .cv-certifications,
+            .cv-skill-list,
+            .cv-skill-tag {
+                display: none !important;
+            }
+
+            /* Typography improvements for document style */
+            h1, h2, h3, h4, h5, h6 {
+                font-family: 'Times New Roman', serif !important;
+                color: #000 !important;
+            }
+
+            p, li, span, div {
+                font-family: 'Times New Roman', serif !important;
+                color: #000 !important;
+            }
+
+            /* Page margins */
+            @page {
+                size: A4 !important;
+                margin: 1in 0.8in !important;
+            }
+
+            /* Ensure clean document flow */
+            .cv-header::before {
+                display: none !important;
             }
         }
 
@@ -444,13 +654,17 @@
 <body>
     <!-- Action Buttons -->
     <div class="cv-actions">
-        <button onclick="window.print()" class="cv-btn">
+        <button onclick="printCV()" class="cv-btn">
             <i class="fas fa-print"></i>
-            Print CV
+            Print/Save PDF
         </button>
-        <button onclick="downloadPDF()" class="cv-btn secondary">
-            <i class="fas fa-download"></i>
-            Download PDF
+        <button onclick="downloadAsDoc()" class="cv-btn secondary">
+            <i class="fas fa-file-word"></i>
+            Download as Doc
+        </button>
+        <button onclick="copyToClipboard()" class="cv-btn" style="background: var(--accent-color);">
+            <i class="fas fa-copy"></i>
+            Copy Text
         </button>
         <a href="index.html" class="cv-btn" style="background: var(--text-light);">
             <i class="fas fa-home"></i>
@@ -618,6 +832,23 @@
                         <li><strong>Implemented customer experience optimization strategies</strong> resulting in improved retail performance</li>
                     </ul>
                 </div>
+
+                <div class="cv-experience-item">
+                    <div class="cv-item-header">
+                        <div>
+                            <h3 class="cv-item-title">Store Manager</h3>
+                            <p class="cv-item-company">99p Stores Ltd</p>
+                        </div>
+                        <span class="cv-item-duration">January 2003 – August 2014</span>
+                    </div>
+                    <ul class="cv-achievements">
+                        <li><strong>Managed multi-site retail operations</strong> across high-traffic store locations with teams of up to 30+ staff members, implementing systematic process standardization and performance optimization methodologies</li>
+                        <li><strong>Developed automated data logging and KPI tracking systems</strong> using Excel-based reporting workflows, maintaining accurate daily performance metrics and creating comprehensive internal reporting dashboards</li>
+                        <li><strong>Led strategic store setup operations</strong> including process flow optimization, inventory management systems, and comprehensive team training programs for new location launches</li>
+                        <li><strong>Implemented customer experience optimization strategies</strong> through data-driven analysis of purchasing patterns and operational efficiency improvements</li>
+                        <li><strong>Created standardized operational procedures and training documentation systems</strong>, establishing foundation for systematic process improvement and automation thinking</li>
+                    </ul>
+                </div>
             </section>
 
             <!-- Key Projects & Achievements -->
@@ -704,7 +935,7 @@
                         <div>
                             <h3 class="cv-item-title">Enterprise AI Customer Service Platform</h3>
                         </div>
-                        <span class="cv-item-duration">2023-2024</span>
+                        <span class="cv-item-duration">2023-2025</span>
                     </div>
                     <ul class="cv-achievements">
                         <li><strong>Developed multi-tenant automation platform</strong> serving 10+ organizations with intelligent query routing and response generation</li>
@@ -719,7 +950,7 @@
                         <div>
                             <h3 class="cv-item-title">Cross-Platform Business Intelligence System</h3>
                         </div>
-                        <span class="cv-item-duration">2021-2022</span>
+                        <span class="cv-item-duration">2020-2025</span>
                     </div>
                     <ul class="cv-achievements">
                         <li><strong>Developed automated data integration solution</strong> connecting 20+ business platforms and eliminating manual data processing</li>
@@ -740,7 +971,7 @@
                             <h3 class="cv-item-title">Master of Science in Business Administration</h3>
                             <p class="cv-item-company">London College of Excellence</p>
                         </div>
-                        <span class="cv-item-duration">2019</span>
+                        <span class="cv-item-duration">2004</span>
                     </div>
                     <p class="cv-item-description">
                         <em>Focus: Strategic Management, Operations Optimization, Technology Integration</em>
@@ -753,7 +984,7 @@
                             <h3 class="cv-item-title">Bachelor of Science in Computer Science</h3>
                             <p class="cv-item-company">Wesley Boys Degree College</p>
                         </div>
-                        <span class="cv-item-duration">2015</span>
+                        <span class="cv-item-duration">2002</span>
                     </div>
                     <p class="cv-item-description">
                         <em>Focus: Programming, Systems Analysis, Database Management, Software Engineering</em>
